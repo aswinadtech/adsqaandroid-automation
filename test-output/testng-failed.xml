@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="com.twc.ios.app.testcases.AndroidSmokeTest"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.twc.ios.app.testcases.AndroidSmokeTest">
+        <methods>
+          <include name="Validate_Feed1_ct_Custom_param"/>
+          <include name="validate_PreRollVideo_Call_content_url_parameter"/>
+          <include name="Validate_PreRollVideo_wfxtg_Custom_param"/>
+          <include name="validate_Daily_Details_Ad_Call_content_url_parameter"/>
+          <include name="Validate_PreRollVideo_hzcs_Custom_param"/>
+          <include name="Validate_Feed1_zip_Custom_param"/>
+          <include name="Validate_PreRollVideo_cmsid_Custom_param"/>
+          <include name="Validate_Feed1_wind_Custom_param"/>
+          <include name="Validate_Marquee_zip_Custom_param"/>
+          <include name="Verify_Confiant_SDK_Calls"/>
+          <include name="Validate_IMA_SDK_version"/>
+          <include name="Validate_Feed1_fltmpc_Custom_param"/>
+          <include name="Validate_PreRollVideo_ttid_Custom_param"/>
+          <include name="Validate_Marquee_st_Custom_param"/>
+          <include name="Validate_PreRollVideo_cxtg_Custom_param"/>
+          <include name="Validate_Marquee_fltmpc_Custom_param"/>
+          <include name="Validate_Marquee_dma_Custom_param"/>
+          <include name="Validate_PreRollVideo_zcs_Custom_param"/>
+          <include name="Validate_PreRollVideo_ltv_Custom_param"/>
+          <include name="Verify_PrerollAd"/>
+          <include name="beforeClass"/>
+          <include name="validate_Map_Details_Ad_Call_content_url_parameter"/>
+          <include name="Validate_Marquee_wind_Custom_param"/>
+          <include name="afterClass"/>
+          <include name="Validate_Health_Flu_Articles_ltv_Custom_param"/>
+          <include name="Verify_Map_Details_mr_Custom_Parameter"/>
+          <include name="Validate_PreRollVideo_vid_Custom_param"/>
+          <include name="Validate_Feed1_st_Custom_param"/>
+          <include name="Validate_PreRollVideo_nzcs_Custom_param"/>
+          <include name="Validate_PreRollVideo_description_url_Custom_param"/>
+          <include name="Validate_Marquee_ct_Custom_param"/>
+          <include name="Validate_PreRollVideo_ref_Custom_param"/>
+          <include name="Validate_Feed1_dma_Custom_param"/>
+        </methods>
+      </class> <!-- com.twc.ios.app.testcases.AndroidSmokeTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
