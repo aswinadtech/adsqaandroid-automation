@@ -505,10 +505,10 @@ public class Functions extends Driver {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		// Capabilities for IOS and Android Based on Selected on Device Selection
-	/*	capabilities.setCapability("deviceName", "Galaxy S21 5G");
-		capabilities.setCapability("udid", "277a9e7c891c7ece");
+		/*capabilities.setCapability("deviceName", "Galaxy S21 5G");
+		capabilities.setCapability("udid", "R5CR11NNFQW");
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "10");
+		capabilities.setCapability("platformVersion", "12");
 		capabilities.setCapability("appPackage", "com.weather.Weather");
 		capabilities.setCapability("appActivity", "com.weather.Weather.app.SplashScreenActivity");
 		capabilities.setCapability("automationName", "UiAutomator2");
@@ -516,11 +516,10 @@ public class Functions extends Driver {
 		capabilities.setCapability("autoLaunch", true);*/
 		
 		capabilities.setCapability(ReadExcelValues.data[2][0], ReadExcelValues.data[2][2]);
-	capabilities.setCapability(ReadExcelValues.data[3][0], ReadExcelValues.data[3][2]);
+		capabilities.setCapability(ReadExcelValues.data[3][0], ReadExcelValues.data[3][2]);
 		capabilities.setCapability(ReadExcelValues.data[7][0], ReadExcelValues.data[7][2]);
 		capabilities.setCapability(ReadExcelValues.data[11][0], ReadExcelValues.data[11][2]);
 		capabilities.setCapability(ReadExcelValues.data[12][0], ReadExcelValues.data[12][2]);
-		capabilities.setCapability("platformVersion", "10");
 		capabilities.setCapability("appActivity", "com.weather.Weather.app.SplashScreenActivity");
 		capabilities.setCapability("automationName", "UiAutomator2");
 		capabilities.setCapability("noReset", true);
@@ -1755,7 +1754,6 @@ public class Functions extends Driver {
 			System.out.println("App Closed SuccessFully");
 			logStep("App Closed SuccessFully");
 //			TestBase.waitForMilliSeconds(5000);
-			
 			Ad.launchApp();
 			//Ad.activateApp("com.weather.TWC");
 			System.out.println("App Launched SuccessFully");

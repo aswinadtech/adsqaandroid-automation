@@ -124,9 +124,9 @@
     <fullscreen>false</fullscreen>
     <mainWindow>
       <x>20</x>
-      <y>272</y>
+      <y>48</y>
       <width>900</width>
-      <height>646</height>
+      <height>694</height>
     </mainWindow>
     <lastCheckUpdates>2017-06-30 06:35:41.478 UTC</lastCheckUpdates>
   </startupConfiguration>
@@ -237,7 +237,7 @@
       <entry>
         <string>Rewrite</string>
         <rewrite>
-          <toolEnabled>false</toolEnabled>
+          <toolEnabled>true</toolEnabled>
           <debugging>false</debugging>
           <sets>
             <rewriteSet>

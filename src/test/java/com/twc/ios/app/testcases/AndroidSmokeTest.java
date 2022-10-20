@@ -166,7 +166,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		ftlScreens = new AndroidFTLScreens(Ad);
 		aqCardScreen = new AndroidAirQualityCardScreen(Ad);
 		fOneCardScreen = new AndroidFeedOneCardScreen(Ad);
-				
+		
 	}
 	
 /*	@Test(priority = 51, enabled = true)
@@ -2144,7 +2144,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	 * This method validate the 'mr' custom parameter of Hourly Details
 	 * @throws Exception
 	 */
-	/*@Test(priority = 475, enabled = true)
+	@Test(priority = 475, enabled = true)
 	@Description("Verify 'mr' custom parameter of Hourly Details")
 	public void Verify_Hourly_Details_mr_Custom_Parameter() throws Exception {
 		System.out.println("==============================================");
@@ -2171,7 +2171,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.validate_custom_param_val_of_gampad("Smoke", "Hourly", "mr", "1");
 		
-	}*/
+	}
 	
 	
 	
@@ -2217,8 +2217,8 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.validate_custom_param_val_of_gampad("Smoke", "Map", "mr", "0");
 		proxy.clearCharlesSession();
-		//Functions.scroll_Up();
-		Functions.swipe_Down(Ad);
+		//Functions.swipe_Down(Ad);
+		Functions.swipe_Left();
 		Functions.archive_folder("Charles");
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
@@ -2258,11 +2258,11 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		addrScreen.enter_requiredLocation("30124");
 		TestBase.waitForMilliSeconds(20000);
 		// navigate to Hourly tab
-		// navigateToHourlyTab();
-		// TestBase.waitForMilliSeconds(2000);
+		hrTab.navigateToHourlyTab();
+		TestBase.waitForMilliSeconds(2000);
 		// navigate to Daily tab
-		// navigateToDailyTab();
-		// TestBase.waitForMilliSeconds(2000);
+		dTab.navigateToDailyTab();
+		TestBase.waitForMilliSeconds(2000);
 		// navigate to Radar tab
 		rTab.navigateToRadarTab();
 		TestBase.waitForMilliSeconds(2000);
@@ -2276,38 +2276,32 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates wfxtg custom parameter of Hourly details call
 	 */
-	/*
-	 * @Test(priority = 527, enabled = true)
-	 * 
-	 * @Description("Validating 'wfxtg' custom parameter of Hourly details call ")
-	 * public void Validate_HourlyDetails_wfxtg_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating wfxtg custom parameter of Hourly details call");
-	 * logStep("Validating wfxtg custom parameter of Hourly details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly",
-	 * "wfxtg", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 527, enabled = true)
+	@Description("Validating 'wfxtg' custom parameter of Hourly details call ")
+	public void Validate_HourlyDetails_wfxtg_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating wfxtg custom parameter of Hourly details call");
+		logStep("Validating wfxtg custom parameter of Hourly details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "wfxtg", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates wfxtg custom parameter of Daily details call
 	 */
-	/*
-	 * @Test(priority = 528, enabled = true)
-	 * 
-	 * @Description("Validating 'wfxtg' custom parameter of Daily details call ")
-	 * public void Validate_DailyDetails_wfxtg_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating wfxtg custom parameter of Daily details call");
-	 * logStep("Validating wfxtg custom parameter of Daily details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)",
-	 * "wfxtg", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 528, enabled = true)
+	@Description("Validating 'wfxtg' custom parameter of Daily details call ")
+	public void Validate_DailyDetails_wfxtg_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating wfxtg custom parameter of Daily details call");
+		logStep("Validating wfxtg custom parameter of Daily details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)", "wfxtg", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates wfxtg custom parameter of Map details call
@@ -2325,38 +2319,32 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates cxtg custom parameter of Hourly details call
 	 */
-	/*
-	 * @Test(priority = 530, enabled = true)
-	 * 
-	 * @Description("Validating 'cxtg' custom parameter of Hourly details call ")
-	 * public void Validate_HourlyDetails_cxtg_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating cxtg custom parameter of Hourly details call");
-	 * logStep("Validating cxtg custom parameter of Hourly details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "cxtg",
-	 * "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 530, enabled = true)
+	@Description("Validating 'cxtg' custom parameter of Hourly details call ")
+	public void Validate_HourlyDetails_cxtg_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating cxtg custom parameter of Hourly details call");
+		logStep("Validating cxtg custom parameter of Hourly details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "cxtg", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates cxtg custom parameter of Daily details call
 	 */
-	/*
-	 * @Test(priority = 531, enabled = true)
-	 * 
-	 * @Description("Validating 'cxtg' custom parameter of Daily details call ")
-	 * public void Validate_DailyDetails_cxtg_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating cxtg custom parameter of Daily details call");
-	 * logStep("Validating cxtg custom parameter of Daily details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)",
-	 * "cxtg", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 531, enabled = true)
+	@Description("Validating 'cxtg' custom parameter of Daily details call ")
+	public void Validate_DailyDetails_cxtg_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating cxtg custom parameter of Daily details call");
+		logStep("Validating cxtg custom parameter of Daily details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)", "cxtg", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates cxtg custom parameter of Map details call
@@ -2374,38 +2362,32 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates zcs custom parameter of Hourly details call
 	 */
-	/*
-	 * @Test(priority = 533, enabled = true)
-	 * 
-	 * @Description("Validating 'zcs' custom parameter of Hourly details call ")
-	 * public void Validate_HourlyDetails_zcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating zcs custom parameter of Hourly details call");
-	 * logStep("Validating zcs custom parameter of Hourly details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "zcs",
-	 * "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 533, enabled = true)
+	@Description("Validating 'zcs' custom parameter of Hourly details call ")
+	public void Validate_HourlyDetails_zcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating zcs custom parameter of Hourly details call");
+		logStep("Validating zcs custom parameter of Hourly details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "zcs", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates zcs custom parameter of Daily details call
 	 */
-	/*
-	 * @Test(priority = 534, enabled = true)
-	 * 
-	 * @Description("Validating 'zcs' custom parameter of Daily details call ")
-	 * public void Validate_DailyDetails_zcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating zcs custom parameter of Daily details call");
-	 * logStep("Validating zcs custom parameter of Daily details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)",
-	 * "zcs", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 534, enabled = true)
+	@Description("Validating 'zcs' custom parameter of Daily details call ")
+	public void Validate_DailyDetails_zcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating zcs custom parameter of Daily details call");
+		logStep("Validating zcs custom parameter of Daily details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)", "zcs", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates zcs custom parameter of Map details call
@@ -2423,38 +2405,32 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates hzcs custom parameter of Hourly details call
 	 */
-	/*
-	 * @Test(priority = 536, enabled = true)
-	 * 
-	 * @Description("Validating 'hzcs' custom parameter of Hourly details call ")
-	 * public void Validate_HourlyDetails_hzcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating hzcs custom parameter of Hourly details call");
-	 * logStep("Validating hzcs custom parameter of Hourly details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "hzcs",
-	 * "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 536, enabled = true)
+	@Description("Validating 'hzcs' custom parameter of Hourly details call ")
+	public void Validate_HourlyDetails_hzcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating hzcs custom parameter of Hourly details call");
+		logStep("Validating hzcs custom parameter of Hourly details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "hzcs", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates hzcs custom parameter of Daily details call
 	 */
-	/*
-	 * @Test(priority = 537, enabled = true)
-	 * 
-	 * @Description("Validating 'hzcs' custom parameter of Daily details call ")
-	 * public void Validate_DailyDetails_hzcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating hzcs custom parameter of Daily details call");
-	 * logStep("Validating hzcs custom parameter of Daily details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)",
-	 * "hzcs", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 537, enabled = true)
+	@Description("Validating 'hzcs' custom parameter of Daily details call ")
+	public void Validate_DailyDetails_hzcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating hzcs custom parameter of Daily details call");
+		logStep("Validating hzcs custom parameter of Daily details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)", "hzcs", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates hzcs custom parameter of Map details call
@@ -2472,38 +2448,32 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates nzcs custom parameter of Hourly details call
 	 */
-	/*
-	 * @Test(priority = 539, enabled = true)
-	 * 
-	 * @Description("Validating 'nzcs' custom parameter of Hourly details call ")
-	 * public void Validate_HourlyDetails_nzcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating nzcs custom parameter of Hourly details call");
-	 * logStep("Validating nzcs custom parameter of Hourly details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "nzcs",
-	 * "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 539, enabled = true)
+	@Description("Validating 'nzcs' custom parameter of Hourly details call ")
+	public void Validate_HourlyDetails_nzcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating nzcs custom parameter of Hourly details call");
+		logStep("Validating nzcs custom parameter of Hourly details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "nzcs", "30124");
+
+	}
+	 
 	
 	/**
 	 * This method validates nzcs custom parameter of Daily details call
 	 */
-	/*
-	 * @Test(priority = 540, enabled = true)
-	 * 
-	 * @Description("Validating 'nzcs' custom parameter of Daily details call ")
-	 * public void Validate_DailyDetails_nzcs_Custom_param() throws Exception {
-	 * System.out.println("==============================================");
-	 * System.out.
-	 * println("****** Validating nzcs custom parameter of Daily details call");
-	 * logStep("Validating nzcs custom parameter of Daily details call ");
-	 * Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)",
-	 * "nzcs", "30124");
-	 * 
-	 * }
-	 */
+	
+	@Test(priority = 540, enabled = true)
+	@Description("Validating 'nzcs' custom parameter of Daily details call ")
+	public void Validate_DailyDetails_nzcs_Custom_param() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating nzcs custom parameter of Daily details call");
+		logStep("Validating nzcs custom parameter of Daily details call ");
+		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Daily(10day)", "nzcs", "30124");
+
+	}
+	 
 
 	/**
 	 * This method validates nzcs custom parameter of Map details call
