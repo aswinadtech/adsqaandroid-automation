@@ -1924,11 +1924,11 @@ public class AndroidSettingsScreen extends Utils {
 		navigateBackToFeedCardAndroid();
 		//AppiumFunctions.clickOnBackArrowElement();
 		//AppiumFunctions.clickOnBackArrowElement();
-	/*	FileOutputStream fos = new FileOutputStream(
+			FileOutputStream fos = new FileOutputStream(
 				new File(System.getProperty("user.dir") + "/JenkinsEmailConfig.Properties"));
 		properties.setProperty("AppVersion", apkVersion);
 		properties.store(fos, " App Version read from app and updated");
-		fos.close();*/
+		fos.close();
 
 	}
 
