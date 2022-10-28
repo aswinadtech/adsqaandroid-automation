@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="com.twc.ios.app.testcases.AndroidRegressionTest"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.twc.ios.app.testcases.AndroidRegressionTest">
+        <methods>
+          <include name="Verify_WMAllergy_AdCall"/>
+          <include name="Verify_interstitial_ads_mapCard"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd"/>
+          <include name="Validate_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe2_ref_Custom_params"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_Size"/>
+          <include name="Validate_TapabilityOfDailyNavTabTestAd"/>
+          <include name="Verify_Interstitial_AdCall_during_Heat_Advisory"/>
+          <include name="Validate_Week_Ahead_ltv_Custom_param"/>
+          <include name="Verify_WFXTriggers_Call_When_UPSX_LogIn"/>
+          <include name="validate_NextGen_IM_call_for_es_US"/>
+          <include name="Validate_IDD_StaticAd_bgAssetCall"/>
+          <include name="Validate_NextGenIM_VideoAd_bgAssetCall"/>
+          <include name="Validate_TapabilityOfHomeScreenStickyTestAd"/>
+          <include name="Validate_WMFlu_Ad_Size"/>
+          <include name="Validate_Week_Ahead_Call_Response"/>
+          <include name="Validate_WMAllergy_Ad_Size"/>
+          <include name="verifyAdsWithUPSXLogOut"/>
+          <include name="Validate_Interstitial_ltv_Custom_param"/>
+          <include name="Validate_IDD_StaticAd_fgAssetCall"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd"/>
+          <include name="Validate_NextGenIM_StaticAd_bgAssetCall"/>
+          <include name="enable_PreConfiguration_for_WatsonAndPlanningMomentCards"/>
+          <include name="Validate_WMFlu_Call_Response"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_When_UPSX_LogOut"/>
+          <include name="validate_NextGen_IM_call_for_de_DE"/>
+          <include name="Verify_Amazon_Call_When_UPSX_LogOut"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_fgAssetCall"/>
+          <include name="Validate_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe2_bn_Custom_params"/>
+          <include name="Validate_Weekend_Call_Response"/>
+          <include name="Verify_interstitial_ads_dailyCard"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_bgAssetCall"/>
+          <include name="Validate_SafetyAndPreparednessCard_Call_Response"/>
+          <include name="Validate_Week_Ahead_Ad_Size"/>
+          <include name="Verify_Week_Ahead_AdCall"/>
+          <include name="Verify_WMFlu_AdCall"/>
+          <include name="Validate_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe1_ref_Custom_params"/>
+          <include name="Verify_Amazon_Call_When_UPSX_LogIn"/>
+          <include name="Verify_Gampad_call_When_UPSX_LogOut"/>
+          <include name="Validate_WMFlu_ltv_Custom_param"/>
+          <include name="Validate_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe1_bn_Custom_params"/>
+          <include name="Verify_Lotame_Call_When_UPSX_LogOut"/>
+          <include name="Verify_interstitial_ads_dailyTab"/>
+          <include name="Validate_Integrated_FeedCard_StaticAd_bgAssetCall"/>
+          <include name="Validate_WMAllergy_pos_Custom_param"/>
+          <include name="Validate_WMAllergy_ltv_Custom_param"/>
+          <include name="Validate_WMFlu_pos_Custom_param"/>
+          <include name="Validate_WMAllergy_Call_Response"/>
+          <include name="enable_PreConfiguration_for_servere1_EditorialVideoHeadlineCard_BreakingNewsCard"/>
+          <include name="Verify_HomeScreen_Sticky_Ad_mr_Custom_Parameter_When_Kill_And_Launch"/>
+          <include name="Verify_Lotame_Call_When_UPSX_LogIn"/>
+          <include name="Validate_BreakingNews_Severe1_Call_Response"/>
+          <include name="verifyAdsWithUPSXLogIn"/>
+          <include name="Verify_Gampad_call_When_UPSX_LogIn"/>
+          <include name="Validate_NextGenIM_StaticAd"/>
+          <include name="Validate_Week_Ahead_pos_Custom_param"/>
+          <include name="Verify_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe2_AdCalls"/>
+          <include name="Validate_IDD_Ad"/>
+          <include name="Validate_NextGenIM_VideoAd"/>
+          <include name="Validate_Weekend_ltv_Custom_param"/>
+          <include name="Verify_Editorial_Video_Headline_Card_Breaking_News_Card_Video1_Severe1_AdCalls"/>
+          <include name="Verify_WFXTriggers_Call_When_UPSX_LogOut"/>
+          <include name="enable_PreConfiguration_for_servere2_EditorialVideoHeadlineCard_BreakingNewsCard"/>
+          <include name="validate_NextGen_IM_call_for_en_GB"/>
+          <include name="afterClass"/>
+          <include name="Validate_NextGenIM_VideoAd_Size"/>
+          <include name="Verify_Weekend_AdCall"/>
+          <include name="beforeClass"/>
+          <include name="Validate_Weekend_pos_Custom_param"/>
+          <include name="Verify_Criteo_SDK_config_app_Call_When_UPSX_LogIn"/>
+          <include name="Validate_Weekend_Ad_Size"/>
+          <include name="Verify_interstitial_ads_hourlyTab"/>
+          <include name="Validate_IDD_Ad_Size"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_When_UPSX_LogIn"/>
+          <include name="Validate_NextGenIM_StaticAd_Size"/>
+          <include name="Validate_TapabilityOfRadarNavTabTestAd"/>
+          <include name="Verify_Criteo_SDK_config_app_Call_When_UPSX_LogOut"/>
+          <include name="Validate_Integrated_FeedCard_VideoAd_Size"/>
+          <include name="Verify_interstitial_ads_videoTab"/>
+          <include name="Verify_interstitial_ads_radarTab"/>
+        </methods>
+      </class> <!-- com.twc.ios.app.testcases.AndroidRegressionTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
