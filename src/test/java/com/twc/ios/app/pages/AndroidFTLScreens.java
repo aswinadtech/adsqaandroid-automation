@@ -34,7 +34,8 @@ public class AndroidFTLScreens extends Utils {
 	String iUnderstand_Id = "com.weather.Weather:id/next_button_text";
 	String closeButton_Id = "android:id/button2";
 	String alwaysAllow_Id = "com.android.permissioncontroller:id/permission_allow_always_button";
-	String allowWhileUsingApp_id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button";
+	String allowWhileUsingApp_Id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button";
+	String skipForNow_Id = "com.weather.Weather:id/onboarding_screen_skip_button";
 	
 	
 	
@@ -51,12 +52,14 @@ public class AndroidFTLScreens extends Utils {
 	//By byAllowWhileUsingApp = MobileBy.AccessibilityId(allowWhileUsingApp_AccessibilityId);
 	
 	By byAlertCenter = MobileBy.AccessibilityId("Go to Alerts and Notifications");
+	By bySearchIcon = MobileBy.xpath("//android.widget.ImageView[@resource-id=\"com.weather.Weather:id/search_icon\"]");
 	By byTermsCheckbox = MobileBy.id(termsCheckbox_Id);
 	By byNextButton = MobileBy.id(nextButton_Id);
 	By byIUnderstand = MobileBy.id(iUnderstand_Id);
 	By byCloseButton = MobileBy.id(closeButton_Id);
 	By byAlwaysAllow = MobileBy.id(alwaysAllow_Id);
-	By byAllowWhileUsingApp = MobileBy.id(allowWhileUsingApp_id);
+	By byAllowWhileUsingApp = MobileBy.id(allowWhileUsingApp_Id);
+	By bySkipForNow = MobileBy.id(skipForNow_Id);
 	
 	MobileElement settingsButton = null;
 	MobileElement closeButton = null;
@@ -73,6 +76,8 @@ public class AndroidFTLScreens extends Utils {
 	MobileElement alertCenter = null;
 	MobileElement termsCheckbox = null;
 	MobileElement nextButton = null;
+	MobileElement searchIcon = null;
+	MobileElement skipForNow  = null;
 
 	public AndroidFTLScreens(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
@@ -209,6 +214,21 @@ public class AndroidFTLScreens extends Utils {
 		}
 	}
 	
+	public void clickOnSkipForNow() throws Exception {
+		try {
+			System.out.println("Clicking on Skip For Now");
+			TestBase.waitForVisibilityOfElementLocated(Ad, 20, bySkipForNow);
+			skipForNow = Ad.findElement(bySkipForNow);
+			TestBase.clickOnElement(bySkipForNow, skipForNow, "Skip For Now Button");
+			System.out.println("Skip For Now Button displayed on the screen and closed");
+			logStep("Skip For Now Button displayed on the screen and closed");
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			System.out.println("Skip For Now Button not displayed");
+			logStep("Skip For Now Button not displayed");
+		}
+	}
+	
 		
 	@Step("Handle Unwanted Popups during app launch")
 	public void handle_Unwanted_Popups() throws Exception {
@@ -216,21 +236,24 @@ public class AndroidFTLScreens extends Utils {
 		boolean isSettingsButtonDisplayed = false;
 		
 			try {
-				TestBase.waitForVisibilityOfElementLocated(Ad, 30, byAlertCenter);
-				alertCenter = Ad.findElement(byAlertCenter);
+				/*TestBase.waitForVisibilityOfElementLocated(Ad, 30, byAlertCenter);
+				alertCenter = Ad.findElement(byAlertCenter);*/
+				TestBase.waitForVisibilityOfElementLocated(Ad, 20, bySearchIcon);
+				searchIcon = Ad.findElement(bySearchIcon);
+				
 				System.out
-						.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-				logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
+						.println("Search icon found after app launch, hence no need to verify the application alerts");
+				logStep("Search icon found after app launch, hence no need to verify the application alerts");
 				
 				isSettingsButtonDisplayed = true;
 				
 			} catch (Exception e1) {
 				boolean found = false;
 				while(!found) {
-					if (TestBase.isElementExists(byAlertCenter)) {
+					if (TestBase.isElementExists(bySearchIcon)) {
 						System.out
-						.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-						logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
+						.println("Search icon found after app launch, hence no need to verify the application alerts");
+						logStep("Search icon found after app launch, hence no need to verify the application alerts");
 					found = true;
 					break;
 					}
@@ -240,10 +263,10 @@ public class AndroidFTLScreens extends Utils {
 					attachScreen();
 					clickOnIUnderstand();
 					attachScreen();
-					if (TestBase.isElementExists(byAlertCenter)) {
+					if (TestBase.isElementExists(bySearchIcon)) {
 						System.out
-						.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-						logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
+						.println("Search icon found after app launch, hence no need to verify the application alerts");
+						logStep("Search icon found after app launch, hence no need to verify the application alerts");
 					found = true;
 					break;
 					}
@@ -253,11 +276,14 @@ public class AndroidFTLScreens extends Utils {
 					attachScreen();
 					clickOnclosebutton();
 					attachScreen();
-					if (TestBase.isElementExists(byAlertCenter)) {
+					clickOnSkipForNow();
+					attachScreen();
+					if (TestBase.isElementExists(bySearchIcon)) {
 						System.out
-						.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-						logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-					found = true;					}
+						.println("Search icon found after app launch, hence no need to verify the application alerts");
+						logStep("Search icon found after app launch, hence no need to verify the application alerts");
+					found = true;					
+					}
 				}
 				
 								
@@ -277,11 +303,14 @@ public class AndroidFTLScreens extends Utils {
 		attachScreen(Ad);
 		boolean isSettingsButtonDisplayed = false;
 		try {
-			TestBase.waitForVisibilityOfElementLocated(Ad, 30, byAlertCenter);
-			alertCenter = Ad.findElement(byAlertCenter);
+			/*TestBase.waitForVisibilityOfElementLocated(Ad, 30, byAlertCenter);
+			alertCenter = Ad.findElement(byAlertCenter);*/
+			TestBase.waitForVisibilityOfElementLocated(Ad, 20, bySearchIcon);
+			searchIcon = Ad.findElement(bySearchIcon);
+			
 			System.out
-					.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-			logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
+					.println("Search icon found after app launch, hence no need to verify the application alerts");
+			logStep("Search icon found after app launch, hence no need to verify the application alerts");
 			
 			isSettingsButtonDisplayed = true;
 			
@@ -294,10 +323,10 @@ public class AndroidFTLScreens extends Utils {
 				attachScreen(Ad);
 				clickOnIUnderstand();
 				attachScreen(Ad);
-				if (TestBase.isElementExists(byAlertCenter, Ad)) {
+				if (TestBase.isElementExists(bySearchIcon, Ad)) {
 					System.out
-					.println("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
-					logStep("Alert Center Bell icon found after app launch, hence no need to verify the application alerts");
+					.println("Search icon found after app launch, hence no need to verify the application alerts");
+					logStep("Search icon found after app launch, hence no need to verify the application alerts");
 				found = true;
 				break;
 				}
@@ -307,6 +336,14 @@ public class AndroidFTLScreens extends Utils {
 				attachScreen(Ad);
 				clickOnclosebutton();
 				attachScreen(Ad);
+				clickOnSkipForNow();
+				attachScreen();
+				if (TestBase.isElementExists(bySearchIcon, Ad)) {
+					System.out
+					.println("Search icon found after app launch, hence no need to verify the application alerts");
+					logStep("Search icon found after app launch, hence no need to verify the application alerts");
+				found = true;					
+				}
 			}
 									
 		}

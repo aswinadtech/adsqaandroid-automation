@@ -144,7 +144,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		// Preconditions
 		Functions.capabilities();
 		Functions.Appium_Autostart();
-		Utils.getCurrentMacIPAddressAndSetiPhoneProxy(true, true);
+		//Utils.getCurrentMacIPAddressAndSetiPhoneProxy(true, true);
 		// Enable rewriting on Charles install/launch TWC to rewrite geoipcountry to US
 		proxy.enableRewriting();
 		proxy.startRecording();
@@ -291,7 +291,7 @@ public class RegressionTest extends TwcIosBaseTest {
 				.println("=========================== amazon aax Hourly Details preload ad call ====================");
 		System.out.println("****** amazon aax Hourly Details preload ad call validation Started");
 		logStep("****** amazon aax Hourly Details preload ad call validation Started");
-		Utils.verifyAAX_SlotId("Smoke", "Hourly", false);
+		Utils.verifyAAX_SlotId("Smoke", "Hourly");
 	}
 	
 	@Test(priority = 61, enabled = true)
@@ -1693,6 +1693,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		Functions.checkForAppState();
 		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		//31553 
 		TestBase.waitForMilliSeconds(20000);		
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
@@ -1769,6 +1770,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.archive_folder("Charles");
 		TestBase.waitForMilliSeconds(5000);
 		addrScreen.enternewAddress(false, "61920", "Charleston, Illinois");
+		//37421
 		TestBase.waitForMilliSeconds(20000);	
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
@@ -1899,11 +1901,11 @@ public class RegressionTest extends TwcIosBaseTest {
 		System.out.println("==============================================");
 		System.out.println("****** Validating IDD Ad in test mode");
 		logStep("Validating IDD Ad in test mode ");
-		Functions.close_launchApp();
+//		Functions.close_launchApp();
 		hmTab.clickonHomeTab();
-		stScreen.select_Airlock_UserGroup("IOSFLAG-4200");
+/*		stScreen.select_Airlock_UserGroup("IOSFLAG-4200");
 		Functions.close_launchApp();
-		Functions.checkForAppState();
+		Functions.checkForAppState();*/
 		proxy.clearCharlesSession();
 		addrScreen.enternewAddress(false, "30124", "Cave Spring, Georgia");
 		TestBase.waitForMilliSeconds(20000);
@@ -1979,11 +1981,13 @@ public class RegressionTest extends TwcIosBaseTest {
 		logStep("Validating Integrated Feed Card Static Ad in test mode ");
 		try{
 			hmTab.clickonHomeTab();
-			stScreen.select_Airlock_UserGroup("IntegratedAdCard");
+		/*	stScreen.select_Airlock_UserGroup("IntegratedAdCard");
 			proxy.clearCharlesSession();
 			Functions.archive_folder("Charles");
 			Functions.close_launchApp();
-			Functions.checkForAppState();
+			Functions.checkForAppState();*/
+			proxy.clearCharlesSession();
+			Functions.archive_folder("Charles");
 			addrScreen.enternewAddress(false, "30124", "Cave Spring, Georgia");
 			TestBase.waitForMilliSeconds(20000);
 			// Since as part of sticky ad implementation on UI weather.feed1 appears as weather.feed0 and so on
@@ -2801,7 +2805,7 @@ public class RegressionTest extends TwcIosBaseTest {
 	 * This Script Enable preconfiguration for PreRoll Video Beacon
 	 * @throws Exception
 	 */
-	@Test(priority = 1010, enabled = true)
+/*	@Test(priority = 1010, enabled = true)
 	@Description("Enabling Preconfiguration for PreRoll Video Beacon")
 	public void enable_PreConfiguration_for_PreRoll_Video_Beacon() throws Exception {
 		System.out.println("==============================================");
@@ -2831,9 +2835,9 @@ public class RegressionTest extends TwcIosBaseTest {
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
 		}
-	}
+	}*/
 	
-	@Test(priority = 1011, enabled = true)
+	/*@Test(priority = 1011, enabled = true)
 	@Description("Verify PreRoll Video Beacon")
 	public void Verify_PreRoll_Video_Beacon() throws Exception {
 		System.out.println("==============================================");
@@ -2844,7 +2848,7 @@ public class RegressionTest extends TwcIosBaseTest {
 
 		vTab.validatePreRollVideoBeacon("Smoke", "PreRollVideo", "type", "complete");
 
-	}
+	}*/
 	
 	@Test(priority = 1020, enabled = true)
 	@Description("Enabling Preconfiguration of Map Local to get Severe Insight Card")

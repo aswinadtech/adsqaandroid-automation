@@ -258,7 +258,7 @@
                     <location>
                       <protocol>https</protocol>
                       <host>dsx.weather.com</host>
-                      <path>/cms/v5/privacy/en_US/twc-ios-flagship/*</path>
+                      <path>/cms/v5/privacy/en_US/*/*</path>
                     </location>
                     <enabled>true</enabled>
                   </locationMatch>
@@ -345,10 +345,10 @@
               <sourceLocation>
                 <protocol>https</protocol>
                 <host>dsx.weather.com</host>
-                <path>/cms/v4/list/en_US/ios/video/app</path>
+                <path>/cms/v4/list/en_US/mobile/video/app</path>
                 <query>*</query>
               </sourceLocation>
-              <dest>/Users/narasimhanukala/Work/TWC/MobileAutomation/Branch/Narasimha/adsqaios-automation/src/test/resources/Editorial.json</dest>
+              <dest>/Users/aswinikumar/adsqaandroid-automation-master/src/test/resources/Editorial.json</dest>
               <enabled>true</enabled>
               <caseSensitive>false</caseSensitive>
             </mapLocalMapping>

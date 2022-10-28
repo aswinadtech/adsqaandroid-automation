@@ -258,7 +258,7 @@ public class CriteoAndAmazonBidTest extends TwcIosBaseTest {
 				.println("=========================== amazon aax Hourly Details preload ad call ====================");
 		System.out.println("****** amazon aax Hourly Details preload ad call validation Started");
 		logStep("****** amazon aax Hourly Details preload ad call validation Started");
-		Utils.verifyAAX_SlotId("Smoke", "Hourly", false);
+		Utils.verifyAAX_SlotId("Smoke", "Hourly");
 	}
 	
 	@Test(priority = 61, enabled = true)
@@ -502,7 +502,7 @@ public class CriteoAndAmazonBidTest extends TwcIosBaseTest {
 		Utils.validate_aax_bid_value_with_gampad_bid_value("Smoke", "Feed6", true, true);
 	}*/
 
-	/*@Test(priority = 320, enabled = true)
+	@Test(priority = 320, enabled = true)
 	@Description("Verify Hourly Details ad call amazon bid id")
 	public void Verify_Hourly_Details_ad_call_amazon_bid_id() throws Exception {
 		System.out.println("==============================================");
@@ -511,7 +511,7 @@ public class CriteoAndAmazonBidTest extends TwcIosBaseTest {
 		System.out.println("****** Hourly Details ad call amazon bid id validation Started");
 		logStep("****** Hourly Details ad call amazon bid id validation Started");
 		Utils.validate_aax_bid_value_with_gampad_bid_value("Smoke", "Hourly", true, false);
-	}*/
+	}
 
 	@Test(priority = 321, enabled = true)
 	@Description("Verify Daily Details ad call amazon bid id")

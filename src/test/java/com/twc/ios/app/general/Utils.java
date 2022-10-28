@@ -52,11 +52,18 @@ import com.twc.ios.app.excel.ExcelData;
 import com.twc.ios.app.functions.Functions;
 import com.twc.ios.app.pages.AirQualityCardScreen;
 import com.twc.ios.app.pages.AlertCenterScreen;
+import com.twc.ios.app.pages.AndroidAirQualityCardScreen;
 import com.twc.ios.app.pages.AndroidAlertCenterScreen;
+import com.twc.ios.app.pages.AndroidDailyCardScreen;
 import com.twc.ios.app.pages.AndroidDailyNavTab;
 import com.twc.ios.app.pages.AndroidHomeNavTab;
+import com.twc.ios.app.pages.AndroidHourlyCardScreen;
 import com.twc.ios.app.pages.AndroidHourlyNavTab;
+import com.twc.ios.app.pages.AndroidNewsCardScreen;
+import com.twc.ios.app.pages.AndroidRadarCardScreen;
 import com.twc.ios.app.pages.AndroidRadarNavTab;
+import com.twc.ios.app.pages.AndroidTodayCardScreen;
+import com.twc.ios.app.pages.AndroidVideoCardScreen;
 import com.twc.ios.app.pages.AndroidVideoNavTab;
 import com.twc.ios.app.pages.CurrentConditionsCardScreen;
 import com.twc.ios.app.pages.DailyCardScreen;
@@ -78,6 +85,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
+import io.appium.java_client.ios.IOSDriver;
 
 public class Utils extends Functions {
 
@@ -720,6 +728,24 @@ public class Utils extends Functions {
 		}
 		return flag;
 	}
+	
+	/**
+	 * Verifies whether IM Ad displayed on Homescreen and returns true/false
+	 * @return
+	 */
+	public static boolean isNextGenIMAdDisplayedAndroid() {
+		boolean flag = false;
+		if (TestBase.isElementExists(By.xpath("//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/card_integrated_ad_root']"))) {
+			nextGenIMadDisplayed = true;
+			System.out.println("****** NextGen IM Ad displayed on homescreen");
+			logStep("****** NextGen IM Ad displayed on homescreen");
+			flag = true;
+		} else {
+			nextGenIMadDisplayed = false;
+			flag = false;
+		}
+		return flag;
+	}
 
 	/**
 	 * Checks whether the interstitial ad call exists or not and return boolean value accordingly
@@ -869,7 +895,7 @@ public class Utils extends Functions {
 																		Element eElement1 = (Element) innernode3;
 																		// System.out.println("Innernode3 element name
 																		// is: "+eElement1.getNodeName());
-																		if (eElement1.getNodeName().equals("header")) {
+																		if (eElement1.getNodeName().equals("header") || eElement1.getNodeName().equals("first-line")) {
 																			String content = eElement1.getTextContent();
 																			// System.out.println("request
 																			// body"+content);
@@ -1746,9 +1772,18 @@ public class Utils extends Functions {
 		// String iuId =
 		// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
 		if (sheetName.equalsIgnoreCase("IntegratedForecast")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fcard%2Fdaily";
+			}
 		} else if (sheetName.equalsIgnoreCase("NextGenIM")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			}
+			
 		} else {
 			iuId = ReadExcelValues.data[18][Cap];
 		}
@@ -1802,7 +1837,7 @@ public class Utils extends Functions {
 																		Element eElement1 = (Element) innernode3;
 																		// System.out.println("Innernode3 element name
 																		// is: "+eElement1.getNodeName());
-																		if (eElement1.getNodeName().equals("header")) {
+																		if (eElement1.getNodeName().equals("header") || eElement1.getNodeName().equals("first-line")) {
 																			String content = eElement1.getTextContent();
 																			// System.out.println("request body
 																			// "+content);
@@ -1930,7 +1965,11 @@ public class Utils extends Functions {
 		// String iuId = readExcelValues.data[18][Cap];
 
 		if (sheetName.contains("NextGenIM")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			}
 		} else if (sheetName.equalsIgnoreCase("IDD")) {
 			String today = dailyDetailsDayOfWeek.concat("1");
 			iuId = ReadExcelValues.data[18][Cap];
@@ -2103,9 +2142,17 @@ public class Utils extends Functions {
 		// String iuId =
 		// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
 		if (sheetName.equalsIgnoreCase("IntegratedForecast")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fcard%2Fdaily";
+			}
 		} else if (sheetName.equalsIgnoreCase("NextGenIM")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			}
 		} else if (sheetName.equalsIgnoreCase("IDD")) {
 			String today = dailyDetailsDayOfWeek.concat("1");
 			iuId = ReadExcelValues.data[18][Cap];
@@ -2165,7 +2212,7 @@ public class Utils extends Functions {
 																		Element eElement1 = (Element) innernode3;
 																		// System.out.println("Innernode3 element name
 																		// is: "+eElement1.getNodeName());
-																		if (eElement1.getNodeName().equals("header")) {
+																		if (eElement1.getNodeName().equals("header") || eElement1.getNodeName().equals("first-line")) {
 																			String content = eElement1.getTextContent();
 																			// System.out.println("request body
 																			// "+content);
@@ -2297,9 +2344,17 @@ public class Utils extends Functions {
 		// String iuId =
 		// "iu=%2F7646%2Fapp_iphone_us%2Fdb_display%2Fhome_screen%2Ftoday";
 		if (sheetName.equalsIgnoreCase("IntegratedForecast")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fcard%2Fdaily";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fcard%2Fdaily";
+			}
 		} else if (sheetName.equalsIgnoreCase("NextGenIM")) {
-			iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			if (Ad instanceof IOSDriver<?>) {
+				iuId = "iu=%2F7646%2Ftest_app_iphone_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			} else if (Ad instanceof AndroidDriver<?>){
+				iuId = "iu=%2F7646%2Ftest_app_android_us%2Fdb_display%2Fhome_screen%2Fmarquee";
+			}
 		} else if (sheetName.equalsIgnoreCase("IDD")) {
 			String today = dailyDetailsDayOfWeek.concat("1");
 			iuId = ReadExcelValues.data[18][Cap];
@@ -2359,7 +2414,7 @@ public class Utils extends Functions {
 																		Element eElement1 = (Element) innernode3;
 																		// System.out.println("Innernode3 element name
 																		// is: "+eElement1.getNodeName());
-																		if (eElement1.getNodeName().equals("header")) {
+																		if (eElement1.getNodeName().equals("header") || eElement1.getNodeName().equals("first-line")) {
 																			String content = eElement1.getTextContent();
 																			// System.out.println("request body
 																			// "+content);
@@ -2456,13 +2511,18 @@ public class Utils extends Functions {
 
 		boolean iMCallResponse = Utils.isNextGenIMorIFCall_hasResponse(Excelname, sheetName);
 		String cardName = "homescreen";
-		MobileElement adele;
-		MobileElement nextGenAdImage;
+		MobileElement adele = null;
+		MobileElement nextGenAdImage  = null;
 
 		TestBase.waitForMilliSeconds(10000);
 		if (iMCallResponse == true) {
 			try {
-				adele = Ad.findElementByName("nextgen-integrated-marquee-card-containerView");
+				if (Ad instanceof IOSDriver<?>) {
+					adele = Ad.findElementByName("nextgen-integrated-marquee-card-containerView");
+				} else if (Ad instanceof AndroidDriver<?>){
+					adele = Ad.findElementById("com.weather.Weather:id/card_integrated_ad_root");
+				}
+				
 				/*
 				 * nextGenAdImage = Ad.findElementByXPath(
 				 * "//XCUIElementTypeOther[@name=\"nextgen-integrated-marquee-card-containerView\"]//XCUIElementTypeImage"
@@ -2493,7 +2553,11 @@ public class Utils extends Functions {
 
 		} else {
 			try {
-				adele = Ad.findElementByName("nextgen-integrated-marquee-card-containerView");
+				if (Ad instanceof IOSDriver<?>) {
+					adele = Ad.findElementByName("nextgen-integrated-marquee-card-containerView");
+				} else if (Ad instanceof AndroidDriver<?>){
+					adele = Ad.findElementById("com.weather.Weather:id/card_integrated_ad_root");
+				}
 				/*
 				 * nextGenAdImage = Ad.findElementByXPath(
 				 * "//XCUIElementTypeOther[@name=\"nextgen-integrated-marquee-card-containerView\"]//XCUIElementTypeImage"
@@ -2531,13 +2595,18 @@ public class Utils extends Functions {
 
 		boolean iMCallResponse = Utils.isNextGenIMorIFCall_hasResponse(Excelname, sheetName);
 		String cardName = "homescreen";
-		MobileElement adele;
-		MobileElement nextGenAdImage;
+		MobileElement adele = null;
+		MobileElement nextGenAdImage = null;
 
 		TestBase.waitForMilliSeconds(10000);
 		if (iMCallResponse == true) {
 			try {
-				adele = Ad.findElementByName("integrated-ad-card-containerView");
+				
+				if (Ad instanceof IOSDriver<?>) {
+					adele = Ad.findElementByName("integrated-ad-card-containerView");
+				} else if (Ad instanceof AndroidDriver<?>){
+					adele = Ad.findElementByXPath("(//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/ad_view_holder\"]//android.webkit.WebView)[1]");
+				}
 				/*
 				 * nextGenAdImage = Ad.findElementByXPath(
 				 * "//XCUIElementTypeOther[@name=\"nextgen-integrated-marquee-card-containerView\"]//XCUIElementTypeImage"
@@ -2568,7 +2637,11 @@ public class Utils extends Functions {
 
 		} else {
 			try {
-				adele = Ad.findElementByName("integrated-ad-card-containerView");
+				if (Ad instanceof IOSDriver<?>) {
+					adele = Ad.findElementByName("integrated-ad-card-containerView");
+				} else if (Ad instanceof AndroidDriver<?>){
+					adele = Ad.findElementByXPath("(//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/ad_view_holder\"]//android.webkit.WebView)[1]");
+				}
 				/*
 				 * nextGenAdImage = Ad.findElementByXPath(
 				 * "//XCUIElementTypeOther[@name=\"nextgen-integrated-marquee-card-containerView\"]//XCUIElementTypeImage"
@@ -5094,7 +5167,7 @@ public class Utils extends Functions {
 	 */
 	public static String verifyInterstitialAd(String excelName, String sheetName, String cardName,
 			String interStitialType) throws Exception {
-		HomeNavTab hmTab = new HomeNavTab(Ad);
+		/*HomeNavTab hmTab = new HomeNavTab(Ad);
 		HourlyNavTab hrTab = new HourlyNavTab(Ad);
 		DailyNavTab dTab = new DailyNavTab(Ad);
 		RadarNavTab rTab = new RadarNavTab(Ad);
@@ -5105,7 +5178,48 @@ public class Utils extends Functions {
 		AirQualityCardScreen aqScreen = new AirQualityCardScreen(Ad);
 		RadarCardScreen rScreen = new RadarCardScreen(Ad);
 		DailyCardScreen dScreen = new DailyCardScreen(Ad);
-		NewsCardScreen nScreen = new NewsCardScreen(Ad);
+		NewsCardScreen nScreen = new NewsCardScreen(Ad);*/
+		Object hmTab = null;
+		Object hrTab = null;
+		Object dTab = null;
+		Object rTab = null;
+		Object vTab = null;
+		Object pScreen = null;
+		Object hrScreen = null;
+		Object vScreen = null;
+		Object tScreen = null;
+		Object aqScreen = null;
+		Object rScreen = null;
+		Object dScreen = null;
+		Object nScreen = null;
+		
+		if (Ad instanceof IOSDriver<?>) {
+			hmTab = new HomeNavTab(Ad);
+			hrTab = new HourlyNavTab(Ad);
+			dTab = new DailyNavTab(Ad);
+			rTab = new RadarNavTab(Ad);
+			vTab = new VideoNavTab(Ad);
+			pScreen = new PlanningCardScreen(Ad);
+			vScreen = new VideoCardScreen(Ad);
+			tScreen = new TodayCardScreen(Ad);
+			aqScreen = new AirQualityCardScreen(Ad);
+			rScreen = new RadarCardScreen(Ad);
+			dScreen = new DailyCardScreen(Ad);
+			nScreen = new NewsCardScreen(Ad);
+		} else if (Ad instanceof AndroidDriver<?>) {
+			hmTab = new AndroidHomeNavTab(Ad);
+			hrTab = new AndroidHourlyNavTab(Ad);
+			dTab = new AndroidDailyNavTab(Ad);
+			rTab = new AndroidRadarNavTab(Ad);
+			vTab = new AndroidVideoNavTab(Ad);
+			hrScreen = new AndroidHourlyCardScreen(Ad);
+			vScreen = new AndroidVideoCardScreen(Ad);
+			tScreen = new AndroidTodayCardScreen(Ad);
+			aqScreen = new AndroidAirQualityCardScreen(Ad);
+			rScreen = new AndroidRadarCardScreen(Ad);
+			dScreen = new AndroidDailyCardScreen(Ad);
+			nScreen = new AndroidNewsCardScreen(Ad);
+		}
 		/*
 		 * Maps: exit Video: Exit Hourly : Entry Daily : Exit
 		 */
@@ -5131,7 +5245,18 @@ public class Utils extends Functions {
 						Utils.navigateTofeedCard("planning-containerView", false, false);
 					} else {
 						// navigate to feed card
-						Utils.navigateTofeedCard(cardName, false, false);
+						
+						if (Ad instanceof IOSDriver<?>) {
+							Utils.navigateTofeedCard(cardName, false, false);
+						} else if (Ad instanceof AndroidDriver<?>) {
+							if (cardName.equalsIgnoreCase("hourly")) {
+								((AndroidHourlyCardScreen) hrScreen).scrollToHourlyCard();
+							} else if (cardName.equalsIgnoreCase("daily")) {
+								((AndroidDailyCardScreen) dScreen).scrollToDailyCard();
+							} else if (cardName.equalsIgnoreCase("today")) {
+								((AndroidTodayCardScreen) tScreen).scrollToTodayCard();
+							}
+						}
 					}
 
 				}
@@ -5146,40 +5271,100 @@ public class Utils extends Functions {
 					interStitialDisplayed = false;
 				} else {
 					if (cardName.equalsIgnoreCase("video")) {
-						vScreen.navigateToVideoCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((VideoCardScreen) vScreen).navigateToVideoCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidVideoCardScreen) vScreen).navigateToVideoCardContentPageAndDontHandleInterstitials();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("today")) {
-						tScreen.navigateToTodayCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((TodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidTodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("aq")) {
-						aqScreen.navigateToAirQualityCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((AirQualityCardScreen) aqScreen).navigateToAirQualityCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidAirQualityCardScreen) aqScreen).navigateToAirQualityCardContentPageAndDontHandleInterstitials();
+						}	
+						
 
 					} else if (cardName.equalsIgnoreCase("radar.largead")) {
-						rScreen.navigateToRadarCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((RadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidRadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("daily")) {
-						dScreen.navigateToDailyCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((DailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidDailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("news")) {
-						nScreen.navigateToNewsCardContentPageAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((NewsCardScreen) nScreen).navigateToNewsCardContentPageAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidNewsCardScreen) nScreen).navigateToNewsCardContentPageAndDontHandleInterstitials();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("hourlyTab")) {
-						hrTab.navigateToHourlyTab();
+						if (Ad instanceof IOSDriver<?>) {
+							((HourlyNavTab) hrTab).navigateToHourlyTab();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidHourlyNavTab) hrTab).navigateToHourlyTab();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("dailyTab")) {
-						dTab.navigateToDailyTab();
+						if (Ad instanceof IOSDriver<?>) {
+							((DailyNavTab) dTab).navigateToDailyTab();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidDailyNavTab) dTab).navigateToDailyTab();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("videoTab")) {
-						vTab.navigateToVideoTab();
+						if (Ad instanceof IOSDriver<?>) {
+							((VideoNavTab) vTab).navigateToVideoTab();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidVideoNavTab) vTab).navigateToVideoTab();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("mapTab")) {
-						rTab.navigateToRadarTab();
+						if (Ad instanceof IOSDriver<?>) {
+							((RadarNavTab) rTab).navigateToRadarTab();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							((AndroidRadarNavTab) rTab).navigateToRadarTab();
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("hourlybanner")) {
-						pScreen.navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((PlanningCardScreen) pScreen).navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							
+						}
+						
 
 					} else if (cardName.equalsIgnoreCase("dailybanner")) {
-						pScreen.navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+						if (Ad instanceof IOSDriver<?>) {
+							((PlanningCardScreen) pScreen).navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+						} else if (Ad instanceof AndroidDriver<?>) {
+							
+						}
+						
 
 					}
 					
@@ -5191,10 +5376,18 @@ public class Utils extends Functions {
 					 */
 					if (interStitialType.equalsIgnoreCase("Exit")) {
 						if (cardName.contains("Tab")) {
-							hmTab.navigateToHomeTab_toGetInterStitialAd();
-
+							if (Ad instanceof IOSDriver<?>) {
+								((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+							} else if (Ad instanceof AndroidDriver<?>) {
+								((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+							}
 						} else {
-							navigateBackToFeedCard();
+							
+							if (Ad instanceof IOSDriver<?>) {
+								navigateBackToFeedCard();
+							} else if (Ad instanceof AndroidDriver<?>) {
+								navigateBackToFeedCardAndroid();						
+							}
 						}
 					}
 					/*
@@ -5221,11 +5414,19 @@ public class Utils extends Functions {
 					long interstitialFqtimeElapsed = 0L;
 					long convert = 0;
 					long interstitialFqtimeconvert = 0L;
-					handle_Interstitial_Ad();
+					if (Ad instanceof IOSDriver<?>) {
+						handle_Interstitial_Ad();
+					} else if (Ad instanceof AndroidDriver<?>) {
+						handle_Interstitial_AdAndroid();						
+					}
 					if (interStitialDisplayed) {
 						if (interStitialType.equalsIgnoreCase("Entry")) {
 							if (!cardName.contains("Tab")) {
-								navigateBackToFeedCard();
+								if (Ad instanceof IOSDriver<?>) {
+									navigateBackToFeedCard();
+								} else if (Ad instanceof AndroidDriver<?>) {
+									navigateBackToFeedCardAndroid();						
+								}
 							}
 						}
 						System.out.println("Interstitial Ad Displayed");
@@ -5264,9 +5465,15 @@ public class Utils extends Functions {
 							// Since interstitial call doesnt generate automtically after the frequency cap
 							// and it generates when refresh happened.
 							// hence pull to refresh is performed after navigating to home tab
-							hmTab.navigateToHomeTab_toGetInterStitialAd();
-							Functions.scroll_Up();
-							Functions.scroll_Up();
+							if (Ad instanceof IOSDriver<?>) {
+								((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+								Functions.scroll_Up();
+								Functions.scroll_Up();
+							} else if (Ad instanceof AndroidDriver<?>) {
+								//((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+								Functions.close_launchAppAndroid();
+							}
+							
 							TestBase.waitForMilliSeconds(5000);
 
 							Functions.archive_folder("Charles");
@@ -5283,7 +5490,18 @@ public class Utils extends Functions {
 											Utils.navigateTofeedCard("planning-containerView", false, false);
 										} else {
 											// navigate to feed card
-											Utils.navigateTofeedCard(cardName, false, false);
+											
+											if (Ad instanceof IOSDriver<?>) {
+												Utils.navigateTofeedCard(cardName, false, false);
+											} else if (Ad instanceof AndroidDriver<?>) {
+												if (cardName.equalsIgnoreCase("hourly")) {
+													((AndroidHourlyCardScreen) hrScreen).scrollToHourlyCard();
+												} else if (cardName.equalsIgnoreCase("daily")) {
+													((AndroidDailyCardScreen) dScreen).scrollToDailyCard();
+												} else if (cardName.equalsIgnoreCase("today")) {
+													((AndroidTodayCardScreen) tScreen).scrollToTodayCard();
+												}
+											}
 										}
 
 									}
@@ -5307,28 +5525,76 @@ public class Utils extends Functions {
 									 * Since Nav Tab elements are loosing references, hence reassigning them
 									 */
 									if (cardName.equalsIgnoreCase("hourlyTab")) {
-										hrTab.navigateToHourlyTab();
+										if (Ad instanceof IOSDriver<?>) {
+											((HourlyNavTab) hrTab).navigateToHourlyTab();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidHourlyNavTab) hrTab).navigateToHourlyTab();
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("dailyTab")) {
-										dTab.navigateToDailyTab();
+										if (Ad instanceof IOSDriver<?>) {
+											((DailyNavTab) dTab).navigateToDailyTab();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidDailyNavTab) dTab).navigateToDailyTab();
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("videoTab")) {
-										vTab.navigateToVideoTab();
+										if (Ad instanceof IOSDriver<?>) {
+											((VideoNavTab) vTab).navigateToVideoTab();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidVideoNavTab) vTab).navigateToVideoTab();
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("mapTab")) {
-										rTab.navigateToRadarTab();
+										if (Ad instanceof IOSDriver<?>) {
+											((RadarNavTab) rTab).navigateToRadarTab();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidRadarNavTab) rTab).navigateToRadarTab();
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("hourlybanner")) {
-										pScreen.navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+										if (Ad instanceof IOSDriver<?>) {
+											((PlanningCardScreen) pScreen).navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("dailybanner")) {
-										pScreen.navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+										if (Ad instanceof IOSDriver<?>) {
+											((PlanningCardScreen) pScreen).navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("radar.largead")) {
-										rScreen.navigateToRadarCardContentPageAndDontHandleInterstitials();
+										if (Ad instanceof IOSDriver<?>) {
+											((RadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidRadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+										}
+										
 
 									} else if (cardName.equalsIgnoreCase("daily")) {
-										dScreen.navigateToDailyCardContentPageAndDontHandleInterstitials();
+										if (Ad instanceof IOSDriver<?>) {
+											((DailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidDailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+										}
+										
+
+									} else if (cardName.equalsIgnoreCase("today")) {
+										if (Ad instanceof IOSDriver<?>) {
+											((TodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidTodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+										}
+										
 
 									}
 									// }
@@ -5341,16 +5607,32 @@ public class Utils extends Functions {
 
 									if (interStitialType.equalsIgnoreCase("Exit")) {
 										if (cardName.contains("Tab")) {
-											hmTab.navigateToHomeTab_toGetInterStitialAd();
+											if (Ad instanceof IOSDriver<?>) {
+												((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+											} else if (Ad instanceof AndroidDriver<?>) {
+												((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+											}
 										} else {
-											navigateBackToFeedCard();
+											if (Ad instanceof IOSDriver<?>) {
+												navigateBackToFeedCard();
+											} else if (Ad instanceof AndroidDriver<?>) {
+												navigateBackToFeedCardAndroid();						
+											}
 										}
 									}
-									handle_Interstitial_Ad();
+									if (Ad instanceof IOSDriver<?>) {
+										handle_Interstitial_Ad();
+									} else if (Ad instanceof AndroidDriver<?>) {
+										handle_Interstitial_AdAndroid();						
+									}
 									if (interStitialDisplayed) {
 										if (interStitialType.equalsIgnoreCase("Entry")) {
 											if (!cardName.contains("Tab")) {
-												navigateBackToFeedCard();
+												if (Ad instanceof IOSDriver<?>) {
+													navigateBackToFeedCard();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													navigateBackToFeedCardAndroid();						
+												}
 											}
 										}
 										System.out.println("Interstitial Ad Displayed after 1 min");
@@ -5365,7 +5647,11 @@ public class Utils extends Functions {
 
 										if (interStitialType.equalsIgnoreCase("Entry")) {
 											if (!cardName.contains("Tab")) {
-												navigateBackToFeedCard();
+												if (Ad instanceof IOSDriver<?>) {
+													navigateBackToFeedCard();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													navigateBackToFeedCardAndroid();						
+												}
 											}
 										}
 
@@ -5380,9 +5666,17 @@ public class Utils extends Functions {
 
 									// remove below
 									if (cardName.contains("Tab")) {
-										hmTab.navigateToHomeTab_toGetInterStitialAd();
+										if (Ad instanceof IOSDriver<?>) {
+											((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+										}
 									} else {
-										navigateBackToFeedCard();
+										if (Ad instanceof IOSDriver<?>) {
+											navigateBackToFeedCard();
+										} else if (Ad instanceof AndroidDriver<?>) {
+											navigateBackToFeedCardAndroid();						
+										}
 									}
 								}
 
@@ -5396,9 +5690,17 @@ public class Utils extends Functions {
 
 								// remove below
 								if (cardName.contains("Tab")) {
-									hmTab.navigateToHomeTab_toGetInterStitialAd();
+									if (Ad instanceof IOSDriver<?>) {
+										((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+									} else if (Ad instanceof AndroidDriver<?>) {
+										((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+									}
 								} else {
-									navigateBackToFeedCard();
+									if (Ad instanceof IOSDriver<?>) {
+										navigateBackToFeedCard();
+									} else if (Ad instanceof AndroidDriver<?>) {
+										navigateBackToFeedCardAndroid();						
+									}
 								}
 							}
 
@@ -5435,9 +5737,15 @@ public class Utils extends Functions {
 									// Since interstitial call doesnt generate automtically after the frequency cap
 									// and it generates when refresh happened.
 									// hence pull to refresh is performed after navigating to home tab
-									hmTab.navigateToHomeTab_toGetInterStitialAd();
-									Functions.scroll_Up();
-									Functions.scroll_Up();
+									if (Ad instanceof IOSDriver<?>) {
+										((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+										Functions.scroll_Up();
+										Functions.scroll_Up();
+									} else if (Ad instanceof AndroidDriver<?>) {
+										//((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+										Functions.close_launchAppAndroid();
+									}
+									
 									TestBase.waitForMilliSeconds(5000);
 
 									Functions.archive_folder("Charles");
@@ -5455,7 +5763,18 @@ public class Utils extends Functions {
 													Utils.navigateTofeedCard("planning-containerView", false, false);
 												} else {
 													// navigate to feed card
-													Utils.navigateTofeedCard(cardName, false, false);
+													
+													if (Ad instanceof IOSDriver<?>) {
+														Utils.navigateTofeedCard(cardName, false, false);
+													} else if (Ad instanceof AndroidDriver<?>) {
+														if (cardName.equalsIgnoreCase("hourly")) {
+															((AndroidHourlyCardScreen) hrScreen).scrollToHourlyCard();
+														} else if (cardName.equalsIgnoreCase("daily")) {
+															((AndroidDailyCardScreen) dScreen).scrollToDailyCard();
+														} else if (cardName.equalsIgnoreCase("today")) {
+															((AndroidTodayCardScreen) tScreen).scrollToTodayCard();
+														}
+													}
 												}
 
 											}
@@ -5479,28 +5798,76 @@ public class Utils extends Functions {
 											 * Since Nav Tab elements are loosing references, hence reassigning them
 											 */
 											if (cardName.equalsIgnoreCase("hourlyTab")) {
-												hrTab.navigateToHourlyTab();
+												if (Ad instanceof IOSDriver<?>) {
+													((HourlyNavTab) hrTab).navigateToHourlyTab();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidHourlyNavTab) hrTab).navigateToHourlyTab();
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("dailyTab")) {
-												dTab.navigateToDailyTab();
+												if (Ad instanceof IOSDriver<?>) {
+													((DailyNavTab) dTab).navigateToDailyTab();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidDailyNavTab) dTab).navigateToDailyTab();
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("videoTab")) {
-												vTab.navigateToVideoTab();
+												if (Ad instanceof IOSDriver<?>) {
+													((VideoNavTab) vTab).navigateToVideoTab();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidVideoNavTab) vTab).navigateToVideoTab();
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("mapTab")) {
-												rTab.navigateToRadarTab();
+												if (Ad instanceof IOSDriver<?>) {
+													((RadarNavTab) rTab).navigateToRadarTab();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidRadarNavTab) rTab).navigateToRadarTab();
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("hourlybanner")) {
-												pScreen.navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+												if (Ad instanceof IOSDriver<?>) {
+													((PlanningCardScreen) pScreen).navigateToHourlyDetailsFromPlanningCardAndDontHandleInterstitials();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("dailybanner")) {
-												pScreen.navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+												if (Ad instanceof IOSDriver<?>) {
+													((PlanningCardScreen) pScreen).navigateToDailyDetailsFromPlanningCardAndDontHandleInterstitials();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("radar.largead")) {
-												rScreen.navigateToRadarCardContentPageAndDontHandleInterstitials();
+												if (Ad instanceof IOSDriver<?>) {
+													((RadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidRadarCardScreen) rScreen).navigateToRadarCardContentPageAndDontHandleInterstitials();
+												}
+												
 
 											} else if (cardName.equalsIgnoreCase("daily")) {
-												dScreen.navigateToDailyCardContentPageAndDontHandleInterstitials();
+												if (Ad instanceof IOSDriver<?>) {
+													((DailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidDailyCardScreen) dScreen).navigateToDailyCardContentPageAndDontHandleInterstitials();
+												}
+												
+
+											} else if (cardName.equalsIgnoreCase("today")) {
+												if (Ad instanceof IOSDriver<?>) {
+													((TodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+												} else if (Ad instanceof AndroidDriver<?>) {
+													((AndroidTodayCardScreen) tScreen).navigateToTodayCardContentPageAndDontHandleInterstitials();
+												}
+												
 
 											}
 											// }
@@ -5545,16 +5912,32 @@ public class Utils extends Functions {
 											TestBase.waitForMilliSeconds(2000);
 											if (interStitialType.equalsIgnoreCase("Exit")) {
 												if (cardName.contains("Tab")) {
-													hmTab.navigateToHomeTab_toGetInterStitialAd();
+													if (Ad instanceof IOSDriver<?>) {
+														((HomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+													} else if (Ad instanceof AndroidDriver<?>) {
+														((AndroidHomeNavTab) hmTab).navigateToHomeTab_toGetInterStitialAd();
+													}
 												} else {
-													navigateBackToFeedCard();
+													if (Ad instanceof IOSDriver<?>) {
+														navigateBackToFeedCard();
+													} else if (Ad instanceof AndroidDriver<?>) {
+														navigateBackToFeedCardAndroid();						
+													}
 												}
 											}
-											handle_Interstitial_Ad();
+											if (Ad instanceof IOSDriver<?>) {
+												handle_Interstitial_Ad();
+											} else if (Ad instanceof AndroidDriver<?>) {
+												handle_Interstitial_AdAndroid();						
+											}
 											if (interStitialDisplayed) {
 												if (interStitialType.equalsIgnoreCase("Entry")) {
 													if (cardName.contains("banner")) {
-														navigateBackToFeedCard();
+														if (Ad instanceof IOSDriver<?>) {
+															navigateBackToFeedCard();
+														} else if (Ad instanceof AndroidDriver<?>) {
+															navigateBackToFeedCardAndroid();						
+														}
 													}
 												}
 												System.out.println("Interstitial Ad Displayed after 1 min");
@@ -5569,7 +5952,11 @@ public class Utils extends Functions {
 
 												if (interStitialType.equalsIgnoreCase("Entry")) {
 													if (cardName.contains("banner")) {
-														navigateBackToFeedCard();
+														if (Ad instanceof IOSDriver<?>) {
+															navigateBackToFeedCard();
+														} else if (Ad instanceof AndroidDriver<?>) {
+															navigateBackToFeedCardAndroid();						
+														}
 													}
 												}
 
@@ -5618,7 +6005,11 @@ public class Utils extends Functions {
 
 						if (interStitialType.equalsIgnoreCase("Entry")) {
 							if (!cardName.contains("Tab")) {
-								navigateBackToFeedCard();
+								if (Ad instanceof IOSDriver<?>) {
+									navigateBackToFeedCard();
+								} else if (Ad instanceof AndroidDriver<?>) {
+									navigateBackToFeedCardAndroid();						
+								}
 							}
 						}
 
@@ -6549,7 +6940,7 @@ public class Utils extends Functions {
 		if (includeDetailsPages) {
 			Functions.genericScrollTWCAndroid(byFooterCard, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP, includeDetailsPages, navigateTwiceToDetailsPages);
 		} else {
-			Functions.genericScrollTWCAndroid(byFooterCard, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP, includeDetailsPages, navigateTwiceToDetailsPages);
+			Functions.genericScroll(byFooterCard, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP);
 		}
 		
 		hmTab.clickonHomeTab();
@@ -11750,7 +12141,7 @@ public class Utils extends Functions {
 																		Element eElement1 = (Element) innernode3;
 																		// System.out.println("Innernode3 element name
 																		// is: "+eElement1.getNodeName());
-																		if (eElement1.getNodeName().equals("header")) {
+																		if (eElement1.getNodeName().equals("header") || eElement1.getNodeName().equals("first-line")) {
 																			String content = eElement1.getTextContent();
 																			// System.out.println("request body
 																			// "+content);

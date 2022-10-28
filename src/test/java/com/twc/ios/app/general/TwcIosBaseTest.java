@@ -504,6 +504,43 @@ public class TwcIosBaseTest extends CharlesProxy{
 	}
 	
 	/**
+	 * Create a Charles configuration to rewrite vt1ContentMode mode to the given content mode. Rewrite to severe1 or severe2 to show Breaking
+	 * News/Trending module
+	 *
+	 * @param fileName
+	 *            - Name of file (.config extension) to store configuration. Will be created in user.dir
+	 * @param contentMode
+	 *            - What to change the content mode to
+	 * @return Config Files (for deletion in After method)
+	 */
+	public File changeVt1ContentModeWhenNoTunnelBearAndroid(String fileName, String contentMode, String privacyRegime, String country, String region) {
+		final List<File> configFiles = new ArrayList<File>();
+		final File parentDir = new File(Constants.PATH_USER_HOME);
+		parentDir.mkdirs();
+		final File configFile = new File(parentDir, fileName);
+		configFile.setWritable(true);
+
+		// Create Charles and configure rewrite to enable Breaking News
+		 CharlesConfiguration config = new CharlesConfiguration();
+
+		 config.addLocation(Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/" + "*vt1contentMode*", "*");
+		 config.addRule(RewriteRuleType.BODY, false, true, "", false, "\"mode\"\\s*:\\s*\"[A-Za-z0-9]*\"", true, false, false, "", false, "\"mode\" : \"" + contentMode + "\"", false, RewriteRuleReplaceType.ONLY_FIRST);
+		 config.saveConfigurations(fileName);
+
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "usa", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, privacyRegime, false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, country, false, RewriteRuleReplaceType.ONLY_FIRST);
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region", false, "GA", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, region, false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/v5/privacy/en_US/*/*", "");
+
+		config.saveConfigurations(fileName);
+
+
+		return configFile;
+	}
+	
+	/**
 	 * Create a Charles configuration to rewrite the Geo IP Country to given Country. 
 	 * @param fileName
 	 *            - Name of file (.config extension) to store configuration. Will be created in user.dir
@@ -561,40 +598,94 @@ public class TwcIosBaseTest extends CharlesProxy{
 	        //proxy.enableMapLocal();
 	 }
 	 
-	 /**
-		 * Create a Charles configuration by enable maplocal to get Severe Insight Card 
+		/**
+		 * Create a Charles configuration by enable maplocal to get Severe Insight Card
+		 * 
 		 * @param fileName
 		 * @param jsonPath
 		 */
-		 public void mapLocalForSevereInsightWhenNoTunnelBear(String fileName, String jsonPath, String privacyRegime, String country, String region) {
-		        //String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
-		        try {
-		        	CharlesConfiguration config = new CharlesConfiguration();
-		        	
-		        	//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "usa", false, RewriteRuleReplaceType.ONLY_FIRST);
-	    			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, privacyRegime, false, RewriteRuleReplaceType.ONLY_FIRST);
-	    			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, country, false, RewriteRuleReplaceType.ONLY_FIRST);
-	    			//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region", false, "GA", false, RewriteRuleReplaceType.ONLY_FIRST);
-	    			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, region, false, RewriteRuleReplaceType.ONLY_FIRST);
-	    			config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/v5/privacy/en_US/twc-ios-flagship/*", "");
+		public void mapLocalForSevereInsightWhenNoTunnelBear(String fileName, String jsonPath, String privacyRegime,
+				String country, String region) {
+			// String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
+			try {
+				CharlesConfiguration config = new CharlesConfiguration();
 
-	    			config.saveConfigurations(fileName);
-		        	
-		        	
-		        	
-		        	config.addMapping(CharlesConfiguration.Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/*", "*",
-		                    jsonPath, false);
-		        	config.saveConfigurations(fileName);
-		            
-		          
-		           // proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);
-		        } catch (CharlesProxyException e) {
-		            Assert.fail(e.getMessage());
-		        }
+				// config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy",
+				// false, "exempt", false, false, false, "twc-privacy", false, "usa", false,
+				// RewriteRuleReplaceType.ONLY_FIRST);
+				config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+",
+						true, false, false, "twc-privacy", false, privacyRegime, false,
+						RewriteRuleReplaceType.ONLY_FIRST);
+				config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false,
+						"[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, country, false,
+						RewriteRuleReplaceType.ONLY_FIRST);
+				// config.addRule(RewriteRuleType.MODIFY_HEADER, false, true,
+				// "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region",
+				// false, "GA", false, RewriteRuleReplaceType.ONLY_FIRST);
+				config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false,
+						"[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, region, false,
+						RewriteRuleReplaceType.ONLY_FIRST);
+				config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/v5/privacy/en_US/twc-ios-flagship/*",
+						"");
 
-		        //proxy.startCharlesProxy();
-		        //proxy.enableMapLocal();
-		 }
+				config.saveConfigurations(fileName);
+
+				config.addMapping(CharlesConfiguration.Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/*", "*",
+						jsonPath, false);
+				config.saveConfigurations(fileName);
+
+				// proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);
+			} catch (CharlesProxyException e) {
+				Assert.fail(e.getMessage());
+			}
+
+			// proxy.startCharlesProxy();
+			// proxy.enableMapLocal();
+		}
+		 
+			/**
+			 * Create a Charles configuration by enable maplocal to get Severe Insight Card
+			 * 
+			 * @param fileName
+			 * @param jsonPath
+			 */
+			public void mapLocalForSevereInsightWhenNoTunnelBearAndroid(String fileName, String jsonPath,
+					String privacyRegime, String country, String region) {
+				// String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
+				try {
+					CharlesConfiguration config = new CharlesConfiguration();
+
+					// config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy",
+					// false, "exempt", false, false, false, "twc-privacy", false, "usa", false,
+					// RewriteRuleReplaceType.ONLY_FIRST);
+					config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false,
+							"[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, privacyRegime, false,
+							RewriteRuleReplaceType.ONLY_FIRST);
+					config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false,
+							"[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, country, false,
+							RewriteRuleReplaceType.ONLY_FIRST);
+					// config.addRule(RewriteRuleType.MODIFY_HEADER, false, true,
+					// "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region",
+					// false, "GA", false, RewriteRuleReplaceType.ONLY_FIRST);
+					config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false,
+							"[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, region, false,
+							RewriteRuleReplaceType.ONLY_FIRST);
+					config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/v5/privacy/en_US/*/*", "");
+
+					config.saveConfigurations(fileName);
+
+					config.addMapping(CharlesConfiguration.Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/*",
+							"*", jsonPath, false);
+					config.saveConfigurations(fileName);
+
+					// proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);
+				} catch (CharlesProxyException e) {
+					Assert.fail(e.getMessage());
+				}
+
+				// proxy.startCharlesProxy();
+				// proxy.enableMapLocal();
+			}
 	 
 	 public void mapLocalForEditorialVideoHeadLineCard(String fileName, String jsonPath) {
 	        //String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
@@ -644,6 +735,38 @@ public class TwcIosBaseTest extends CharlesProxy{
 	        //proxy.enableMapLocal();
 	 }
 	 
+	 public void reWriteContentModeAndMapLocalForEditorialVideoHeadLineCardAndroid(String fileName, String jsonPath, String contentMode) {
+	        //String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
+	        try {
+	        	/*final List<File> configFiles = new ArrayList<File>();
+	    		final File parentDir = new File(Constants.PATH_USER_HOME);
+	    		parentDir.mkdirs();
+	    		final File configFile = new File(parentDir, fileName);
+	    		configFile.setWritable(true);*/
+
+	    		// Create Charles and configure rewrite to enable Breaking News
+	    		 CharlesConfiguration config = new CharlesConfiguration();
+
+	    		 config.addLocation(Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/" + "*vt1contentMode*", "*");
+	    		 config.addRule(RewriteRuleType.BODY, false, true, "", false, "\"mode\"\\s*:\\s*\"[A-Za-z0-9]*\"", true, false, false, "", false, "\"mode\" : \"" + contentMode + "\"", false, RewriteRuleReplaceType.ONLY_FIRST);
+	    		 config.saveConfigurations(fileName);
+
+	    		//return configFile;
+	    		
+	    		
+	            //mapConfig = new CharlesConfiguration();
+	    		 config.addMapping(CharlesConfiguration.Protocol.HTTPS, "dsx.weather.com", "", "/cms/v4/list/en_US/mobile/video/app", "*",
+	                    jsonPath, false);
+	    		 config.saveConfigurations(fileName);
+	            //proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);
+	        } catch (CharlesProxyException e) {
+	            Assert.fail(e.getMessage());
+	        }
+
+	        //proxy.startCharlesProxy();
+	        //proxy.enableMapLocal();
+	 }
+	 
 	 public void reWriteContentModeAndMapLocalForEditorialVideoHeadLineCardWhenNoTunnelBear(String fileName, String jsonPath, String contentMode, String privacyRegime, String country, String region) {
 	        //String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
 	        try {
@@ -673,6 +796,46 @@ public class TwcIosBaseTest extends CharlesProxy{
 	    		
 	            //mapConfig = new CharlesConfiguration();
 	    		 config.addMapping(CharlesConfiguration.Protocol.HTTPS, "dsx.weather.com", "", "/cms/v4/list/en_US/ios/video/app", "*",
+	                    jsonPath, false);
+	    		 config.saveConfigurations(fileName);
+	            //proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);
+	        } catch (CharlesProxyException e) {
+	            Assert.fail(e.getMessage());
+	        }
+
+	        //proxy.startCharlesProxy();
+	        //proxy.enableMapLocal();
+	 }
+	 
+	 public void reWriteContentModeAndMapLocalForEditorialVideoHeadLineCardWhenNoTunnelBearAndroid(String fileName, String jsonPath, String contentMode, String privacyRegime, String country, String region) {
+	        //String jsonPath = "src/test/resources/SevereInsightAtlanta.json";
+	        try {
+	        	/*final List<File> configFiles = new ArrayList<File>();
+	    		final File parentDir = new File(Constants.PATH_USER_HOME);
+	    		parentDir.mkdirs();
+	    		final File configFile = new File(parentDir, fileName);
+	    		configFile.setWritable(true);*/
+
+	    		// Create Charles and configure rewrite to enable Breaking News
+	    		 CharlesConfiguration config = new CharlesConfiguration();
+
+	    		 config.addLocation(Protocol.HTTPS, "api.weather.com", "", "/v3/aggcommon/" + "*vt1contentMode*", "*");
+	    		 config.addRule(RewriteRuleType.BODY, false, true, "", false, "\"mode\"\\s*:\\s*\"[A-Za-z0-9]*\"", true, false, false, "", false, "\"mode\" : \"" + contentMode + "\"", false, RewriteRuleReplaceType.ONLY_FIRST);
+	    		 config.saveConfigurations(fileName);
+
+	    		//return configFile;
+	    		
+	    		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "usa", false, RewriteRuleReplaceType.ONLY_FIRST);
+ 			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, privacyRegime, false, RewriteRuleReplaceType.ONLY_FIRST);
+ 			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, country, false, RewriteRuleReplaceType.ONLY_FIRST);
+ 			//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region", false, "GA", false, RewriteRuleReplaceType.ONLY_FIRST);
+ 			config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, region, false, RewriteRuleReplaceType.ONLY_FIRST);
+ 			config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/v5/privacy/en_US/*/*", "");
+
+ 			config.saveConfigurations(fileName);
+	    		
+	            //mapConfig = new CharlesConfiguration();
+	    		 config.addMapping(CharlesConfiguration.Protocol.HTTPS, "dsx.weather.com", "", "/cms/v4/list/en_US/mobile/video/app", "*",
 	                    jsonPath, false);
 	    		 config.saveConfigurations(fileName);
 	            //proxy = new CharlesProxy("localhost", CONFIG_FILE_PATH);

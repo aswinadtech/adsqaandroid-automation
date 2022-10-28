@@ -16,13 +16,13 @@ import io.qameta.allure.Step;
 public class AndroidHomeNavTab extends Utils {
 	AppiumDriver<MobileElement> Ad;
 	String homeTab_AccessibilityId = "Home Tab";
-	String integratedMarqueeCard_AccessibilityId = "nextgen-integrated-marquee-card-containerView";
-	String homeScreenStickyTestAd_AccessibilityId = "an ad";
+	String integratedMarqueeCard_Id = "com.weather.Weather:id/card_integrated_ad_root";
+	String homeScreenStickyTestAd_Xpath = "(//android.widget.LinearLayout[@resource-id=\"com.weather.Weather:id/sticky_ad_container\"]//android.webkit.WebView)[1]";
 	
 
 	By byFeedTab = MobileBy.AccessibilityId(homeTab_AccessibilityId);
-	By byIntegratedMarqueeCard = MobileBy.AccessibilityId(integratedMarqueeCard_AccessibilityId);
-	By byHomeScreenStickyTestAd = MobileBy.AccessibilityId(homeScreenStickyTestAd_AccessibilityId);
+	By byIntegratedMarqueeCard = MobileBy.id(integratedMarqueeCard_Id);
+	By byHomeScreenStickyTestAd = MobileBy.xpath(homeScreenStickyTestAd_Xpath);
 
 	MobileElement feedTab = null;
 	MobileElement homeScreenStickyTestAd = null;

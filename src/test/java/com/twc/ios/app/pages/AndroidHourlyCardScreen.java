@@ -15,21 +15,27 @@ import io.qameta.allure.Step;
 
 public class AndroidHourlyCardScreen extends Utils {
 	AppiumDriver<MobileElement> Ad;
-		
+	String hourlyCard_Id = "com.weather.Weather:id/hourly_forecast_card_view";
 	String hourlyDetails_Id = "com.weather.Weather:id/details_button";
 	
 	
 	By byHourlyDetails = MobileBy.id(hourlyDetails_Id);
+	By byHourlyCard = MobileBy.id(hourlyCard_Id);
 	
 	
 	MobileElement hourlyDetails = null;
+	MobileElement hourlyCard = null;
 	
 
 	public AndroidHourlyCardScreen(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
 	}
 
-	
+	public void scrollToHourlyCard() throws Exception {
+		//aQCard = Ad.findElement(byAirQualityCard);
+		Functions.genericScroll(byHourlyCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		//Functions.genericScrollTWC(byFeedOneCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP, false, false);
+	}
 	
 	@Step("Navigate To Hourly Card Content Page")
 	public void navigateToHourlyCardContentPage() throws Exception {

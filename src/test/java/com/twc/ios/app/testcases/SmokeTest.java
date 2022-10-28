@@ -2640,7 +2640,7 @@ public class SmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates wfxtg custom parameter of Hourly details banner ad call
 	 */
-	/*@Test(priority = 576, enabled = true)
+	@Test(priority = 576, enabled = true)
 	@Description("Validating 'wfxtg' custom parameter of Hourly details banner ad call ")
 	public void Validate_HourlyDetails_Banner_Ad_wfxtg_Custom_param() throws Exception {
 		System.out.println("==============================================");
@@ -2648,7 +2648,7 @@ public class SmokeTest extends TwcIosBaseTest {
 		logStep("Validating wfxtg custom parameter of Hourly details banner ad call ");
 		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "wfxtg", "61920");
 
-	}*/
+	}
 
 	/**
 	 * This method validates wfxtg custom parameter of Daily details banner ad call
@@ -2667,7 +2667,7 @@ public class SmokeTest extends TwcIosBaseTest {
 	 * This method validates cxtg custom parameter of Home Screen banner banner ad
 	 * call
 	 */
-	/*@Test(priority = 578, enabled = true)
+	@Test(priority = 578, enabled = true)
 	@Description("Validating 'cxtg' custom parameter of Hourly details banner ad call ")
 	public void Validate_HourlyDetails_Banner_Ad_cxtg_Custom_param() throws Exception {
 		System.out.println("==============================================");
@@ -2675,7 +2675,7 @@ public class SmokeTest extends TwcIosBaseTest {
 		logStep("Validating cxtg custom parameter of Hourly details banner ad call ");
 		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "cxtg", "61920");
 
-	}*/
+	}
 
 	/**
 	 * This method validates cxtg custom parameter of Daily details banner ad call
@@ -2693,7 +2693,7 @@ public class SmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates zcs custom parameter of Hourly details banner ad call
 	 */
-	/*@Test(priority = 580, enabled = true)
+	@Test(priority = 580, enabled = true)
 	@Description("Validating 'zcs' custom parameter of Hourly details banner ad call ")
 	public void Validate_HourlyDetails_Banner_Ad_zcs_Custom_param() throws Exception {
 		System.out.println("==============================================");
@@ -2701,7 +2701,7 @@ public class SmokeTest extends TwcIosBaseTest {
 		logStep("Validating zcs custom parameter of Hourly details banner ad call ");
 		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "zcs", "61920");
 
-	}*/
+	}
 
 	/**
 	 * This method validates zcs custom parameter of Daily details banner ad call
@@ -2719,7 +2719,7 @@ public class SmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates hzcs custom parameter of Hourly details banner ad call
 	 */
-	/*@Test(priority = 582, enabled = true)
+	@Test(priority = 582, enabled = true)
 	@Description("Validating 'hzcs' custom parameter of Hourly details banner ad call ")
 	public void Validate_HourlyDetails_Banner_Ad_hzcs_Custom_param() throws Exception {
 		System.out.println("==============================================");
@@ -2727,7 +2727,7 @@ public class SmokeTest extends TwcIosBaseTest {
 		logStep("Validating hzcs custom parameter of Hourly details banner ad call ");
 		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "hzcs", "61920");
 
-	}*/
+	}
 
 	/**
 	 * This method validates hzcs custom parameter of Daily details banner ad call
@@ -2745,7 +2745,7 @@ public class SmokeTest extends TwcIosBaseTest {
 	/**
 	 * This method validates nzcs custom parameter of Hourly details banner ad call
 	 */
-	/*@Test(priority = 584, enabled = true)
+	@Test(priority = 584, enabled = true)
 	@Description("Validating 'nzcs' custom parameter of Hourly details banner ad call ")
 	public void Validate_HourlyDetails_Banner_Ad_nzcs_Custom_param() throws Exception {
 		System.out.println("==============================================");
@@ -2753,7 +2753,7 @@ public class SmokeTest extends TwcIosBaseTest {
 		logStep("Validating nzcs custom parameter of Hourly details banner ad call ");
 		Utils.validate_custom_param_val_of_gampad_with_zip("Smoke", "Hourly", "nzcs", "61920");
 
-	}*/
+	}
 
 	/**
 	 * This method validates nzcs custom parameter of Daily details banner ad call

@@ -17,13 +17,13 @@ public class AndroidRadarNavTab extends Utils{
 	
 	String radarTab_AccessibilityId = "Radar Tab";
 	String closeLight_AccessibilityId = "close light";
-	String radarTabStickyTestAd_AccessibilityId = "weather.maps-adContentView";
-	String radarTabStickyTestAdContainer_AccessibilityId = "weather.maps-adContainterView";
+	String radarTabStickyTestAd_Xpath = "(//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/ad_view_holder\"]//android.webkit.WebView)[1]";
+	String radarTabStickyTestAdContainer_Id = "com.weather.Weather:id/ad_view_holder";
 
 	By byRadarNavTab = MobileBy.AccessibilityId(radarTab_AccessibilityId);
 	By byCloseLight = MobileBy.AccessibilityId(closeLight_AccessibilityId);
-	By byRadarTabStickyTestAd = MobileBy.AccessibilityId(radarTabStickyTestAd_AccessibilityId);
-	By byRadarTabStickyTestAdContainer = MobileBy.AccessibilityId(radarTabStickyTestAdContainer_AccessibilityId);
+	By byRadarTabStickyTestAd = MobileBy.xpath(radarTabStickyTestAd_Xpath);
+	By byRadarTabStickyTestAdContainer = MobileBy.id(radarTabStickyTestAdContainer_Id);
 
 	MobileElement radarNavTab = null;
 	MobileElement closeLight = null;

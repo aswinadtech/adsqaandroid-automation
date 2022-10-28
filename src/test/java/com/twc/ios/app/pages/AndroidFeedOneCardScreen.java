@@ -14,12 +14,12 @@ import io.qameta.allure.Step;
 
 public class AndroidFeedOneCardScreen extends Utils {
 	AppiumDriver<MobileElement> Ad;
-	String feedOneCardAd_AccessibilityId = "weather.feed0-adContainerView";
+	String feedOneCardAd_Xpath = "(//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/ad_view_holder\"]//android.webkit.WebView)[1]";
 	String snapshotLogo_AccessibilityId = "SnapshotLogo";
 	String buttonClose_AccessibilityId  = "button close";
 	
-	By byFeedOneCard = MobileBy.AccessibilityId("integrated-ad-card-containerView");
-	By byFeedOneCardAd = MobileBy.AccessibilityId(feedOneCardAd_AccessibilityId);
+	By byFeedOneCard = MobileBy.id("com.weather.Weather:id/ia_card_title");
+	By byFeedOneCardAd = MobileBy.xpath(feedOneCardAd_Xpath);
 	By bySnapshotLogo = MobileBy.AccessibilityId(snapshotLogo_AccessibilityId);
 	By byButtonClose = MobileBy.AccessibilityId(buttonClose_AccessibilityId);
 	

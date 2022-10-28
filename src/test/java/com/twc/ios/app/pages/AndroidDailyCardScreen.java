@@ -33,6 +33,12 @@ public class AndroidDailyCardScreen extends Utils {
 	public AndroidDailyCardScreen(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
 	}
+	
+	public void scrollToDailyCard() throws Exception {
+		//aQCard = Ad.findElement(byAirQualityCard);
+		Functions.genericScroll(byDailyCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		//Functions.genericScrollTWC(byFeedOneCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP, false, false);
+	}
 
 	@Step("Navigate To Daily Card Content Page")
 	public void navigateToDailyCardContentPage() throws Exception {

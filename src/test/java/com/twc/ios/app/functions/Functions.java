@@ -559,7 +559,7 @@ public class Functions extends Driver {
 		//System.out.println("Capabilities have been launched  with fullreset ");
 	}
 	
-	public void clickOnsettingIconAndroid() throws Exception {
+	public void clickOnSettingIconAndroid() throws Exception {
 		try {
 			System.out.println("Clicking on Setting Icon");
 			logStep("Clicking on Setting Icon");
@@ -732,6 +732,84 @@ public class Functions extends Driver {
 
 		Write_result wrResult1 = new Write_result();
 		// wrResult1.WriteResult("Capabilities", ipaPath.toString(), 14, Cap);
+	}
+	
+	
+	/**
+	 * Launch the TWC App with localization settings
+	 * @param region
+	 * @param includeRegion
+	 * @param language
+	 * @param includelanguage
+	 * @throws Exception
+	 */
+	public static void launchtheAndroidApp_forLocalization(String region, boolean includeRegion,
+			String language, boolean includelanguage) throws Exception {
+		AndroidFTLScreens ftlScreens;
+		
+		ReadExcelValues.excelValues("Smoke", "Capabilities");
+		
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+
+		// Capabilities for IOS and Android Based on Selected on Device Selection
+		/*capabilities.setCapability("deviceName", "Galaxy S21 5G");
+		capabilities.setCapability("udid", "R5CR11NNFQW");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("platformVersion", "12");
+		capabilities.setCapability("appPackage", "com.weather.Weather");
+		capabilities.setCapability("appActivity", "com.weather.Weather.app.SplashScreenActivity");
+		capabilities.setCapability("automationName", "UiAutomator2");
+		capabilities.setCapability("noReset", true);
+		capabilities.setCapability("autoLaunch", true);*/
+		
+		capabilities.setCapability(ReadExcelValues.data[2][0], ReadExcelValues.data[2][2]);
+		capabilities.setCapability(ReadExcelValues.data[3][0], ReadExcelValues.data[3][2]);
+		capabilities.setCapability(ReadExcelValues.data[7][0], ReadExcelValues.data[7][2]);
+		capabilities.setCapability(ReadExcelValues.data[11][0], ReadExcelValues.data[11][2]);
+		capabilities.setCapability(ReadExcelValues.data[12][0], ReadExcelValues.data[12][2]);
+		capabilities.setCapability("appActivity", "com.weather.Weather.app.SplashScreenActivity");
+		capabilities.setCapability("automationName", "UiAutomator2");
+		capabilities.setCapability("noReset", true);
+		capabilities.setCapability(ReadExcelValues.data[13][0], "7200");
+		capabilities.setCapability(ReadExcelValues.data[14][0], true);
+		capabilities.setCapability("launchTimeout", 240000);
+		//capabilities.setCapability("useNewWDA", true);
+		capabilities.setCapability("wdaLocalPort", "7403");
+		capabilities.setCapability("clearSystemFiles", true);
+		if (includeRegion) {
+			capabilities.setCapability("locale", region);
+		}
+		if (includelanguage) {
+			capabilities.setCapability("language", language);
+		}
+		System.out.println("Reading capabilities done");
+		// Wait time for Execution of node.js
+		// TestBase.waitForMilliSeconds(10000);
+		try {
+			Ad = new AndroidDriver(new URL("http://127.0.0.1:4733/wd/hub"), capabilities);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// Ad= new IOSDriver<MobileElement>(service, capabilities);
+		Ad.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		System.out.println("TWC Android App Launched");
+		ftlScreens = new AndroidFTLScreens(Ad);
+		/*ftlScreens.clickONTerms();
+		attachScreen();
+		ftlScreens.clickONNext();
+		attachScreen();
+		//scrollforclickngIunderstand();
+		ftlScreens.ClickonIUnderstand();
+		attachScreen();
+		ftlScreens.clickOnAllow();
+		attachScreen();
+		ftlScreens.clickOnWhileUsingTheApp();
+		attachScreen();
+		ftlScreens.Clickonclosebutton();
+		attachScreen();*/
+		ftlScreens.handle_Unwanted_Popups();
+		Thread.sleep(10000);
+		//System.out.println("Capabilities have been launched  with fullreset ");
 	}
 
 	/**
@@ -1455,14 +1533,11 @@ public class Functions extends Driver {
 			// Double endY1 = (double) (dimensions.getHeight()/40); //
 			// dimensions.getHeight() 0.2; == 512.0
 			Double endY1 = dimensions.getHeight() * 0.40;
-			if (Ad instanceof AndroidDriver<?>) {
-				endY1 = dimensions.getHeight() * 0.30;
-			} 
-			
 			endY = endY1.intValue();
+			swipe_Left();
 			ta.press(PointOption.point(0, endY)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
 					.moveTo(PointOption.point(0, startY)).release().perform();
-						
+									
 		} catch (Exception e) {
 
 		}
@@ -1492,7 +1567,7 @@ public class Functions extends Driver {
 			endY = endY1.intValue();
 			ta.press(PointOption.point(startX, endY)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
 					.moveTo(PointOption.point(endX, endY)).release().perform();
-			
+						
 		} catch (Exception e) {
 
 		}
@@ -2448,7 +2523,7 @@ public class Functions extends Driver {
 				} catch (Exception e3) {
 					try {
 						TestBase.waitForMilliSeconds(2000);
-						interstitalAd = Ad.findElementById("close-button-icon");
+						interstitalAd = Ad.findElementByXPath("//android.widget.TextView[@resource-id=\"close-button-icon\"]");
 						/*
 						 * add below two lines to capture page source of interstitial, delete later
 						 */
@@ -4333,11 +4408,13 @@ public class Functions extends Driver {
 		}
 		
 			System.out.println("Scroll complete, Expected element: " + locator + " found: " + elementFound);
+			logStep("Scroll complete, Expected element: " + locator + " found: " + elementFound);
 		
 		if (elementFound) {
 			if(scrollToTop) {
 				System.out.println("Moving element to top");
 				moveElementToTop(locator, dim, offsetY, tolerance);
+				attachScreen();
 			}
 		}
 		
@@ -4687,6 +4764,7 @@ public class Functions extends Driver {
 			if (scrollToTop) {
 				System.out.println("Moving element to top");
 				moveElementToTop(locator, dim1, offsetY, tolerance);
+				attachScreen();
 			}
 		}
 	}
@@ -4841,6 +4919,12 @@ public class Functions extends Driver {
 				System.out.println("Current Card is : " + cardName);
 				logStep("Current Card is : " + cardName);
 				attachScreen();
+				
+				if (cardName.equalsIgnoreCase("Integrated Marquee")) {
+					nextGenIMadDisplayed = true;
+				} else if (cardName.equalsIgnoreCase("Rain")) {
+					rainCardDisplayed = true;
+				}
 
 				/**
 				 * Code to navigate to content pages.....
@@ -4969,6 +5053,7 @@ public class Functions extends Driver {
 			if (scrollToTop) {
 				System.out.println("Moving element to top");
 				moveElementToTop(locator, dim1, offsetY, tolerance);
+				attachScreen();
 			}
 		}
 	}
@@ -5299,6 +5384,7 @@ public class Functions extends Driver {
 			if (scrollToTop) {
 				System.out.println("Moving element to top");
 				moveElementToTop(ele, dim1, offsetY, tolerance);
+				attachScreen();
 			}
 		}
 		

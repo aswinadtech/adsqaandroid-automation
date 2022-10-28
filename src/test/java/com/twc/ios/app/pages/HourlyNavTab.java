@@ -1,6 +1,7 @@
 package com.twc.ios.app.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.twc.ios.app.charlesfunctions.CharlesProxy;
 import com.twc.ios.app.functions.Functions;
@@ -84,6 +85,5 @@ public class HourlyNavTab extends Utils {
 	public void assertSevereInsightTextOnHourlyNavTab() {
 		severeInsightText = Ad.findElement(bySevereInsightText);
 	}
-	
-
+		
 }

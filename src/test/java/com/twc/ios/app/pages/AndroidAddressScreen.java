@@ -42,7 +42,7 @@ public class AndroidAddressScreen extends Utils {
 	String oK_AccessibilityId = "OK";
 
 	By bySearchForYourLocation = MobileBy.xpath(searchForYourLocation_Xpath);
-	By byCurrentLocation = MobileBy.AccessibilityId(currentLocation_AccessibilityId);
+	//By byCurrentLocation = MobileBy.AccessibilityId(currentLocation_AccessibilityId);
 	By byCurrentLocation2 = MobileBy.AccessibilityId(currentLocation2_AccessibilityId);
 	By byAddCityOrZIPCode = MobileBy.AccessibilityId(addCityOrZIPCode_AccessibilityId);
 	By bySearchBar = MobileBy.AccessibilityId(searchBar_AccessibilityId);
@@ -61,9 +61,13 @@ public class AndroidAddressScreen extends Utils {
 
 	String search_AccessibilityId = "Search";
 	String locationSearch_Id = "com.weather.Weather:id/search_text";
+	String currentLocation_Xpath = "//android.widget.TextView[@text=\"Current Location\"]";
+	
 
 	By bySearch = MobileBy.AccessibilityId(search_AccessibilityId);
 	By byLocationSearch = MobileBy.id(locationSearch_Id);
+	By byCurrentLocation = MobileBy.xpath(currentLocation_Xpath);
+	
 
 	MobileElement searchForYourLocation = null;
 	MobileElement cancel = null;
@@ -88,9 +92,48 @@ public class AndroidAddressScreen extends Utils {
 	MobileElement allowWhileUsingApp = null;
 
 	MobileElement locationSearch = null;
+	MobileElement currentLocation = null;
 
 	public AndroidAddressScreen(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
+	}
+	
+	public void selectCurrentLocation() throws Exception {
+		try {
+			System.out.println("Current Location Selection Started");
+			// TestBase.waitForElementToBeClickable(Ad, 60, bySearch);
+	
+			search = Ad.findElement(bySearch);
+			try {
+				TestBase.clickOnElement(bySearch, search, "Search Icon");
+				// Ad.findElementByAccessibilityId("Search").click();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			/*
+			 * try{ TestBase.clickOnElement(bySearch, search, "Search Icon");
+			 * }catch(Exception e) { e.printStackTrace(); }
+			 */
+			boolean found = false;
+			while (!found) {
+
+				if (TestBase.isElementExists(byLocationSearch, Ad)) {
+					found = true;
+					break;
+				} else {
+					TestBase.clickOnElement(bySearch, search, "Search Icon");
+				}
+
+			}
+			currentLocation = Ad.findElement(byCurrentLocation);
+			TestBase.clickOnElement(byCurrentLocation, currentLocation, "Current Location");
+			System.out.println("Current Location Selection Ended");
+			attachScreen();
+		} catch (Exception ex) {
+			attachScreen();
+			ex.printStackTrace();
+		}
+
 	}
 
 	public void enter_requiredLocation(String location) throws Exception {
@@ -215,7 +258,7 @@ public class AndroidAddressScreen extends Utils {
 					}
 				} else if (location.contains("08824")) {
 					// System.out.println(loc.getText());
-					if (allLocations.get(i).getText().contains("South Brunswick")) {
+					if (allLocations.get(i).getText().contains("Kendall Park")) {
 
 						allLocations.get(i).click();
 						Thread.sleep(3000);
@@ -224,6 +267,38 @@ public class AndroidAddressScreen extends Utils {
 				} else if (location.contains("61920")) {
 					// System.out.println(loc.getText());
 					if (allLocations.get(i).getText().contains("Charleston")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("12758")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Livingston Manor")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("31553")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Nahunta")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("37421")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Chattanooga")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("98902")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Yakima")) {
 
 						allLocations.get(i).click();
 						Thread.sleep(3000);
@@ -363,7 +438,7 @@ public class AndroidAddressScreen extends Utils {
 					}
 				} else if (location.contains("08824")) {
 					// System.out.println(loc.getText());
-					if (allLocations.get(i).getText().contains("South Brunswick")) {
+					if (allLocations.get(i).getText().contains("Kendall Park")) {
 
 						allLocations.get(i).click();
 						Thread.sleep(3000);
@@ -372,6 +447,38 @@ public class AndroidAddressScreen extends Utils {
 				} else if (location.contains("61920")) {
 					// System.out.println(loc.getText());
 					if (allLocations.get(i).getText().contains("Charleston")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("12758")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Livingston Manor")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("31553")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Nahunta")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("37421")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Chattanooga")) {
+
+						allLocations.get(i).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else if (location.contains("98902")) {
+					// System.out.println(loc.getText());
+					if (allLocations.get(i).getText().contains("Yakima")) {
 
 						allLocations.get(i).click();
 						Thread.sleep(3000);

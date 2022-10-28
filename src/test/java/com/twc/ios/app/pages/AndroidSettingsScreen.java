@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import com.twc.ios.app.functions.Functions;
@@ -30,8 +31,8 @@ import io.qameta.allure.Step;
 
 public class AndroidSettingsScreen extends Utils {
 	AppiumDriver<MobileElement> Ad;
-	String settingsButton_AccessibilityId = "Setting Icon";
-	String privacySettingsLabel_AccessibilityId = "privacy_settings_label";
+	String settingsButton_AccessibilityId = "Setting icon";
+	String privacySettingsLabel_Xpath = "//android.widget.TextView[@text=\"Privacy Settings\"]";
 	String privacySettingsCell_AccessibilityId = "privacy_settings_cell";
 	String applicationVersion_AccessibilityId = "app_version";
 	String settingsBackButton_AccessibilityId = "Settings back button";
@@ -43,7 +44,7 @@ public class AndroidSettingsScreen extends Utils {
 	String oK_Name = "OK";
 	String clearCache_Name = "Clear Cache";
 	String general_Name = "General";
-	
+	String pricacyOptInConfirm_Id = "com.weather.Weather:id/popup_positive_button";
 
 	By bySettingsButton = MobileBy.AccessibilityId(settingsButton_AccessibilityId);
 	By byApplicationVersion = MobileBy.AccessibilityId(applicationVersion_AccessibilityId);
@@ -56,8 +57,13 @@ public class AndroidSettingsScreen extends Utils {
 	By byOK = MobileBy.name(oK_Name);
 	By byClearCache = MobileBy.name(clearCache_Name);
 	By byGeneral = MobileBy.name(general_Name);
+	By byPricacyOptInConfirm = MobileBy.id(pricacyOptInConfirm_Id);
 	
 	By byAlertCenter = MobileBy.AccessibilityId("Go to Alerts and Notifications");
+	By bySearchIcon = MobileBy.xpath("//android.widget.ImageView[@resource-id=\"com.weather.Weather:id/search_icon\"]");
+	
+	
+
 	
 	MobileElement settingsButton = null;
 	MobileElement privacySettings = null;
@@ -71,6 +77,7 @@ public class AndroidSettingsScreen extends Utils {
 	MobileElement oK = null;
 	MobileElement clearCache = null;
 	MobileElement general = null;
+	MobileElement pricacyOptInConfirm = null;
 	
 
 	public AndroidSettingsScreen(AppiumDriver<MobileElement> Ad) {
@@ -145,27 +152,19 @@ public class AndroidSettingsScreen extends Utils {
 	@Step("Navigate to Privacy Page from Settings")
 	public void navigateToPrivacyPage_From_Settings() throws Exception {
 
-		ReadExcelValues.excelValues("Smoke", "TestMode");
-
-		try {
-			Ad.findElementByName(ReadExcelValues.data[1][Cap]).click();
-		} catch (Exception e1) {
-			try {
-				Functions.close_launchApp();
-			} catch (Exception e2) {
-
-			} finally {
-				Ad.findElementByName(ReadExcelValues.data[1][Cap]).click();
-			}
-		}
+		clickOnSettingIcon();
+		
 		By byPrivacySettingsButton = null;
 		try {
-			byPrivacySettingsButton = MobileBy.AccessibilityId(privacySettingsLabel_AccessibilityId);
-			privacySettings = Ad.findElement(byPrivacySettingsButton);
+			byPrivacySettingsButton = MobileBy.xpath(privacySettingsLabel_Xpath);
+			
 		} catch (Exception e) {
-			byPrivacySettingsButton = MobileBy.AccessibilityId(privacySettingsCell_AccessibilityId);
-			privacySettings = Ad.findElement(byPrivacySettingsButton);
+			byPrivacySettingsButton = MobileBy.xpath(privacySettingsLabel_Xpath);
+			
 		}
+		Functions.genericScroll(byPrivacySettingsButton, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		
+		privacySettings = Ad.findElement(byPrivacySettingsButton);
 		TestBase.clickOnElement(byPrivacySettingsButton, privacySettings, "Privacy Settings Button");
 	}
 
@@ -189,51 +188,38 @@ public class AndroidSettingsScreen extends Utils {
 //		swipe_Up(Ad);
 //		swipe_Up(Ad);
 //		swipe_Up(Ad);
-		Thread.sleep(5000);
+		
 		// swipe_Up();
+		By byPrivacy_Optin = MobileBy.xpath(ReadExcelValues.data[23][Cap]);
+		By byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[24][Cap]);
+		Functions.genericScroll(byPrivacy_Optin, true, true, 224, TOLERANCE_FROM_TOP);
+		Thread.sleep(5000);
 		try {
-			privacy_Optin = Ad.findElementByXPath(ReadExcelValues.data[23][Cap]);
-			//privacy_Optin_label = privacy_Optin.getAttribute("name");
-			privacy_Optin_label = TestBase.getElementAttribute(privacy_Optin, "name");
-			String isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-			while (isPrivacyOptInVisible.equalsIgnoreCase("false")) {
-				swipe_Up(Ad);
-				isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-			}
-			
+			privacy_Optin = Ad.findElement(byPrivacy_Optin);
+						
 			try {
-				privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[24][Cap]);
-				//privacy_Optout_label = privacy_Optout.getAttribute("name");
-				privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+				privacy_Optout = Ad.findElement(byPrivacy_Optout);
+				
 			} catch (Exception e) {
-				privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[27][Cap]);
-				//privacy_Optout_label = privacy_Optout.getAttribute("name");
-				privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+				byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[27][Cap]);
+				privacy_Optout = Ad.findElement(byPrivacy_Optout);
+				
 			}
-			privacy_Optin_default = Ad.findElementByXPath(ReadExcelValues.data[25][Cap]);
-			//privacy_Optin_default_label = privacy_Optin_default.getAttribute("value");
-			privacy_Optin_default_label = TestBase.getElementAttribute(privacy_Optin_default, "value");
-			if (privacy_Optin_default_label.equalsIgnoreCase("1")) {
-				System.out.println("Privacy Option is already set to optin");
-				logStep("Privacy Option is already set to optin");
+								
+			try {
+				privacy_Optin.click();
+				Thread.sleep(3000);
+				clickOnPrivacyOptInConfirm();
+				System.out.println("Privacy Optin is selected");
+				logStep("Privacy Optin is selected");
 				attachScreen();
-
-			} else {
+			} catch (Exception e) {
+				System.out.println("An exception while selecting optin");
+				logStep("An exception while selecting optin");
 				attachScreen();
-				try {
-					privacy_Optin.click();
-					Thread.sleep(3000);
-					click_Continue();
-					System.out.println("Privacy Optin is selected");
-					logStep("Privacy Optin is selected");
-					attachScreen();
-				} catch (Exception e) {
-					System.out.println("An exception while selecting optin");
-					logStep("An exception while selecting optin");
-					attachScreen();
-					// Assert.fail("An exception while selecting optin");
+				// Assert.fail("An exception while selecting optin");
 				}
-			}
+			
 		} catch (Exception e) {
 			System.out.println("Privacy feature options are not displayed on the Privacy Settings page");
 			logStep("Privacy feature options are not displayed on the Privacy Settings page");
@@ -242,26 +228,12 @@ public class AndroidSettingsScreen extends Utils {
 			// Settings page");
 		} finally {
 			// Navigating back from Privacy Settings page.
-			//Ad.findElementByAccessibilityId("Settings back button").click();
-			//Thread.sleep(2000);
-			settingsBackButton = Ad.findElement(bySettingsBackButton);
-			TestBase.clickOnElement(bySettingsBackButton, settingsBackButton, "Settings Back Button");
-			Thread.sleep(2000);
-			// Click on Close icon on Settings page.
-			//Ad.findElementByXPath("(//XCUIElementTypeButton[@name='close_menu_button'])[1]").click();
-			closeMenuButton = Ad.findElement(byCloseMenuButton);
-			TestBase.clickOnElement(byCloseMenuButton, closeMenuButton, "Close Menu Button");
-			Thread.sleep(1000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
 			attachScreen();
-			/*
-			 * if (!interStitialChecked) { handle_Interstitial_Ad(); }
-			 */
-			/*
-			 * Functions.clear_session(); System.out.
-			 * println("Kill and Launching the app after privacy optin is selected");
-			 * logStep("Kill and Launching the app after privacy optin is selected");
-			 * Functions.close_launchApp();
-			 */
+			
 		}
 
 	}
@@ -286,50 +258,37 @@ public class AndroidSettingsScreen extends Utils {
 //		swipe_Up(Ad);
 //		swipe_Up(Ad);
 //		swipe_Up(Ad);
-		Thread.sleep(5000);
+	
 		// swipe_Up();
+		By byPrivacy_Optin = MobileBy.xpath(ReadExcelValues.data[23][Cap]);
+		By byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[24][Cap]);
+		Functions.genericScroll(byPrivacy_Optin, true, true, 224, TOLERANCE_FROM_TOP);
+		Thread.sleep(5000);
 		try {
-			privacy_Optin = Ad.findElementByXPath(ReadExcelValues.data[23][Cap]);
-			//privacy_Optin_label = privacy_Optin.getAttribute("name");
-			privacy_Optin_label = TestBase.getElementAttribute(privacy_Optin, "name");
-			String isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-			while (isPrivacyOptInVisible.equalsIgnoreCase("false")) {
-				swipe_Up(Ad);
-				isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-			}
+			privacy_Optin = Ad.findElement(byPrivacy_Optin);
+			
 			try {
-				privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[24][Cap]);
-				//privacy_Optout_label = privacy_Optout.getAttribute("name");
-				privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+				privacy_Optout = Ad.findElement(byPrivacy_Optout);
+				
 			} catch (Exception e) {
-				privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[27][Cap]);
-				//privacy_Optout_label = privacy_Optout.getAttribute("name");
-				privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+				byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[27][Cap]);
+				privacy_Optout = Ad.findElement(byPrivacy_Optout);
+				
 			}
-			privacy_Optin_default = Ad.findElementByXPath(ReadExcelValues.data[25][Cap]);
-			//privacy_Optin_default_label = privacy_Optin_default.getAttribute("value");
-			privacy_Optin_default_label = TestBase.getElementAttribute(privacy_Optin_default, "value");
-
-			if (!privacy_Optin_default_label.equalsIgnoreCase("1")) {
-				System.out.println("Already Privacy Optout is selected");
-				logStep("Already Privacy Optout is selected");
+			
+			try {
+				privacy_Optout.click();
+				System.out.println("Privacy Optout is selected");
+				logStep("Privacy Optout is selected");
 				attachScreen();
-
-			} else {
+			} catch (Exception e) {
+				System.out.println("An exception while selecting optout");
+				logStep("An exception while selecting optout");
 				attachScreen();
-				try {
-					privacy_Optout.click();
-					System.out.println("Privacy Optout is selected");
-					logStep("Privacy Optout is selected");
-					attachScreen();
-				} catch (Exception e) {
-					System.out.println("An exception while selecting optout");
-					logStep("An exception while selecting optout");
-					attachScreen();
-					// Assert.fail("An exception while selecting optout");
-				}
-
+				// Assert.fail("An exception while selecting optout");
 			}
+
+		
 		} catch (Exception e) {
 			System.out.println("Privacy feature options are not displayed on the Privacy Settings page");
 			logStep("Privacy feature options are not displayed on the Privacy Settings page");
@@ -338,27 +297,11 @@ public class AndroidSettingsScreen extends Utils {
 			// Settings page");
 		} finally {
 			// Navigating back from Privacy Settings page.
-			//Ad.findElementByAccessibilityId("Settings back button").click();
-			settingsBackButton = Ad.findElement(bySettingsBackButton);
-			TestBase.clickOnElement(bySettingsBackButton, settingsBackButton, "Settings Back Button");
-			Thread.sleep(2000);
-			// Click on Close icon on Settings page.
-			//Ad.findElementByXPath("(//XCUIElementTypeButton[@name='close_menu_button'])[1]").click();
-			closeMenuButton = Ad.findElement(byCloseMenuButton);
-			TestBase.clickOnElement(byCloseMenuButton, closeMenuButton, "Close Menu Button");
-			Thread.sleep(1000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
 			attachScreen();
-			/*
-			 * if (!interStitialChecked) { handle_Interstitial_Ad(); }
-			 */
-
-			// Functions.clear_session();
-			/*
-			 * System.out.
-			 * println("Kill and Launching the app after privacy optout is selected");
-			 * logStep("Kill and Launching the app after privacy optout is selected");
-			 * Functions.close_launchApp();
-			 */
 		}
 
 	}
@@ -387,51 +330,30 @@ public class AndroidSettingsScreen extends Utils {
 		try {
 			System.out.println("Current Context is: " + Ad.getContext());
 			logStep("Current Context is: " + Ad.getContext());
-			try {
-				Ad.context("NATIVE_APP");
-				System.out.println("Switching to Native App Context");
-				logStep("Switching to Native App Context");
-			} catch (Exception ex) {
-				System.out.println("An Exception while Switching to Native App Context");
-				logStep("An Exception while Switching to Native App Context");
-			}
+			
 
 //			swipe_Up(Ad);
 //			swipe_Up(Ad);
 //			swipe_Up(Ad);
-			Thread.sleep(5000);
+			
 			// swipe_Up();
+			By byPrivacy_Optin = MobileBy.xpath(ReadExcelValues.data[23][Cap]);
+			By byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[24][Cap]);
+			Functions.genericScroll(byPrivacy_Optin, true, true, 224, TOLERANCE_FROM_TOP);
+			Thread.sleep(5000);
 
 			try {
-				privacy_Optin = Ad.findElementByXPath(ReadExcelValues.data[23][Cap]);
-				//privacy_Optin_label = privacy_Optin.getAttribute("name");
-				privacy_Optin_label = TestBase.getElementAttribute(privacy_Optin, "name");
-				String isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-				while (isPrivacyOptInVisible.equalsIgnoreCase("false")) {
-					swipe_Up(Ad);
-					isPrivacyOptInVisible = TestBase.getElementAttribute(privacy_Optin, "visible");
-				}
+				privacy_Optin = Ad.findElement(byPrivacy_Optin);
+				
 				try {
-					privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[24][Cap]);
-					//privacy_Optout_label = privacy_Optout.getAttribute("name");
-					privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+					privacy_Optout = Ad.findElement(byPrivacy_Optout);
+					
 				} catch (Exception e) {
-					privacy_Optout = Ad.findElementByXPath(ReadExcelValues.data[27][Cap]);
-					//privacy_Optout_label = privacy_Optout.getAttribute("name");
-					privacy_Optout_label = TestBase.getElementAttribute(privacy_Optout, "name");
+					byPrivacy_Optout = MobileBy.xpath(ReadExcelValues.data[27][Cap]);
+					privacy_Optout = Ad.findElement(byPrivacy_Optout);
+					
 				}
-				privacy_Optin_default = Ad.findElementByXPath(ReadExcelValues.data[25][Cap]);
-				//privacy_Optin_default_label = privacy_Optin_default.getAttribute("value");
-				privacy_Optin_default_label = TestBase.getElementAttribute(privacy_Optin_default, "value");
-				if (!privacy_Optin_default_label.equalsIgnoreCase("1")) {
-					System.out.println("By default Privacy Option is set to false");
-					logStep("By default Privacy Option is set to false");
-					attachScreen();
-					Assert.fail("By default Privacy Option is set to false");
-				} else {
-					System.out.println("By default Privacy Option is set to true");
-					logStep("By default Privacy Option is set to true");
-				}
+				
 			} catch (Exception e) {
 				System.out.println("Privacy feature options are not displayed on the Privacy Settings page");
 				logStep("Privacy feature options are not displayed on the Privacy Settings page");
@@ -444,15 +366,10 @@ public class AndroidSettingsScreen extends Utils {
 			logStep("There is an exception while validating Privacy feature options on the Privacy Settings page");
 		} finally {
 			// Navigating back from Privacy Settings page.
-			//Ad.findElementByAccessibilityId("Settings back button").click();
-			settingsBackButton = Ad.findElement(bySettingsBackButton);
-			TestBase.clickOnElement(bySettingsBackButton, settingsBackButton, "Settings Back Button");
-			Thread.sleep(2000);
-			// Click on Close icon on Settings page.
-			//Ad.findElementByXPath("(//XCUIElementTypeButton[@name='close_menu_button'])[1]").click();
-			closeMenuButton = Ad.findElement(byCloseMenuButton);
-			TestBase.clickOnElement(byCloseMenuButton, closeMenuButton, "Close Menu Button");
-			Thread.sleep(1000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
+			Ad.navigate().back();
+			TestBase.waitForMilliSeconds(2000);
 			attachScreen();
 
 		}
@@ -869,7 +786,7 @@ public class AndroidSettingsScreen extends Utils {
 	}
 
 	@Step("Select Airlock User Group: {0}")
-	public void select_Airlock_UserGroup(String userGroupName) throws Exception {
+	public void select_Airlock_UserGroupiOS(String userGroupName) throws Exception {
 		FTLScreens ftlScreens;
 		System.out.println("Trying to select Airlock  User Group");
 		logStep("Trying to select Airlock  User Group");
@@ -1359,6 +1276,182 @@ public class AndroidSettingsScreen extends Utils {
 		}
 
 	}
+	
+	public  void clickOnVersionnumber() throws Exception {
+		try {
+						
+			System.out.println("Clicking on Version number  till test mode settings option is displaying");
+			logStep("Clicking on Version number till test mode settings option is displaying");	
+			for(int i=1;i<10;i++) {		 
+				Ad.findElementById("com.weather.Weather:id/about_version").click();
+				 Thread.sleep(6000);
+		}
+		}
+		catch(Exception e) {
+			System.out.println("Clicking on Version number  till test mode settings option is displaying");
+			logStep("Clicking on Version number till test mode settings option is displaying");	
+			for(int i=1;i<10;i++) {			 
+				Ad.findElementById("com.weather.Weather:id/about_version").click();
+				 Thread.sleep(6000);
+			}
+		}
+			
+		}
+	
+	public  void clickOnTestModeSettings() throws Exception {
+		try {
+		System.out.println("Clicking on test mode settings");
+		logStep("Clicking on test mode settings");
+		Ad.findElementById("com.weather.Weather:id/test_mode_settings").click();
+		Thread.sleep(6000);
+		}catch(Exception e) {
+			System.out.println("Clicking on test mode settings");
+			logStep("Clicking on test mode settings");
+			Ad.findElementById("com.weather.Weather:id/test_mode_settings").click();
+			Thread.sleep(6000);
+		}
+	}
+	
+public  void clickOnAirlock() throws Exception {
+		
+	 	//clicking on Airlock
+			try {
+	System.out.println("Clicking on Airlock");
+	logStep("Clicking on Airlock");
+	//Thread.sleep(15000);
+			 List<MobileElement> all=Ad.findElementsById("android:id/title");
+			// Thread.sleep(15000);
+			 for(WebElement Airlock:all) {
+				if( Airlock.getAttribute("text").equalsIgnoreCase("Airlock")) {
+					new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Airlock));
+					Airlock.click();
+				//	 Thread.sleep(15000);
+					 break;
+				 }
+			 }
+			}
+			catch(Exception e) {
+				System.out.println("Clicking on Airlock");
+				logStep("Clicking on Airlock");
+				 List<MobileElement> all=Ad.findElementsByClassName("android.widget.LinearLayout");
+				 for(WebElement Airlock:all) {
+					if( Airlock.getAttribute("text").contains("Airlock")) {
+						new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Airlock));
+						 Airlock.click();
+						// Thread.sleep(5000);
+						 break;
+			}
+				 }
+		}
+		}
+
+public  void clickOnUserGroups() throws Exception {
+	System.out.println("Clicking on User Groups");
+	logStep("Clicking on User Groups");
+	List<MobileElement> all=Ad.findElementsById("android:id/title");
+	 for(WebElement Airlock:all) {
+		if( Airlock.getAttribute("text").equalsIgnoreCase("User Groups")) {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(Airlock));
+			 Airlock.click();
+		//	 Thread.sleep(5000);
+			 break;
+		 }
+	 }
+}
+
+public  void enablingResponsiveMode() throws Exception{
+System.out.println("Enabling Responsive Mode");
+	logStep("Enabling Responsive Mode");
+	
+		Ad.findElementById("android:id/checkbox").click();
+
+		Thread.sleep(6000);
+}
+	
+
+public  void enterRequiredUserGroup(String usergroup) throws Exception {
+	
+	System.out.println("entering "+ usergroup);
+	logStep("entering "+ usergroup);
+	MobileElement ugSearchBar = Ad.findElementById("com.weather.Weather:id/search_bar");
+	//Ad.findElementById("com.weather.Weather:id/search_bar").sendKeys(usergroup);
+	TestBase.typeText(ugSearchBar, "UserGroup", usergroup);
+  Thread.sleep(15000);
+  try {
+  List<MobileElement> all=Ad.findElementsById("android:id/text1");
+	// Thread.sleep(5000);
+	 for(WebElement req:all) {
+		if( req.getAttribute("text").equalsIgnoreCase(usergroup)) {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(req));
+		
+		//	 Thread.sleep(15000);
+			 req.click();
+			Thread.sleep(5000);
+			Ad.navigate().back();
+			Ad.navigate().back();
+			 break;
+		 }
+	 }
+  }
+  catch(Exception e){
+	  System.out.println("entering "+ usergroup);
+		logStep("entering "+ usergroup);
+	  List<MobileElement> all=Ad.findElementsByClassName("android.widget.CheckedTextView");
+	//  Thread.sleep(15000);
+	for (WebElement req : all) {
+		if (req.getAttribute("text").equalsIgnoreCase(usergroup)) {
+			new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(req));
+			req.click();
+
+			Thread.sleep(5000);
+			Ad.navigate().back();
+			Ad.navigate().back();
+			break;
+		}
+	}
+  }
+}
+	
+	public  void select_Airlock_UserGroup(String usergroup) throws Exception{
+		
+		try {
+			clickOnSettingIcon();
+			attachScreen();
+		} catch (Exception e) {
+			clickOnSettingIcon();
+			attachScreen();
+		}
+		try {
+			swipe_Up(Ad);
+			swipe_Up(Ad);
+			//Swipe_Conter(10);
+			// cliking on aboutthisapp
+			clickOnAboutthisapp_UPSX();
+			attachScreen();
+		} catch (Exception e) {
+			swipe_Up(Ad);
+			swipe_Up(Ad);
+			//Swipe_Conter(10);
+			// cliking on aboutthisapp
+			clickOnAboutthisapp_UPSX();
+			attachScreen();
+		}
+	     	
+	     	clickOnVersionnumber();
+	 	
+	     	clickOnTestModeSettings() ;
+			
+	     	clickOnAirlock();
+			
+	     	enablingResponsiveMode();
+			
+	     	clickOnUserGroups();
+		
+	     	enterRequiredUserGroup(usergroup);
+	     	
+	     	Functions.close_launchAppAndroid();
+		
+		}
 
 	@Step("Clear Airlock User Groups")
 	public void clearAirlock() throws Exception {
@@ -1850,14 +1943,34 @@ public class AndroidSettingsScreen extends Utils {
 
 	}
 	
-	public void clickOnsettingIcon() throws Exception {
+	public void clickOnPrivacyOptInConfirm() throws Exception {
+		try {
+			System.out.println("Clicking on Confirm On Privacy Optin Modal");
+			logStep("Clicking on Confirm On Privacy Optin Modal");
+			//Ad.findElementByAccessibilityId("Setting icon").click();
+			pricacyOptInConfirm = Ad.findElement(byPricacyOptInConfirm);
+			TestBase.clickOnElement(byPricacyOptInConfirm, pricacyOptInConfirm, "Confirm Button");
+			Thread.sleep(10000);
+			
+		} catch (Exception e) {
+			System.out.println("Privacy Optin already might have selected or an Exception while clicking on Confirm button");
+			logStep("Privacy Optin already might have selected or an Exception while clicking on Confirm button");
+			attachScreen();
+			//Assert.fail("An Exception while clicking on Continue button");
+		}
+
+	}
+	
+	public void clickOnSettingIcon() throws Exception {
 		try {
 			System.out.println("Clicking on Setting Icon");
 			logStep("Clicking on Setting Icon");
-			Ad.findElementByAccessibilityId("Setting icon").click();
+			//Ad.findElementByAccessibilityId("Setting icon").click();
+			settingsButton = Ad.findElement(bySettingsButton);
+			TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			Thread.sleep(10000);
-			if (TestBase.isElementExists(MobileBy.AccessibilityId("Go to Alerts and Notifications"))) {
-				Ad.findElementByAccessibilityId("Setting icon").click();
+			if (TestBase.isElementExists(bySearchIcon)) {
+				TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			}
 		} catch (Exception e) {
 			Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
@@ -1889,10 +2002,10 @@ public class AndroidSettingsScreen extends Utils {
 		String apkVersion = null;
 		// cliking View more Button
 		try {
-			clickOnsettingIcon();
+			clickOnSettingIcon();
 			attachScreen();
 		} catch (Exception e) {
-			clickOnsettingIcon();
+			clickOnSettingIcon();
 			attachScreen();
 		}
 		try {
@@ -1924,12 +2037,176 @@ public class AndroidSettingsScreen extends Utils {
 		navigateBackToFeedCardAndroid();
 		//AppiumFunctions.clickOnBackArrowElement();
 		//AppiumFunctions.clickOnBackArrowElement();
-	/*	FileOutputStream fos = new FileOutputStream(
+		FileOutputStream fos = new FileOutputStream(
 				new File(System.getProperty("user.dir") + "/JenkinsEmailConfig.Properties"));
 		properties.setProperty("AppVersion", apkVersion);
 		properties.store(fos, " App Version read from app and updated");
-		fos.close();*/
+		fos.close();
 
+	}
+	
+	public  void clickOnLogin() throws Exception {
+		System.out.println("Clicking on Login");
+		logStep("Clicking on Login");
+		List<MobileElement> all=Ad.findElementsById("android:id/title");
+		 for(WebElement login:all) {
+			if( login.getAttribute("text").equalsIgnoreCase("Log In")) {
+				new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(login));
+				login.click();
+				 Thread.sleep(5000);
+				 break;
+			 }
+		 }
+	}
+	
+	public void clickOnUPSXProfile() throws Exception {
+		try {
+			System.out.println("Clicking on UPSX profile Icon");
+			logStep("Clicking on UPSX profile Icon");
+			Ad.findElementByAccessibilityId("Setting icon").click();
+			Thread.sleep(10000);
+			if (TestBase.isElementExists(MobileBy.AccessibilityId("Go to Alerts and Notifications"))) {
+				Ad.findElementByAccessibilityId("Setting icon").click();
+			}
+		} catch (Exception e) {
+			Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
+			Thread.sleep(10000);
+		}
+
+	}
+	
+	public  void EmailUPSXLoginUserName(String email) throws Exception {
+		try {
+		System.out.println("entering "+ email);
+		logStep("entering "+ email);
+		Ad.findElementById("com.weather.Weather:id/email_edit_text").sendKeys(email);
+      Thread.sleep(10000);
+		}
+		catch(Exception e) {
+			System.out.println("entering "+ email);
+			logStep("entering "+ email);
+			Ad.findElementById("com.weather.Weather:id/email_edit_text").sendKeys(email);
+	      Thread.sleep(10000);
+		}
+      }
+	
+	public  void EmailUPSXLoginPassword(String password) throws Exception {
+		try {
+		System.out.println("entering "+ password);
+		logStep("entering "+ password);
+		Ad.findElementById("com.weather.Weather:id/password_edit_text").sendKeys(password);
+      Thread.sleep(10000);
+		}
+		catch(Exception e) {
+			System.out.println("entering "+ password);
+			logStep("entering "+ password);
+			Ad.findElementById("com.weather.Weather:id/email_edit_text").sendKeys(password);
+	      Thread.sleep(10000);
+		}
+      }
+	
+	
+	public  void clickOnUPSXloginbutton() throws Exception {
+		try {
+			System.out.println("Clicking on Login button");
+			logStep("Clicking on Login button");
+			Ad.findElementById("com.weather.Weather:id/login_button").click();
+	      Thread.sleep(10000);
+			}
+			catch(Exception e) {
+				System.out.println("Clicking on Login button");
+				logStep("Clicking on Login button");
+				Ad.findElementById("com.weather.Weather:id/login_button").click();
+		      Thread.sleep(10000);
+			}
+	      }
+	
+	
+	
+	public  void logoutfromUPSXAcoount(String email) throws Exception {
+		try {
+		System.out.println("entering "+ email);
+		logStep("entering "+ email);
+		Ad.findElementById("com.weather.Weather:id/email_edit_text").sendKeys(email);
+      Thread.sleep(10000);
+		}
+		catch(Exception e) {
+			System.out.println("entering "+ email);
+			logStep("entering "+ email);
+			Ad.findElementById("com.weather.Weather:id/email_edit_text").sendKeys(email);
+	      Thread.sleep(10000);
+		}
+      }
+	
+	public  void UPSX_login(String email,String password) throws Exception {
+		try {
+			clickOnSettingIcon();
+			attachScreen();
+		} catch (Exception e) {
+			clickOnSettingIcon();
+			attachScreen();
+		}
+		clickOnLogin();
+		attachScreen();
+		EmailUPSXLoginUserName(email);
+		attachScreen();
+	   EmailUPSXLoginPassword(password);
+	   attachScreen();
+	   clickOnUPSXloginbutton();
+	  
+	   try {
+		   navigateBackToFeedCardAndroid(); 
+		   Functions.close_launchAppAndroid();
+	   }catch(Exception e){
+		   Functions.close_launchAppAndroid(); 
+	   }
+	   
+	   attachScreen();
+	}
+
+	public  void UPSX_logout() throws Exception {
+		
+		clickOnUPSXProfile();
+		attachScreen();
+		clickOnUPSXSignOut();
+		 attachScreen();
+		 clickOnUPSXSignOut();
+		 try {
+			   navigateBackToFeedCardAndroid(); 
+			   Functions.close_launchAppAndroid();
+		   }catch(Exception e){
+			   Functions.close_launchAppAndroid(); 
+		   }
+		 attachScreen();
+	}
+	
+	public void clickOnUPSXSignOut() throws Exception {
+		// Functions.verifyElement(ByAccessibilityId("About this App"));
+		try {
+			List<MobileElement> all = Ad.findElementsById("android:id/title");
+			// Thread.sleep(15000);
+			for (WebElement signout : all) {
+				if (signout.getAttribute("text").equalsIgnoreCase("Sign Out")) {
+					//new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(seetingsscreen));
+					//TestBase.waitForElementToBeClickable(Ad, 60, byAboutLabel);
+					signout.click();
+					Thread.sleep(15000);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			List<MobileElement> all = Ad.findElementsByClassName("android.widget.TextView");
+			// Thread.sleep(15000);
+			for (WebElement signout : all) {
+				if (signout.getAttribute("text").equalsIgnoreCase("	Sign Out")) {
+					//new WebDriverWait(Ad, Functions.maxTimeout).until(ExpectedConditions.elementToBeClickable(seetingsscreen));
+					//TestBase.waitForElementToBeClickable(Ad, 60, byAboutLabel);
+					signout.click();
+					Thread.sleep(15000);
+					break;
+		}
+	}
+		}
 	}
 
 }

@@ -15,16 +15,24 @@ import io.qameta.allure.Step;
 
 public class AndroidTodayCardScreen extends Utils {
 	AppiumDriver<MobileElement> Ad;
+	String todayCard_Xpath = "//android.widget.TextView[@text=\"Today's Details\"]";
 	String todayCardDetailsButton_Id = "com.weather.Weather:id/details_button";
 	
-	By byTodayCardDetailsButton = MobileBy.id(todayCardDetailsButton_Id);
 	
+	By byTodayCardDetailsButton = MobileBy.id(todayCardDetailsButton_Id);
+	By byTodayCard = MobileBy.xpath(todayCard_Xpath);
 
 	MobileElement todayCardDetailsButton = null;
-	
+	MobileElement todayCard = null;
 
 	public AndroidTodayCardScreen(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
+	}
+	
+	public void scrollToTodayCard() throws Exception {
+		//aQCard = Ad.findElement(byAirQualityCard);
+		Functions.genericScroll(byTodayCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		//Functions.genericScrollTWC(byFeedOneCard, true, true, getOffsetYTop(), TOLERANCE_FROM_TOP, false, false);
 	}
 
 	@Step("Navigate To Today Card Content Page")

@@ -34,7 +34,7 @@ public class AndroidDailyNavTab extends Utils {
 	String dynamicDailyCell_Xpath = "//android.widget.HorizontalScrollView[@resource-id='com.weather.Weather:id/daily_details_forecast_tab_layout']/android.widget.LinearLayout/android.widget.LinearLayout[@index='";
 	String iDDAd_AccessibilityId = "PROTOTYPE GRIDS FOR IDD - w/CREATIVE";
 	String dailyNavTabTestAd_AccessibilityId = "an ad";
-	String dailyNavTabTestAd_Xpath = "//XCUIElementTypeOther[@name='Ad']";
+	String dailyNavTabTestAd_Xpath = "(//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/ad_view_holder\"]//android.webkit.WebView)[1]";
 	String severeInsightText_Xpath = "//XCUIElementTypeStaticText[@name='Seek  safe shelter immediately. Damaging winds, large hail and tornados very likely.']";
 	
 	
@@ -347,7 +347,8 @@ public class AndroidDailyNavTab extends Utils {
 		if (iMCallResponse == true) {
 			try {
 				//adele = Ad.findElementByAccessibilityId("PROTOTYPE GRIDS FOR IDD - w/CREATIVE");
-				iDDAd = Ad.findElement(byIDDAd);
+				//iDDAd = Ad.findElement(byIDDAd);
+				iDDAd = Ad.findElement(byDailyNavTabTestAd);
 				
 				if (iDDAd.isDisplayed()) {
 					logStep("IDD Ad presented on the page ");
@@ -366,7 +367,8 @@ public class AndroidDailyNavTab extends Utils {
 		} else {
 			try {
 				//adele = Ad.findElementByAccessibilityId("PROTOTYPE GRIDS FOR IDD - w/CREATIVE");
-				iDDAd = Ad.findElement(byIDDAd);
+				//iDDAd = Ad.findElement(byIDDAd);
+				iDDAd = Ad.findElement(byDailyNavTabTestAd);
 				if (iDDAd.isDisplayed()) {
 					logStep("IDD Ad presented on the page when response is false");
 					System.out.println("IDD Ad presented on the page when response is false");
