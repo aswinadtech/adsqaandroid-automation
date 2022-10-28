@@ -2037,7 +2037,11 @@ public  void enterRequiredUserGroup(String usergroup) throws Exception {
 		navigateBackToFeedCardAndroid();
 		//AppiumFunctions.clickOnBackArrowElement();
 		//AppiumFunctions.clickOnBackArrowElement();
+<<<<<<< HEAD
 		FileOutputStream fos = new FileOutputStream(
+=======
+			FileOutputStream fos = new FileOutputStream(
+>>>>>>> 7e2aad892d0a174826fa9bb9b2b15f764aff0c8f
 				new File(System.getProperty("user.dir") + "/JenkinsEmailConfig.Properties"));
 		properties.setProperty("AppVersion", apkVersion);
 		properties.store(fos, " App Version read from app and updated");
