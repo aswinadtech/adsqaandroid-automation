@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1772" started-at="2022-11-13T06:51:47Z" finished-at="2022-11-13T06:51:49Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1772" started-at="2022-11-13T06:51:47Z" finished-at="2022-11-13T06:51:49Z">
+      <class name="com.twc.ios.app.testcases.AndroidSmokeTest">
+        <test-method status="PASS" signature="Validate_Amazon_SDK_adsdk_parameter()[pri:825, instance:com.twc.ios.app.testcases.AndroidSmokeTest@75b3673]" name="Validate_Amazon_SDK_adsdk_parameter" duration-ms="1436" started-at="2022-11-13T12:21:47Z" finished-at="2022-11-13T12:21:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Validate_Amazon_SDK_adsdk_parameter -->
+        <test-method status="PASS" signature="Validate_GMA_SDK_version()[pri:826, instance:com.twc.ios.app.testcases.AndroidSmokeTest@75b3673]" name="Validate_GMA_SDK_version" duration-ms="173" started-at="2022-11-13T12:21:49Z" finished-at="2022-11-13T12:21:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Validate_GMA_SDK_version -->
+      </class> <!-- com.twc.ios.app.testcases.AndroidSmokeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
