@@ -3178,5 +3178,306 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		logStep("****** Gampad Call verification test case Started");
 		Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
 	}
+	
+	
+		/**
+	 * This method enables monthly premium subscription
+	 * @throws Exception
+	 */
+	@Test(priority = 3000, enabled = true)
+	@Description("Verify Premium Subscription")
+	public void enablePremiumSubsription() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Enable Premium Subscription test Started");
+		logStep("****** Enable Premium Subscription test Started");
+		Utils.getCurrentMacIPAddressAndSetandroidProxy(false, true);
+	//Ad.launchApp();
+		Ad.quit();
+	Functions.launchtheAndroidApp();
+		Functions.close_launchAppAndroid();
+	//	Utils.PremiumSubscriptionforMonthly();
+//		TestBase.waitForMilliSeconds(5000);
+//		Ad.launchApp();
+		try {
+			//stScreen.UPSX_login("twcremoveads@gmail.com", "Monocept@123");
+			Utils.PremiumSubscriptionforMonthly();
+			
+		//loginScreen.enableMonthlyPremiumSubscription("twcremoveads@gmail.com", "Monocept@123");
+//			loginScreen.enableYearlyPremiumSubscription("jmktwc4@gmail.com", "300Interstate");
+		} finally {
+			subscriptionFqCapStrtTime = System.nanoTime();
+			start = System.nanoTime();
+			Functions.close_launchAppAndroid();
+			attachScreen();
+								
+			Utils.getCurrentMacIPAddressAndSetandroidProxy(true, true);
+			
+			Ad.launchApp();
+			Ad.terminateApp("com.weather.Weather");
+			System.out.println("App Closed SuccessFully");
+			logStep("App Closed SuccessFully");
+			Ad.launchApp();
+			System.out.println("App Launched SuccessFully");
+			logStep("App Launched SuccessFully");
+			proxy.clearCharlesSession();
+			Functions.close_launchAppAndroid();
+			Functions.put_Background_launchAndroid(10);
+			Functions.archive_folder("Charles");
+			proxy.getXml();
+			Utils.createXMLFileForCharlesSessionFile();
+		}
+		
+	}
+	
+	/**
+	 * This method verifies Lotame call 
+	 * @throws Exception
+	 */
+	@Test(priority = 3001, enabled = true)
+	@Description("Lotame Call verification")
+	public void Verify_Lotame_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** bcp.crwdcntrl.net Call test case Started");
+		logStep("****** bcp.crwdcntrl.net Call test case Started");
+		Utils.verifyAPICal("Smoke", "Lotame", true);
+	}
+
+	/**
+	 * This method verifies FACTUAL call
+	 * @throws Exception
+	 */
+	@Test(priority = 3002, enabled = true)
+	@Description("Factual Call verification")
+	public void Verify_LocationWFXTriggers_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** location.wfxtriggers.com Call test case Started");
+		logStep("location.wfxtriggers.com Call test case Started");
+		Utils.verifyAPICal("Smoke", "LocationWFX", true);
+	}
+	
+	/**
+	 * This method verifies WFXTriggers call
+	 * @throws Exception
+	 */
+	@Test(priority = 3004, enabled = true)
+	@Description("WFXTrigger Call verification")
+	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
+		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
+	}
+	
+	/**
+	 * This method verifies Amazon call
+	 * @throws Exception
+	 */
+	@Test(priority = 3006, enabled = true)
+	@Description("Amazon aax call verification")
+	public void Verify_Amazon_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** amazon-adsystem.com Call test case Started");
+		logStep("****** amazon-adsystem.com Call test case Started");
+		Utils.verify_Amazon_aax_call("Smoke", "Amazon", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Initialization API call
+	 * @throws Exception
+	 */
+	@Test(priority = 3008, enabled = true)
+	@Description("Verify Criteo SDK inapp v2 call")
+	public void Verify_Criteo_SDK_inapp_v2_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+		logStep("****** Criteo SDK inapp/v2 call validation Started");
+		Utils.verifyCriteo_inapp_v2_Call("Smoke", "Criteo", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Bidder API call
+	 * @throws Exception
+	 */
+	@Test(priority = 3009, enabled = true)
+	@Description("Verify Criteo SDK config app call")
+	public void Verify_Criteo_SDK_config_app_Call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK config/app call ====================");
+		System.out.println("****** Criteo SDK config/app call validation Started");
+		logStep("****** Criteo SDK config/app call validation Started");
+		Utils.verifyCriteo_config_app_Call("Smoke", "Criteo", true);
+	}
+
+	/**
+	 * This method verifies NextGen IM gampad call
+	 * @throws Exception
+	 */
+	@Test(priority = 3010, enabled = true)
+	@Description("Verify Gampad Ad Call")
+	public void Verify_Gampad_call_When_Premium_Subscription_Enabled() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Gampad Call verification test case Started");
+		logStep("****** Gampad Call verification test case Started");
+		Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
+	}
+	
+	@Test(priority = 3011, enabled = true)
+	@Description("Verify Premium Subscription Expiry")
+	public void checkPremiumSubsriptionExpiry1() throws Exception {
+		Functions.close_launchAppAndroid();
+		Utils.CancelPremiumSubscription();
+	}
+	
+	/**
+	 * This method verifies whether premium subscription expired or not
+	 * @throws Exception
+	 */
+	@Test(priority = 3012, enabled = true)
+	@Description("Verify Premium Subscription Expiry")
+	public void checkPremiumSubsriptionExpiry() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Premium Subscription Expiry test Started");
+		logStep("****** Premium Subscription Expiry test Started");
+		finish = System.nanoTime();
+		subscriptionFqCapEndTime = System.nanoTime();
+		timeElapsed = finish - start;
+		subscriptionFqtimeElapsed = subscriptionFqCapEndTime - subscriptionFqCapStrtTime;
+		convert = TimeUnit.SECONDS.convert(timeElapsed, TimeUnit.NANOSECONDS);
+		subscriptionFqtimeconvert = TimeUnit.SECONDS.convert(subscriptionFqtimeElapsed,
+				TimeUnit.NANOSECONDS);
+		// System.out.println("Elapsed time is: " + convert);
+		System.out.println("Subscription Frequency Cap Elapsed time is: " + subscriptionFqtimeconvert);
+		
+		if (subscriptionFqtimeconvert >= 305) {
+			System.out.println("Subscription Frequency Cap Elapsed time is: >= 300, hence ads to be displayed, continuing validation");
+		} else {
+			System.out.println("Will be going to for loop due to elapsed time less than 300 s ");
+			logStep("Will be going to forloop due to elapsed time less than 300 s ");
+			for (int i = 0; i <= 300; i++) {
+				TestBase.waitForMilliSeconds(1000);
+				finish = System.nanoTime();
+				subscriptionFqCapEndTime = System.nanoTime();
+
+				timeElapsed = finish - start;
+				subscriptionFqtimeElapsed = subscriptionFqCapEndTime - subscriptionFqCapStrtTime;
+
+				convert = TimeUnit.SECONDS.convert(timeElapsed, TimeUnit.NANOSECONDS);
+				subscriptionFqtimeconvert = TimeUnit.SECONDS.convert(subscriptionFqtimeElapsed,
+						TimeUnit.NANOSECONDS);
+				// System.out.println("Elapsed time is: " + convert);
+				System.out.println(
+						"Subscription Frequency Cap Elapsed time is: " + subscriptionFqtimeconvert);
+				
+				if (subscriptionFqtimeconvert >= 305) {
+					System.out.println("Subscription Frequency Cap Elapsed time is: >= 300, hence ads to be displayed, continuing validation");
+					break;
+				}
+			}
+		}
+		
+		Ad.launchApp();
+		attachScreen();
+		proxy.clearCharlesSession();
+		Functions.close_launchAppAndroid();
+		//Functions.put_Background_launch(10);
+		Functions.archive_folder("Charles");
+		proxy.getXml();
+		Utils.createXMLFileForCharlesSessionFile();
+	}
+	
+	
+	/**
+	 * This method verifies Lotame call 
+	 * @throws Exception
+	 */
+	@Test(priority = 3013, enabled = true)
+	@Description("Lotame Call verification")
+	public void Verify_Lotame_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** bcp.crwdcntrl.net Call test case Started");
+		logStep("****** bcp.crwdcntrl.net Call test case Started");
+		Utils.verifyAPICal("Smoke", "Lotame", true);
+	}
+
+	/**
+	 * This method verifies FACTUAL call
+	 * @throws Exception
+	 */
+	@Test(priority = 3014, enabled = true)
+	@Description("Factual Call verification")
+	public void Verify_LocationWFXTriggers_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** location.wfxtriggers.com Call test case Started");
+		logStep("location.wfxtriggers.com Call test case Started");
+		Utils.verifyAPICal("Smoke", "LocationWFX", true);
+	}
+	
+	/**
+	 * This method verifies WFXTriggers call
+	 * @throws Exception
+	 */
+	@Test(priority = 3015, enabled = true)
+	@Description("WFXTrigger Call verification")
+	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
+		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
+	}
+	
+	/**
+	 * This method verifies Amazon call
+	 * @throws Exception
+	 */
+	@Test(priority = 3016, enabled = true)
+	@Description("Amazon aax call verification")
+	public void Verify_Amazon_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** amazon-adsystem.com Call test case Started");
+		logStep("****** amazon-adsystem.com Call test case Started");
+		Utils.verify_Amazon_aax_call("Smoke", "Amazon", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Initialization API call
+	 * @throws Exception
+	 */
+	@Test(priority = 3018, enabled = true)
+	@Description("Verify Criteo SDK inapp v2 call")
+	public void Verify_Criteo_SDK_inapp_v2_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
+		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
+		logStep("****** Criteo SDK inapp/v2 call validation Started");
+		Utils.verifyCriteo_inapp_v2_Call("Smoke", "Criteo", true);
+	}
+	
+	/**
+	 * This method verifies Criteo Bidder API call
+	 * @throws Exception
+	 */
+	@Test(priority = 3020, enabled = true)
+	@Description("Verify Criteo SDK config app call")
+	public void Verify_Criteo_SDK_config_app_Call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("=========================== Criteo SDK config/app call ====================");
+		System.out.println("****** Criteo SDK config/app call validation Started");
+		logStep("****** Criteo SDK config/app call validation Started");
+		Utils.verifyCriteo_config_app_Call("Smoke", "Criteo", true);
+	}
+
+	/**
+	 * This method verifies NextGen IM gampad call
+	 * @throws Exception
+	 */
+	@Test(priority = 3021, enabled = true)
+	@Description("Verify Gampad Ad Call")
+	public void Verify_Gampad_call_When_Premium_Subscription_Expired() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Gampad Call verification test case Started");
+		logStep("****** Gampad Call verification test case Started");
+		Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
+	}
 
 }
