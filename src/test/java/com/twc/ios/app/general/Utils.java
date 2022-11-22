@@ -13681,21 +13681,21 @@ Thread.sleep(2000);
 		}
 		}
 	
- 	public static void PremiumSubscriptionforMonthly() throws Exception {
+ 		public static void PremiumSubscriptionforMonthly() throws Exception {
  		System.out.println("clicking on Go Premium option");
  		logStep("clicking on Go Premium option");
- 		Ad1.findElementById("com.weather.Weather:id/go_premium_text").click();
+ 		Ad.findElementById("com.weather.Weather:id/go_premium_text").click();
  		Thread.sleep(20000);
  	   attachScreen();
  		System.out.println("Clicking on monthly option");
  		logStep("Clicking on monthly option");
- 		List<MobileElement> subscription=Ad1.findElementsById("com.weather.Weather:id/subscription_price");
+ 		List<MobileElement> subscription=Ad.findElementsById("com.weather.Weather:id/subscription_price");
  		subscription.get(1).click();
  		Thread.sleep(10000);
  	   attachScreen();
  		System.out.println("clicking on subscribe option");
  		logStep("clicking on subscribe option");
- 		List<MobileElement> subscribeids=Ad1.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
+ 		List<MobileElement> subscribeids=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
  		for(WebElement subscribe:subscribeids) {
  			if(subscribe.getText().contains("Subscribe")) {
  				subscribe.click();
@@ -13709,18 +13709,18 @@ Thread.sleep(2000);
  	public static void PremiumSubscriptionforyearly() throws Exception {
  		System.out.println("clicking on Go Premium option");
  		logStep("clicking on Go Premium option");
- 		Ad1.findElementById("com.weather.Weather:id/go_premium_text").click();
+ 		Ad.findElementById("com.weather.Weather:id/go_premium_text").click();
  		Thread.sleep(25000);
  	   attachScreen();
  		System.out.println("Clicking on yearly option");
  		logStep("Clicking on yearly option");
- 		List<MobileElement> subscription=Ad1.findElementsById("com.weather.Weather:id/subscription_price");
+ 		List<MobileElement> subscription=Ad.findElementsById("com.weather.Weather:id/subscription_price");
  		subscription.get(0).click();
  		Thread.sleep(10000);
  	   attachScreen();
  		System.out.println("clicking on subscribe option");
  		logStep("clicking on subscribe option");
- 		List<MobileElement> subscribeids=Ad1.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
+ 		List<MobileElement> subscribeids=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
  		for(WebElement subscribe:subscribeids) {
  			if(subscribe.getText().contains("Subscribe")) {
  				subscribe.click();
@@ -13736,14 +13736,14 @@ Thread.sleep(2000);
  		try {
 			System.out.println("Clicking on Setting Icon");
 			logStep("Clicking on Setting Icon");
-			Ad1.findElementByAccessibilityId("Setting icon").click();
+			Ad.findElementByAccessibilityId("Setting icon").click();
 			Thread.sleep(10000);
 			if (TestBase.isElementExists(MobileBy.AccessibilityId("Go to Alerts and Notifications"))) {
-				Ad1.findElementByAccessibilityId("Setting icon").click();
+				Ad.findElementByAccessibilityId("Setting icon").click();
 				   attachScreen();
 			}
 		} catch (Exception e) {
-			Ad1.findElementById("com.weather.Weather:id/profile_avatar").click();
+			Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
 			Thread.sleep(10000);
 			   attachScreen();
 		}
@@ -13754,18 +13754,18 @@ Thread.sleep(2000);
     attachScreen();
  	System.out.println("Clcking on manage subscription on premium page");
  	logStep("Clcking on manage subscription on premium page");
- 	Ad1.findElementById("com.weather.Weather:id/manage_sub_link").click();
+ 	Ad.findElementById("com.weather.Weather:id/manage_sub_link").click();
  	Thread.sleep(10000);
     attachScreen();
  	System.out.println("clicking on weather logo");
  	logStep("clicking on weather logo");
- 	List<MobileElement> Susbcriptions=Ad1.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
+ 	List<MobileElement> Susbcriptions=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
  	Susbcriptions.get(3).click();
  	Thread.sleep(10000);
     attachScreen();
  	System.out.println("clicking on cancel subscrition");
  	logStep("clicking on cancel subscrition");
- 	List<MobileElement> unsubscribe=Ad1.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
+ 	List<MobileElement> unsubscribe=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
 		for(WebElement subscribe:unsubscribe) {
 			if(subscribe.getText().contains("Cancel subscription")) {
 				subscribe.click();
@@ -13777,7 +13777,7 @@ Thread.sleep(2000);
     attachScreen();
  	System.out.println("selecting option for what's making you cancel");
  	logStep("selecting option for what's making you cancel");
- 	List<MobileElement> options=Ad1.findElementsByClassName("android.widget.RadioButton");
+ 	List<MobileElement> options=Ad.findElementsByClassName("android.widget.RadioButton");
  	for(WebElement option:options) {
 		if(option.getText().contains("Decline to answer")) {
 			option.click();
@@ -13789,7 +13789,7 @@ Thread.sleep(2000);
     attachScreen();
  	System.out.println("clicking on continue");
  	logStep("clicking on continue");
- 	List<MobileElement> Continue=Ad1.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
+ 	List<MobileElement> Continue=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
 	for(WebElement subscribe:Continue) {
 		if(subscribe.getText().contains("Continue")) {
 			subscribe.click();
@@ -13801,7 +13801,7 @@ Thread.sleep(2000);
     attachScreen();
  	System.out.println("clciking on cancel subscription");
  	logStep("clciking on cancel subscription");
- 	List<MobileElement> cancel=Ad1.findElementsByClassName("android.widget.Button");
+ 	List<MobileElement> cancel=Ad.findElementsByClassName("android.widget.Button");
 	for(WebElement option:cancel) {
 		if(option.getText().contains("Cancel subscription")) {
 			option.click();
@@ -13814,5 +13814,6 @@ Thread.sleep(2000);
  	
  	
  	}
+
 
 }
