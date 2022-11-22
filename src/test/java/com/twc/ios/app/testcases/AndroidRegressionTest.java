@@ -2895,7 +2895,7 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 	}
 	
 	
-		/**
+	/**
 	 * This method enables monthly premium subscription
 	 * @throws Exception
 	 */
@@ -2908,7 +2908,8 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		Utils.getCurrentMacIPAddressAndSetandroidProxy(false, true);
 	//Ad.launchApp();
 		Ad.quit();
-	Functions.launchtheAndroidApp();
+	//	Ad.resetApp();
+Functions.launchtheAndroidApp();
 		Functions.close_launchAppAndroid();
 	//	Utils.PremiumSubscriptionforMonthly();
 //		TestBase.waitForMilliSeconds(5000);
@@ -2926,8 +2927,12 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 			attachScreen();
 								
 			Utils.getCurrentMacIPAddressAndSetandroidProxy(true, true);
-			
-			Ad.launchApp();
+			Ad.quit();
+			Functions.launchtheAndroidApp();
+			//	Ad.resetApp();
+		Functions.launchtheAndroidApp();
+				Functions.close_launchAppAndroid();
+		//	Ad.launchApp();
 			Ad.terminateApp("com.weather.Weather");
 			System.out.println("App Closed SuccessFully");
 			logStep("App Closed SuccessFully");
@@ -2943,6 +2948,7 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		}
 		
 	}
+	
 	
 	/**
 	 * This method verifies Lotame call 
@@ -3038,8 +3044,8 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 	}
 	
 	@Test(priority = 3011, enabled = true)
-	@Description("Verify Premium Subscription Expiry")
-	public void checkPremiumSubsriptionExpiry1() throws Exception {
+	@Description("Verify Premium Monthly Subscription Expiry")
+	public void checkPremiumSubsriptionMonthlyExpiry() throws Exception {
 		Functions.close_launchAppAndroid();
 		Utils.CancelPremiumSubscription();
 	}
