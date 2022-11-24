@@ -13695,11 +13695,15 @@ Thread.sleep(2000);
  	   attachScreen();
  		System.out.println("clicking on subscribe option");
  		logStep("clicking on subscribe option");
+ 
  		List<MobileElement> subscribeids=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
  		for(WebElement subscribe:subscribeids) {
  			if(subscribe.getText().contains("Subscribe")) {
+ 			
  				subscribe.click();
  				Thread.sleep(20000);
+ 				break;
+ 				
  			}
  		}
  		Thread.sleep(10000);
@@ -13749,7 +13753,8 @@ Thread.sleep(2000);
 		}
  	System.out.println("Clciking on Manage Subscription");
  	logStep("Clciking on Manage Subscription");
- 	clickRequiredElementonSettingsapp("Manage Subscription");
+ 	clickRequiredElementonwetherapp("Manage Subscription");
+ 	//clickRequiredElementonSettingsapp("Manage Subscription");
  	Thread.sleep(10000);
     attachScreen();
  	System.out.println("Clcking on manage subscription on premium page");
