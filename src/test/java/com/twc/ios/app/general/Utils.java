@@ -13819,6 +13819,47 @@ Thread.sleep(2000);
  	
  	
  	}
+	
+	public static void clickRequiredElementonwetherapp(String name) throws Exception {
+		String[] options = name.split("\\|\\|");
+		
+		try {
+
+			
+			List<MobileElement> searchelements = Ad
+					.findElementsByXPath("//android.widget.TextView[@resource-id=\"android:id/title\"]");
+			outerloop:
+			for (int i = 0; i < options.length; i++) {
+				for (WebElement search : searchelements) {
+					//System.out.println(search.getAttribute("text"));
+					//System.out.println(options[i].trim());
+					
+					if (search.getAttribute("text").contains(options[i].trim())) {
+						// if(search.getText().contains(name)) {
+						search.click();
+						Thread.sleep(5000);
+						break outerloop;
+
+					}
+				}
+			}
+
+		} catch (Exception e) {
+		//	e.printStackTrace();
+			List<MobileElement> searchelements = Ad.findElementsByClassName("android.widget.TextView");
+			outerloop:
+			for (int i = 0; i < options.length; i++) {
+				for (WebElement search : searchelements) {
+					if (search.getAttribute("text").contains(options[i].trim())) {
+						search.click();
+						Thread.sleep(5000);
+						break outerloop;
+
+					}
+				}
+			}
+		}
+	}
 
 
 }
