@@ -13381,36 +13381,35 @@ public class Utils extends Functions {
 	
 	public static void clickRequiredElementonSettingsapp(String name) throws Exception {
 		String[] options = name.split("\\|\\|");
-		
+
 		try {
 
-			
 			List<MobileElement> searchelements = Ad1
 					.findElementsByXPath("//android.widget.TextView[@resource-id=\"android:id/title\"]");
-			for (int i = 0; i < options.length; i++) {
+			outerloop: for (int i = 0; i < options.length; i++) {
 				for (WebElement search : searchelements) {
-					//System.out.println(search.getAttribute("text"));
-					//System.out.println(options[i].trim());
-					
+					// System.out.println(search.getAttribute("text"));
+					// System.out.println(options[i].trim());
+
 					if (search.getAttribute("text").contains(options[i].trim())) {
 						// if(search.getText().contains(name)) {
 						search.click();
 						Thread.sleep(5000);
-						break;
+						break outerloop;
 
 					}
 				}
 			}
 
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 			List<MobileElement> searchelements = Ad1.findElementsByClassName("android.widget.TextView");
-			for (int i = 0; i < options.length; i++) {
+			outerloop: for (int i = 0; i < options.length; i++) {
 				for (WebElement search : searchelements) {
 					if (search.getAttribute("text").contains(options[i].trim())) {
 						search.click();
 						Thread.sleep(5000);
-						break;
+						break outerloop;
 
 					}
 				}
@@ -13537,7 +13536,7 @@ public class Utils extends Functions {
 				logStep("Save button not displayed");
 			}
 		}
-Thread.sleep(2000);
+		Thread.sleep(2000);
 		
 		try {
 			//Ad.closeApp();
@@ -13680,186 +13679,6 @@ Thread.sleep(2000);
 			logStep("Failed to close System app ");
 		}
 		}
-	
- 		public static void PremiumSubscriptionforMonthly() throws Exception {
- 		System.out.println("clicking on Go Premium option");
- 		logStep("clicking on Go Premium option");
- 		Ad.findElementById("com.weather.Weather:id/go_premium_text").click();
- 		Thread.sleep(20000);
- 	   attachScreen();
- 		System.out.println("Clicking on monthly option");
- 		logStep("Clicking on monthly option");
- 		List<MobileElement> subscription=Ad.findElementsById("com.weather.Weather:id/subscription_price");
- 		subscription.get(1).click();
- 		Thread.sleep(10000);
- 	   attachScreen();
- 		System.out.println("clicking on subscribe option");
- 		logStep("clicking on subscribe option");
- 
- 		List<MobileElement> subscribeids=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
- 		for(WebElement subscribe:subscribeids) {
- 			if(subscribe.getText().contains("Subscribe")) {
- 			
- 				subscribe.click();
- 				Thread.sleep(20000);
- 				break;
- 				
- 			}
- 		}
- 		Thread.sleep(10000);
- 	   attachScreen();		
- 	}
- 	
- 	public static void PremiumSubscriptionforyearly() throws Exception {
- 		System.out.println("clicking on Go Premium option");
- 		logStep("clicking on Go Premium option");
- 		Ad.findElementById("com.weather.Weather:id/go_premium_text").click();
- 		Thread.sleep(25000);
- 	   attachScreen();
- 		System.out.println("Clicking on yearly option");
- 		logStep("Clicking on yearly option");
- 		List<MobileElement> subscription=Ad.findElementsById("com.weather.Weather:id/subscription_price");
- 		subscription.get(0).click();
- 		Thread.sleep(10000);
- 	   attachScreen();
- 		System.out.println("clicking on subscribe option");
- 		logStep("clicking on subscribe option");
- 		List<MobileElement> subscribeids=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
- 		for(WebElement subscribe:subscribeids) {
- 			if(subscribe.getText().contains("Subscribe")) {
- 				subscribe.click();
- 				Thread.sleep(20000);
- 			}
- 		}
- 	   attachScreen();
- 		
- 	}
-	
- 	
- 	public static void CancelPremiumSubscription() throws Exception {
- 		try {
-			System.out.println("Clicking on Setting Icon");
-			logStep("Clicking on Setting Icon");
-			Ad.findElementByAccessibilityId("Setting icon").click();
-			Thread.sleep(10000);
-			if (TestBase.isElementExists(MobileBy.AccessibilityId("Go to Alerts and Notifications"))) {
-				Ad.findElementByAccessibilityId("Setting icon").click();
-				   attachScreen();
-			}
-		} catch (Exception e) {
-			Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
-			Thread.sleep(10000);
-			   attachScreen();
-		}
- 	System.out.println("Clciking on Manage Subscription");
- 	logStep("Clciking on Manage Subscription");
- 	clickRequiredElementonwetherapp("Manage Subscription");
- 	//clickRequiredElementonSettingsapp("Manage Subscription");
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("Clcking on manage subscription on premium page");
- 	logStep("Clcking on manage subscription on premium page");
- 	Ad.findElementById("com.weather.Weather:id/manage_sub_link").click();
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("clicking on weather logo");
- 	logStep("clicking on weather logo");
- 	List<MobileElement> Susbcriptions=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
- 	Susbcriptions.get(3).click();
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("clicking on cancel subscrition");
- 	logStep("clicking on cancel subscrition");
- 	List<MobileElement> unsubscribe=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
-		for(WebElement subscribe:unsubscribe) {
-			if(subscribe.getText().contains("Cancel subscription")) {
-				subscribe.click();
-				Thread.sleep(20000);
-				break;
-			}
-		}
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("selecting option for what's making you cancel");
- 	logStep("selecting option for what's making you cancel");
- 	List<MobileElement> options=Ad.findElementsByClassName("android.widget.RadioButton");
- 	for(WebElement option:options) {
-		if(option.getText().contains("Decline to answer")) {
-			option.click();
-			Thread.sleep(20000);
-			break;
-		}
-	}
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("clicking on continue");
- 	logStep("clicking on continue");
- 	List<MobileElement> Continue=Ad.findElementsById("com.android.vending:id/0_resource_name_obfuscated");
-	for(WebElement subscribe:Continue) {
-		if(subscribe.getText().contains("Continue")) {
-			subscribe.click();
-			Thread.sleep(20000);
-			break;
-		}
-	}
- 	Thread.sleep(10000);
-    attachScreen();
- 	System.out.println("clciking on cancel subscription");
- 	logStep("clciking on cancel subscription");
- 	List<MobileElement> cancel=Ad.findElementsByClassName("android.widget.Button");
-	for(WebElement option:cancel) {
-		if(option.getText().contains("Cancel subscription")) {
-			option.click();
-			Thread.sleep(20000);
-			attachScreen();
-			break;
-		}
-	}
-   
- 	
- 	
- 	}
-	
-	public static void clickRequiredElementonwetherapp(String name) throws Exception {
-		String[] options = name.split("\\|\\|");
-		
-		try {
-
-			
-			List<MobileElement> searchelements = Ad
-					.findElementsByXPath("//android.widget.TextView[@resource-id=\"android:id/title\"]");
-			outerloop:
-			for (int i = 0; i < options.length; i++) {
-				for (WebElement search : searchelements) {
-					//System.out.println(search.getAttribute("text"));
-					//System.out.println(options[i].trim());
-					
-					if (search.getAttribute("text").contains(options[i].trim())) {
-						// if(search.getText().contains(name)) {
-						search.click();
-						Thread.sleep(5000);
-						break outerloop;
-
-					}
-				}
-			}
-
-		} catch (Exception e) {
-		//	e.printStackTrace();
-			List<MobileElement> searchelements = Ad.findElementsByClassName("android.widget.TextView");
-			outerloop:
-			for (int i = 0; i < options.length; i++) {
-				for (WebElement search : searchelements) {
-					if (search.getAttribute("text").contains(options[i].trim())) {
-						search.click();
-						Thread.sleep(5000);
-						break outerloop;
-
-					}
-				}
-			}
-		}
-	}
-
+	 		
 
 }
