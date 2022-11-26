@@ -574,9 +574,7 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 				properties.getProperty("IMASDKVersion"));
 
 	}
-	
-	
-	
+			
 	@Test(priority = 250,   enabled = true)
 	@Description("Segment Parameter Verificatiion when background launch the app from hourly tab")
 	public void seg_Parameter_Verification_When_Navigated_To_Hourly_Tab() throws Exception {
@@ -2894,7 +2892,7 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
 	}
 	
-/**
+	/**
 	 * This method enables monthly premium subscription
 	 * @throws Exception
 	 */
@@ -2905,17 +2903,17 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		System.out.println("****** Enable Premium Subscription test Started");
 		logStep("****** Enable Premium Subscription test Started");
 		Utils.getCurrentMacIPAddressAndSetandroidProxy(false, true);
-//	Ad.launchApp();
+	//Ad.launchApp();
 		Ad.quit();
 	//	Ad.resetApp();
-Functions.launchtheAndroidApp();
+		Functions.launchtheAndroidApp();
 		Functions.close_launchAppAndroid();
 	//	Utils.PremiumSubscriptionforMonthly();
 //		TestBase.waitForMilliSeconds(5000);
 //		Ad.launchApp();
 		try {
 			//stScreen.UPSX_login("twcremoveads@gmail.com", "Monocept@123");
-			Utils.PremiumSubscriptionforMonthly();
+			loginScreen.enableMonthlyPremiumSubscription();
 			
 		//loginScreen.enableMonthlyPremiumSubscription("twcremoveads@gmail.com", "Monocept@123");
 //			loginScreen.enableYearlyPremiumSubscription("jmktwc4@gmail.com", "300Interstate");
@@ -2929,8 +2927,8 @@ Functions.launchtheAndroidApp();
 			Ad.quit();
 			Functions.launchtheAndroidApp();
 			//	Ad.resetApp();
-		Functions.launchtheAndroidApp();
-				Functions.close_launchAppAndroid();
+			Functions.launchtheAndroidApp();
+			Functions.close_launchAppAndroid();
 		//	Ad.launchApp();
 			Ad.terminateApp("com.weather.Weather");
 			System.out.println("App Closed SuccessFully");
@@ -2954,7 +2952,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3002, enabled = true)
 	@Description("Lotame Call verification")
-	public void Verify_Lotame_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_Lotame_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** bcp.crwdcntrl.net Call test case Started");
 		logStep("****** bcp.crwdcntrl.net Call test case Started");
@@ -2967,7 +2965,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3004, enabled = true)
 	@Description("Factual Call verification")
-	public void Verify_LocationWFXTriggers_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_LocationWFXTriggers_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** location.wfxtriggers.com Call test case Started");
 		logStep("location.wfxtriggers.com Call test case Started");
@@ -2980,7 +2978,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3006, enabled = true)
 	@Description("WFXTrigger Call verification")
-	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
 		logStep("****** triggers.wfxtriggers.com Call test case Started");
@@ -2993,7 +2991,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3008, enabled = true)
 	@Description("Amazon aax call verification")
-	public void Verify_Amazon_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_Amazon_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** amazon-adsystem.com Call test case Started");
 		logStep("****** amazon-adsystem.com Call test case Started");
@@ -3006,7 +3004,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3010, enabled = true)
 	@Description("Verify Criteo SDK inapp v2 call")
-	public void Verify_Criteo_SDK_inapp_v2_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_Criteo_SDK_inapp_v2_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("=========================== Criteo SDK inapp/v2 call ====================");
 		System.out.println("****** Criteo SDK inapp/v2 call validation Started");
@@ -3020,7 +3018,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3012, enabled = true)
 	@Description("Verify Criteo SDK config app call")
-	public void Verify_Criteo_SDK_config_app_Call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_Criteo_SDK_config_app_Call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("=========================== Criteo SDK config/app call ====================");
 		System.out.println("****** Criteo SDK config/app call validation Started");
@@ -3034,7 +3032,7 @@ Functions.launchtheAndroidApp();
 	 */
 	@Test(priority = 3014, enabled = true)
 	@Description("Verify Gampad Ad Call")
-	public void Verify_Gampad_call_When_Premium_Subscription_Enabled() throws Exception {
+	public void Verify_Gampad_call_When_Premium_Subscription_Monthly_Enabled() throws Exception {
 		System.out.println("==============================================");
 		System.out.println("****** Gampad Call verification test case Started");
 		logStep("****** Gampad Call verification test case Started");
@@ -3055,8 +3053,8 @@ Functions.launchtheAndroidApp();
 		Utils.getCurrentMacIPAddressAndSetandroidProxy(false, true);
 		//Ad.quit();
 		Functions.launchtheAndroidApp();
-Functions.close_launchAppAndroid();	
-		Utils.CancelPremiumSubscription();
+		Functions.close_launchAppAndroid();	
+		loginScreen.CancelPremiumSubscription();
 		System.out.println("****** Waiting for five minutes after cancelled the premium subsctption");
 		logStep("****** Waiting for five minutes after cancelled the premium subsctption");
 		TestBase.waitForMilliSeconds(240000);
@@ -3202,6 +3200,5 @@ Functions.close_launchAppAndroid();
 		logStep("****** Gampad Call verification test case Started");
 		Utils.verify_Gampad_adcall("Smoke", "Gampad", true);
 	}
-	
 
 }
