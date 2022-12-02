@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="18" total="97" passed="79">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2970787" started-at="2022-12-02T09:23:26Z" finished-at="2022-12-02T10:12:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2970787" started-at="2022-12-02T09:23:26Z" finished-at="2022-12-02T10:12:57Z">
+      <class name="com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="beforeClass" is-config="true" duration-ms="30188" started-at="2022-12-02T14:53:26Z" finished-at="2022-12-02T14:53:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="preConditionsTest_for_VIRGINIA()[pri:0, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="preConditionsTest_for_VIRGINIA" duration-ms="260642" started-at="2022-12-02T14:53:56Z" finished-at="2022-12-02T14:58:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preConditionsTest_for_VIRGINIA -->
+        <test-method status="PASS" signature="verify_enabling_Privacy_optin_for_VIRGINIA()[pri:10, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_enabling_Privacy_optin_for_VIRGINIA" duration-ms="247305" started-at="2022-12-02T14:58:17Z" finished-at="2022-12-02T15:02:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_enabling_Privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optin_for_VIRGINIA()[pri:11, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optin_for_VIRGINIA" duration-ms="96812" started-at="2022-12-02T15:02:24Z" finished-at="2022-12-02T15:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optin_for_VIRGINIA()[pri:19, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optin_for_VIRGINIA" duration-ms="123" started-at="2022-12-02T15:04:01Z" finished-at="2022-12-02T15:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="verify_Daily_details_call_sod_val_privacy_optin_for_VIRGINIA()[pri:21, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_Daily_details_call_sod_val_privacy_optin_for_VIRGINIA" duration-ms="98" started-at="2022-12-02T15:04:01Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Daily_details_call_sod_val_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_for_VIRGINIA()[pri:26, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_for_VIRGINIA" duration-ms="88" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Lotame_call_privacy_optin_for_VIRGINIA()[pri:38, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_call_privacy_optin_for_VIRGINIA" duration-ms="74" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_call_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optin_for_VIRGINIA()[pri:39, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optin_for_VIRGINIA" duration-ms="58" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_WFXTriggers_Call_privacy_optin_for_VIRGINIA()[pri:40, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_WFXTriggers_Call_privacy_optin_for_VIRGINIA" duration-ms="57" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_WFXTriggers_Call_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optin_for_VIRGINIA()[pri:42, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optin_for_VIRGINIA" duration-ms="48" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optin_for_VIRGINIA()[pri:51, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optin_for_VIRGINIA" duration-ms="49" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optin_for_VIRGINIA()[pri:52, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optin_for_VIRGINIA" duration-ms="60" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optin_for_VIRGINIA -->
+        <test-method status="FAIL" signature="derive_VideoCall_IU_when_Privacy_optin_for_VIRGINIA()[pri:75, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optin_for_VIRGINIA" duration-ms="79727" started-at="2022-12-02T15:04:02Z" finished-at="2022-12-02T15:05:22Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call not found in charles session]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call not found in charles session
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.get_iu_value_of_Feedcall(Utils.java:9783)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.derive_VideoCall_IU_when_Privacy_optin_for_VIRGINIA(AndroidVIRGINIAPrivacyTest.java:400)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optin_for_VIRGINIA -->
+        <test-method status="FAIL" signature="verify_PrerollAd_call_sod_val_privacy_optin_for_VIRGINIA()[pri:76, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optin_for_VIRGINIA" duration-ms="79" started-at="2022-12-02T15:05:22Z" finished-at="2022-12-02T15:05:22Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_custom_param_val_of_gampad(Utils.java:9208)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.verify_PrerollAd_call_sod_val_privacy_optin_for_VIRGINIA(AndroidVIRGINIAPrivacyTest.java:410)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optin_for_VIRGINIA -->
+        <test-method status="FAIL" signature="validate_PrerollVideo_call_rdp_val_privacy_optin_for_VIRGINIA()[pri:77, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optin_for_VIRGINIA" duration-ms="86" started-at="2022-12-02T15:05:22Z" finished-at="2022-12-02T15:05:22Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_rdp_val_in_gampad_url(Utils.java:3266)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_PrerollVideo_call_rdp_val_privacy_optin_for_VIRGINIA(AndroidVIRGINIAPrivacyTest.java:421)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optin_for_VIRGINIA -->
+        <test-method status="PASS" signature="verify_enabling_Privacy_optout_for_VIRGINIA()[pri:101, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_enabling_Privacy_optout_for_VIRGINIA" duration-ms="252952" started-at="2022-12-02T15:05:22Z" finished-at="2022-12-02T15:09:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_enabling_Privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA()[pri:102, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA" duration-ms="66734" started-at="2022-12-02T15:09:35Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA()[pri:105, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA" duration-ms="44" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="verify_Daily_details_call_sod_val_privacy_optout_for_VIRGINIA()[pri:107, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_Daily_details_call_sod_val_privacy_optout_for_VIRGINIA" duration-ms="51" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Daily_details_call_sod_val_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA()[pri:111, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA" duration-ms="56" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA()[pri:131, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA" duration-ms="62" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA()[pri:132, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA" duration-ms="41" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_WFXTriggers_Call_privacy_optout_for_VIRGINIA()[pri:133, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_WFXTriggers_Call_privacy_optout_for_VIRGINIA" duration-ms="41" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_WFXTriggers_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA()[pri:135, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA" duration-ms="48" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA()[pri:140, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA" duration-ms="44" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA()[pri:141, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA" duration-ms="47" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:10:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA()[pri:175, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA" duration-ms="79926" started-at="2022-12-02T15:10:42Z" finished-at="2022-12-02T15:12:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA()[pri:176, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA" duration-ms="284" started-at="2022-12-02T15:12:02Z" finished-at="2022-12-02T15:12:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA()[pri:177, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA" duration-ms="240148" started-at="2022-12-02T15:12:02Z" finished-at="2022-12-02T15:16:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA -->
+        <test-method status="PASS" signature="enable_PreConfiguration_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:200, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="enable_PreConfiguration_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="138360" started-at="2022-12-02T15:16:03Z" finished-at="2022-12-02T15:18:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enable_PreConfiguration_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:201, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="65738" started-at="2022-12-02T15:18:21Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:210, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="24" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:213, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="24" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:231, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="22" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:232, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="27" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:235, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="25" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:241, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="26" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:250, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="23" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:251, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="25" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:19:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="FAIL" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:275, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="80448" started-at="2022-12-02T15:19:27Z" finished-at="2022-12-02T15:20:47Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call not found in charles session]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call not found in charles session
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.get_iu_value_of_Feedcall(Utils.java:9783)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:846)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="FAIL" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:276, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="82" started-at="2022-12-02T15:20:47Z" finished-at="2022-12-02T15:20:48Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_custom_param_val_of_gampad(Utils.java:9208)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:857)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:277, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="92" started-at="2022-12-02T15:20:48Z" finished-at="2022-12-02T15:20:48Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_npa_val_in_gampad_url(Utils.java:3359)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:868)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario()[pri:278, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario" duration-ms="80" started-at="2022-12-02T15:20:48Z" finished-at="2022-12-02T15:20:48Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_rdp_val_in_gampad_url(Utils.java:3266)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:881)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LGPD_Travel_Scenario -->
+        <test-method status="PASS" signature="enable_PreConfiguration_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:300, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="enable_PreConfiguration_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="60540" started-at="2022-12-02T15:20:48Z" finished-at="2022-12-02T15:21:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enable_PreConfiguration_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:301, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="65917" started-at="2022-12-02T15:21:48Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:310, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="28" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:313, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="27" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:331, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="24" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:332, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="27" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:335, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="23" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:341, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="25" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:350, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="20" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:351, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="28" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:22:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:375, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="85458" started-at="2022-12-02T15:22:54Z" finished-at="2022-12-02T15:24:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:376, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="241" started-at="2022-12-02T15:24:20Z" finished-at="2022-12-02T15:24:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:377, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="120" started-at="2022-12-02T15:24:20Z" finished-at="2022-12-02T15:24:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario()[pri:378, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario" duration-ms="240116" started-at="2022-12-02T15:24:20Z" finished-at="2022-12-02T15:28:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_GDPR_Travel_Scenario -->
+        <test-method status="PASS" signature="enable_PreConfiguration_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:400, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="enable_PreConfiguration_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="63384" started-at="2022-12-02T15:28:20Z" finished-at="2022-12-02T15:29:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enable_PreConfiguration_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:401, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="66154" started-at="2022-12-02T15:29:24Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:410, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="191" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:413, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="26" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:431, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="30" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:432, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="33" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:435, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="36" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:441, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="41" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:450, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="50" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:451, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="39" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:30:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="FAIL" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:475, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="79770" started-at="2022-12-02T15:30:30Z" finished-at="2022-12-02T15:31:50Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call not found in charles session]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call not found in charles session
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.get_iu_value_of_Feedcall(Utils.java:9783)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1310)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="FAIL" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:476, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="104" started-at="2022-12-02T15:31:50Z" finished-at="2022-12-02T15:31:50Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_custom_param_val_of_gampad(Utils.java:9208)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1321)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:477, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="135" started-at="2022-12-02T15:31:50Z" finished-at="2022-12-02T15:31:50Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_npa_val_in_gampad_url(Utils.java:3359)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1332)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario()[pri:478, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario" duration-ms="121" started-at="2022-12-02T15:31:50Z" finished-at="2022-12-02T15:31:50Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at com.twc.ios.app.general.Utils.validate_rdp_val_in_gampad_url(Utils.java:3266)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_SERBIA_Travel_Scenario -->
+        <test-method status="PASS" signature="enable_PreConfiguration_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:500, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="enable_PreConfiguration_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="61255" started-at="2022-12-02T15:31:51Z" finished-at="2022-12-02T15:32:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enable_PreConfiguration_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:501, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="66184" started-at="2022-12-02T15:32:52Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:510, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="32" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:513, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="42" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:531, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="42" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:532, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="56" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:535, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="32" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:541, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="31" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:550, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="52" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:551, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="35" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:33:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="FAIL" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:575, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="80778" started-at="2022-12-02T15:33:58Z" finished-at="2022-12-02T15:35:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call not found in charles session]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call not found in charles session
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.get_iu_value_of_Feedcall(Utils.java:9783)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1541)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="FAIL" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:576, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="9" started-at="2022-12-02T15:35:19Z" finished-at="2022-12-02T15:35:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call :null not found in charles session, hence Custom Parameter: sod validation skipped]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call :null not found in charles session, hence Custom Parameter: sod validation skipped
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.validate_custom_param_val_of_gampad(Utils.java:9230)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1553)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:577, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="7" started-at="2022-12-02T15:35:19Z" finished-at="2022-12-02T15:35:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null ad call is not present]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null ad call is not present
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.validate_npa_val_in_gampad_url(Utils.java:3403)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1564)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_Video_call_npa_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario()[pri:578, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario" duration-ms="11" started-at="2022-12-02T15:35:19Z" finished-at="2022-12-02T15:35:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null ad call is not present]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null ad call is not present
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.validate_rdp_val_in_gampad_url(Utils.java:3310)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_LATAMCO_Travel_Scenario -->
+        <test-method status="PASS" signature="enable_PreConfiguration_for_VIRGINIA_To_USA_Travel_Scenario()[pri:800, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="enable_PreConfiguration_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="69468" started-at="2022-12-02T15:35:19Z" finished-at="2022-12-02T15:36:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enable_PreConfiguration_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:801, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="66159" started-at="2022-12-02T15:36:29Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_To_Feed_Cards_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:810, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="49" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_Adcall_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:813, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="50" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Amazon_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:831, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="44" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Lotame_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:832, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="43" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_LocationWFXTriggers_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:835, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="48" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_NextGen_IM_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:850, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="55" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_inapp_v2_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:851, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="48" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:37:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Criteo_SDK_config_app_Call_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="FAIL" signature="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:875, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="80990" started-at="2022-12-02T15:37:35Z" finished-at="2022-12-02T15:38:56Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call not found in charles session]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call not found in charles session
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.get_iu_value_of_Feedcall(Utils.java:9783)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- derive_VideoCall_IU_when_Privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="FAIL" signature="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:876, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="6" started-at="2022-12-02T15:38:56Z" finished-at="2022-12-02T15:38:56Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ad Call :null not found in charles session, hence Custom Parameter: sod validation skipped]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ad Call :null not found in charles session, hence Custom Parameter: sod validation skipped
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.validate_custom_param_val_of_gampad(Utils.java:9230)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1775)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_PrerollAd_call_sod_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="FAIL" signature="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario()[pri:878, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario" duration-ms="7" started-at="2022-12-02T15:38:56Z" finished-at="2022-12-02T15:38:56Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null ad call is not present]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null ad call is not present
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.twc.ios.app.general.Utils.validate_rdp_val_in_gampad_url(Utils.java:3310)
+	at com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest.validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario(AndroidVIRGINIAPrivacyTest.java:1788)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_PrerollVideo_call_rdp_val_privacy_optout_for_VIRGINIA_To_USA_Travel_Scenario -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest@4b2d44bc]" name="afterClass" is-config="true" duration-ms="240596" started-at="2022-12-02T15:38:56Z" finished-at="2022-12-02T15:42:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

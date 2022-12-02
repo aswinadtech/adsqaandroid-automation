@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE charles-session SYSTEM "https://www.charlesproxy.com/dtd/charles-session-1_2.dtd">
+
+<charles-session>
+<transaction status="EXCEPTION" method="CONNECT" protocolVersion="HTTP/1.1" protocol="https" host="graph.fbpigeon.com" actualPort="443" remoteAddress="graph.fbpigeon.com/34.228.203.98" clientAddress="/192.168.1.7" clientPort="34646" startTime="2022-12-02T15:38:14.788+05:30" startTimeMillis="1669975694788" dnsDuration="1" connectDuration="256" sslDuration="270" totalSize="1074">
+<ssl protocol="TLSv1.2" cipherSuite="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256" />
+<alpn protocol="h2" />
+<request handshake="720" headers="0" body="0">
+<headers>
+<first-line><![CDATA[CONNECT graph.fbpigeon.com:443 HTTP/1.1]]></first-line>
+<header>
+<name>Host</name>
+<value>graph.fbpigeon.com:443</value></header>
+<header>
+<name>Connection</name>
+<value>keep-alive</value></header></headers></request>
+<response status="200" handshake="354" headers="0" body="0">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 Connection established]]></first-line></headers></response></transaction>
+<transaction status="EXCEPTION" method="CONNECT" protocolVersion="HTTP/1.1" protocol="https" host="youtubei.googleapis.com" actualPort="443" remoteAddress="youtubei.googleapis.com/142.250.196.42" clientAddress="/192.168.1.7" clientPort="34650" startTime="2022-12-02T15:38:49.868+05:30" startTimeMillis="1669975729868" dnsDuration="1" connectDuration="18" sslDuration="18" totalSize="1104">
+<ssl protocol="TLSv1.2" cipherSuite="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" />
+<alpn protocol="h2" />
+<request handshake="732" headers="0" body="0">
+<headers>
+<first-line><![CDATA[CONNECT youtubei.googleapis.com:443 HTTP/1.1]]></first-line>
+<header>
+<name>Host</name>
+<value>youtubei.googleapis.com:443</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>keep-alive</value></header>
+<header>
+<name>User-Agent</name>
+<value>com.google.android.youtube/1532882368 (Linux; U; Android 10; en_US; SM-G965F; Build/QP1A.190711.020; Cronet/107.0.5284.2)</value></header></headers></request>
+<response status="200" handshake="372" headers="0" body="0">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 Connection established]]></first-line></headers></response></transaction>
+<transaction status="EXCEPTION" method="CONNECT" protocolVersion="HTTP/1.1" protocol="https" host="youtubei.googleapis.com" actualPort="443" remoteAddress="youtubei.googleapis.com/142.250.195.202" clientAddress="/192.168.1.7" clientPort="34652" startTime="2022-12-02T15:38:50.069+05:30" startTimeMillis="1669975730069" dnsDuration="2" connectDuration="17" sslDuration="19" totalSize="1104">
+<ssl protocol="TLSv1.2" cipherSuite="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" />
+<alpn protocol="h2" />
+<request handshake="732" headers="0" body="0">
+<headers>
+<first-line><![CDATA[CONNECT youtubei.googleapis.com:443 HTTP/1.1]]></first-line>
+<header>
+<name>Host</name>
+<value>youtubei.googleapis.com:443</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>keep-alive</value></header>
+<header>
+<name>User-Agent</name>
+<value>com.google.android.youtube/1532882368 (Linux; U; Android 10; en_US; SM-G965F; Build/QP1A.190711.020; Cronet/107.0.5284.2)</value></header></headers></request>
+<response status="200" handshake="372" headers="0" body="0">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 Connection established]]></first-line></headers></response></transaction>
+<transaction status="EXCEPTION" method="CONNECT" protocolVersion="HTTP/1.1" protocol="https" host="youtubei.googleapis.com" actualPort="443" remoteAddress="youtubei.googleapis.com/142.250.195.202" clientAddress="/192.168.1.7" clientPort="34654" startTime="2022-12-02T15:38:50.446+05:30" startTimeMillis="1669975730446" dnsDuration="1" connectDuration="20" sslDuration="21" totalSize="1104">
+<ssl protocol="TLSv1.2" cipherSuite="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" />
+<alpn protocol="h2" />
+<request handshake="732" headers="0" body="0">
+<headers>
+<first-line><![CDATA[CONNECT youtubei.googleapis.com:443 HTTP/1.1]]></first-line>
+<header>
+<name>Host</name>
+<value>youtubei.googleapis.com:443</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>keep-alive</value></header>
+<header>
+<name>User-Agent</name>
+<value>com.google.android.youtube/1532882368 (Linux; U; Android 10; en_US; SM-G965F; Build/QP1A.190711.020; Cronet/107.0.5284.2)</value></header></headers></request>
+<response status="200" handshake="372" headers="0" body="0">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 Connection established]]></first-line></headers></response></transaction>
+<transaction status="EXCEPTION" method="CONNECT" protocolVersion="HTTP/1.1" protocol="https" host="youtubei.googleapis.com" actualPort="443" remoteAddress="youtubei.googleapis.com/142.250.195.170" clientAddress="/192.168.1.7" clientPort="34656" startTime="2022-12-02T15:38:50.952+05:30" startTimeMillis="1669975730952" dnsDuration="2" connectDuration="17" sslDuration="17" totalSize="1104">
+<ssl protocol="TLSv1.2" cipherSuite="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" />
+<alpn protocol="h2" />
+<request handshake="732" headers="0" body="0">
+<headers>
+<first-line><![CDATA[CONNECT youtubei.googleapis.com:443 HTTP/1.1]]></first-line>
+<header>
+<name>Host</name>
+<value>youtubei.googleapis.com:443</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>keep-alive</value></header>
+<header>
+<name>User-Agent</name>
+<value>com.google.android.youtube/1532882368 (Linux; U; Android 10; en_US; SM-G965F; Build/QP1A.190711.020; Cronet/107.0.5284.2)</value></header></headers></request>
+<response status="200" handshake="372" headers="0" body="0">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 Connection established]]></first-line></headers></response></transaction>
+<transaction status="RECEIVING_RESPONSE_BODY" method="GET" protocolVersion="HTTP/1.1" protocol="http" host="control.charles" actualPort="80" path="/session/export-xml" remoteAddress="localhost/0:0:0:0:0:0:0:1" clientAddress="/127.0.0.1" clientPort="59742" startTime="2022-12-02T15:38:56.624+05:30" startTimeMillis="1669975736624" requestBeginTime="2022-12-02T15:38:56.627+05:30" requestBeginTimeMillis="1669975736627" requestTime="2022-12-02T15:38:56.627+05:30" requestTimeMillis="1669975736627" responseTime="2022-12-02T15:38:56.627+05:30" responseTimeMillis="1669975736627" duration="1" connectDuration="1" requestDuration="0" responseDuration="0" latency="0" overallSpeed="303000" requestSpeed="0" responseSpeed="0" totalSize="303">
+<request headers="173" body="0">
+<headers>
+<first-line><![CDATA[GET /session/export-xml HTTP/1.1]]></first-line>
+<header>
+<name>User-Agent</name>
+<value>Java/1.8.0_311</value></header>
+<header>
+<name>Host</name>
+<value>control.charles</value></header>
+<header>
+<name>Accept</name>
+<value>text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2</value></header>
+<header>
+<name>Connection</name>
+<value>keep-alive</value></header></headers></request>
+<response status="200" headers="130" body="0" mime-type="text/xml">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 OK]]></first-line>
+<header>
+<name>Content-Type</name>
+<value>text/xml</value></header>
+<header>
+<name>Content-Disposition</name>
+<value>attachment; filename=charles202212021538.chlsx</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>close</value></header></headers>
+<body><![CDATA[]]></body></response></transaction></charles-session>
