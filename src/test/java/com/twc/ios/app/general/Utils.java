@@ -7002,12 +7002,16 @@ public class Utils extends Functions {
 	 */
 	public static void navigateToAllCardsAndroid(boolean includeDetailsPages, boolean navigateTwiceToDetailsPages) throws Exception {
 		
-		By byFooterCard = MobileBy.xpath("//android.widget.TextView[@text=\"© Copyright TWC Product and Technology, LLC 2011, 2022\"]");
+		//By byFooterCard = MobileBy.xpath("//android.widget.TextView[@text=\"© Copyright TWC Product and Technology, LLC 2011, 2022\"]");
 		By byhourlyCard = MobileBy.xpath("//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/hourly_forecast_card_view\"]");
 		By bydailyCard = MobileBy.xpath("//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/card_daily_forecast_view\"]");
 		By bybNewsCard = MobileBy.xpath("//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/card_breaking_news_view\"]");
 		By byTodaysDetailsCard = MobileBy.xpath("//android.widget.TextView[@resource-id=\"com.weather.Weather:id/header_title\" and @text=\"Today's Details\"]");
 		//By bySeasonalHubCard = MobileBy.xpath("//android.widget.TextView[@resource-id=\"com.weather.Weather:id/header_title\" and @text=\"Today's Details\"]");
+		ReadExcelValues.excelValues("Smoke", "General");
+		String footerText = ReadExcelValues.data[1][Cap];
+		
+		By byFooterCard = MobileBy.xpath("//android.widget.TextView[@text='"+footerText+"']");
 		
 		AndroidHomeNavTab hmTab = new AndroidHomeNavTab(Ad);
 		AndroidHourlyNavTab hrTab = new AndroidHourlyNavTab(Ad);
