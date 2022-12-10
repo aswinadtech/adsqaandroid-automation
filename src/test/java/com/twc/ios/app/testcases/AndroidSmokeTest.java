@@ -189,7 +189,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		System.out.println("****** Interstitial Ad Call iu validation Started");
 		logStep("****** Interstitial Ad Call iu validation Started");
 		proxy.clearCharlesSession();
-		Functions.close_launchApp();
+		Functions.close_launchAppAndroid();
 		Functions.archive_folder("Charles");
 		TestBase.waitForMilliSeconds(15000);
 		proxy.getXml();
