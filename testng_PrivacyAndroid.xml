@@ -5,7 +5,6 @@
     <classes>
       <class name="com.twc.ios.app.testcases.AndroidGDPRPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.AndroidBURDAPrivacyTest"/>
-       <class name="com.twc.ios.app.testcases.VIRGINIAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.AndroidVIRGINIAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.AndroidUSACCPAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.AndroidUSAPrivacyTest"/>
