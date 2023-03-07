@@ -206,7 +206,7 @@ public class LifeStyleCardScreen extends Utils {
 	
 	@Step("Navigae To Desired Index of LifeStyle Card")
 	public void navigateToLifeStyleCardIndexAndAssertAd(String indexName) throws Exception {
-		TestBase.waitForMilliSeconds(10000);
+		TestBase.waitForMilliSeconds(5000);
 		try {
 
 			List<MobileElement> ls;
@@ -242,7 +242,7 @@ public class LifeStyleCardScreen extends Utils {
 					
 					TestBase.clickOnElement(byLifeStyleCardDynamicIndex, lifeStyleCardDynamicIndex,
 							"LifeStyle Card Index " + l);
-					TestBase.waitForMilliSeconds(6000);
+					TestBase.waitForMilliSeconds(10000);
 
 					// System.out.println("Current Context is: "+ Ad.getContext());
 					/*

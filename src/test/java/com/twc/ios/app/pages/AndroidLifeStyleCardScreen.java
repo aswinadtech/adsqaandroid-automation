@@ -427,11 +427,27 @@ public class AndroidLifeStyleCardScreen extends Utils {
 			}
 			
 		}
+		/**
+		 * There are  cases in  android  that, all three are video articles, hence if  news article  not found, going  through video article
+		 */
+		if (!newsArticleFound) {
+			byArticlesLink = MobileBy.xpath("(//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_player_thumbnail_extra'])[1]");
+			articlesLink = Ad.findElement(byArticlesLink);
+			TestBase.clickOnElement(byArticlesLink, articlesLink, "Articles Link");
+		}
 	}
 
 	@Step("Verify Articles Page Header")
 	public void verifyArticlesPageHeader() {
-		articlesHeader = Ad.findElement(byArticlesHeader);
+		try{
+			articlesHeader = Ad.findElement(byArticlesHeader);
+		}catch(Exception e) {
+			/**
+			 * There are  cases in  android  that, all three are video articles, for video article, checking for entire container as there is no specific header for video articles
+			 */
+			byArticlesHeader = MobileBy.xpath("//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_fragment_container']");
+			articlesHeader = Ad.findElement(byArticlesHeader);
+		}
 	}
 
 	@Step("Verify Whether App on Articles Page or Index Content Page")

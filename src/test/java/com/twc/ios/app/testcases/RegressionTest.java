@@ -599,6 +599,10 @@ public class RegressionTest extends TwcIosBaseTest {
 			Functions.close_launchApp();
 			Functions.put_Background_launch(10);
 			Functions.archive_folder("Charles");
+			addrScreen.clearAddedAddresses();
+			TestBase.waitForMilliSeconds(5000);
+			addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+			TestBase.waitForMilliSeconds(20000);
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
 		}
@@ -639,8 +643,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Enabled() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", false);
 	}
 	
@@ -751,6 +755,10 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		Functions.put_Background_launch(10);
 		Functions.archive_folder("Charles");
+		addrScreen.clearAddedAddresses();
+		TestBase.waitForMilliSeconds(5000);
+		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		TestBase.waitForMilliSeconds(20000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -790,8 +798,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_Premium_Subscription_Expired() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
 	}
 	
@@ -888,6 +896,10 @@ public class RegressionTest extends TwcIosBaseTest {
 			Functions.close_launchApp();
 			Functions.put_Background_launch(10);
 			Functions.archive_folder("Charles");
+			addrScreen.clearAddedAddresses();
+			TestBase.waitForMilliSeconds(5000);
+			addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+			TestBase.waitForMilliSeconds(20000);
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
 		}
@@ -928,8 +940,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_AdFree_Subscription_Enabled() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", false);
 	}
 	
@@ -1040,6 +1052,10 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		Functions.put_Background_launch(10);
 		Functions.archive_folder("Charles");
+		addrScreen.clearAddedAddresses();
+		TestBase.waitForMilliSeconds(5000);
+		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		TestBase.waitForMilliSeconds(20000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -1079,8 +1095,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_AdFree_Subscription_Expired() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
 	}
 	
@@ -3330,6 +3346,10 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		Functions.put_Background_launch(10);
 		Functions.archive_folder("Charles");
+		addrScreen.clearAddedAddresses();
+		TestBase.waitForMilliSeconds(5000);
+		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		TestBase.waitForMilliSeconds(20000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -3368,8 +3388,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_UPSX_LogIn() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
 	}
 	
@@ -3446,6 +3466,10 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		Functions.put_Background_launch(10);
 		Functions.archive_folder("Charles");
+		addrScreen.clearAddedAddresses();
+		TestBase.waitForMilliSeconds(5000);
+		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		TestBase.waitForMilliSeconds(20000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -3484,8 +3508,8 @@ public class RegressionTest extends TwcIosBaseTest {
 	@Description("WFXTrigger Call verification")
 	public void Verify_WFXTriggers_Call_When_UPSX_LogOut() throws Exception {
 		System.out.println("==============================================");
-		System.out.println("****** triggers.wfxtriggers.com Call test case Started");
-		logStep("****** triggers.wfxtriggers.com Call test case Started");
+		System.out.println("****** prod.weatherfx.com Call test case Started");
+		logStep("****** prod.weatherfx.com Call test case Started");
 		Utils.verifyAPICal("Smoke", "WFXTrigger", true);
 	}
 	
