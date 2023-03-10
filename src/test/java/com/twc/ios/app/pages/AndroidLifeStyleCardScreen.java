@@ -37,7 +37,7 @@ public class AndroidLifeStyleCardScreen extends Utils {
 	String articlesLink_Xpath = "//android.view.ViewGroup[@resource-id='com.weather.Weather:id/breaking_news_grid_item_1']";
 	//String articlesHeader_AccessibilityId = "view_articleCategoryHeader";
 	String articlesHeader_Id = "com.weather.Weather:id/news_article_header";
-	
+	String videoArticleHeader_Xpath = "//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_fragment_container']";
 	//String allergyContentNavigationBar_Xpath = "//XCUIElementTypeNavigationBar[@name='Allergy']";
 	String allergyContentNavigationBar_Xpath = "//android.widget.TextView[contains(@text, 'Allergy')]";
 	//String fluContentNavigationBar_Xpath = "//XCUIElementTypeNavigationBar[@name='Flu']";
@@ -55,6 +55,7 @@ public class AndroidLifeStyleCardScreen extends Utils {
 	By byArticlesLink = MobileBy.xpath(articlesLink_Xpath);
 	//By byArticlesHeader = MobileBy.xpath(articlesHeader_AccessibilityId);
 	By byArticlesHeader = MobileBy.id(articlesHeader_Id);
+	By byVideoArticleHeader = MobileBy.xpath(videoArticleHeader_Xpath);
 	By byAllergyContentNavigationBar = MobileBy.xpath(allergyContentNavigationBar_Xpath);
 	By byFluContentNavigationBar = MobileBy.xpath(fluContentNavigationBar_Xpath);
 	By byAdvertisementOnFludetails = MobileBy.xpath(advertisementOnFludetails_Xpath);
@@ -423,6 +424,7 @@ public class AndroidLifeStyleCardScreen extends Utils {
 				byArticlesLink = MobileBy.xpath("(//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_player_thumbnail_extra'])["+i+"]");
 				articlesLink = Ad.findElement(byArticlesLink);
 				TestBase.clickOnElement(byArticlesLink, articlesLink, "Articles Link");
+				TestBase.waitForVisibilityOfElementLocated(Ad, 120, byArticlesHeader);
 				break;
 			}
 			
@@ -434,6 +436,7 @@ public class AndroidLifeStyleCardScreen extends Utils {
 			byArticlesLink = MobileBy.xpath("(//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_player_thumbnail_extra'])[1]");
 			articlesLink = Ad.findElement(byArticlesLink);
 			TestBase.clickOnElement(byArticlesLink, articlesLink, "Articles Link");
+			TestBase.waitForVisibilityOfElementLocated(Ad, 120, byVideoArticleHeader);
 		}
 	}
 
@@ -445,8 +448,8 @@ public class AndroidLifeStyleCardScreen extends Utils {
 			/**
 			 * There are  cases in  android  that, all three are video articles, for video article, checking for entire container as there is no specific header for video articles
 			 */
-			byArticlesHeader = MobileBy.xpath("//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_fragment_container']");
-			articlesHeader = Ad.findElement(byArticlesHeader);
+			//byArticlesHeader = MobileBy.xpath("//android.widget.FrameLayout[@resource-id='com.weather.Weather:id/video_fragment_container']");
+			articlesHeader = Ad.findElement(byVideoArticleHeader);
 		}
 	}
 
