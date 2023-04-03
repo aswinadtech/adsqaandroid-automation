@@ -3,22 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.twc.ios.app.testcases.AndroidSmokeTest"/>
+      <class name="com.twc.ios.app.testcases.AndroidUSACCPAPrivacyTest"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.twc.ios.app.testcases.AndroidSmokeTest">
-        <methods>
-          <include name="Verify_Map_Details_mr_Custom_Parameter"/>
-          <include name="beforeClass"/>
-          <include name="Validate_Health_Allergy_Articles_ltv_Custom_param"/>
-          <include name="Validate_PreRollVideo_hzcs_Custom_param"/>
-          <include name="Verify_Hourly_Details_mr_Custom_Parameter"/>
-          <include name="afterClass"/>
-          <include name="Validate_Health_Flu_Articles_ltv_Custom_param"/>
-        </methods>
-      </class> <!-- com.twc.ios.app.testcases.AndroidSmokeTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
