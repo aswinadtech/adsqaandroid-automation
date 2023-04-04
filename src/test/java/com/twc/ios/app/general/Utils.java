@@ -10088,6 +10088,12 @@ public class Utils extends Functions {
 		if (nextGenIMadDisplayed && sheetName.equalsIgnoreCase("Pulltorefresh")) {
 			System.out.println("Since IM Ad displayed on App Launch, Homescreen call validation is skipped");
 			logStep("Since IM Ad displayed on App Launch, Homescreen call validation is skipped");
+		} else 	if ((sheetName.equalsIgnoreCase("Health(coldAndFluArticles)") && fluVideoArticles && cust_param.equalsIgnoreCase("ltv")) || (sheetName.equalsIgnoreCase("Health(allergyArticles)") && allergyVideoArticles && cust_param.equalsIgnoreCase("ltv"))) {
+				/*
+				 * Since Criteo bidding not applicable for Video articles, hence checking a condition.
+				 */
+				System.out.println("It looks that Video Articles found and ltv not applicable for Video Articles..Hence skipping validation");
+				logStep("It looks that Video Articles found and ltv not applicable for Video Articles..Hence skipping validation");
 		} else {
 
 			if (!adCallFound) {
