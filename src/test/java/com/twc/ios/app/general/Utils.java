@@ -10355,20 +10355,22 @@ public class Utils extends Functions {
 					|| cust_param.equalsIgnoreCase("nzcs")) {
 				expected = wfxParameters.get(cust_param);
 			} else {
-				if (Ad instanceof AndroidDriver<?>) {
+				/*if (Ad instanceof AndroidDriver<?>) {
 					expected = get_param_value_from_APICalls(cust_param, zipCode);
 				} else {
 					expected = get_param_value_from_APICalls_V2(cust_param, zipCode, "4", "US");
-				}
+				}*/
+				expected = get_param_value_from_APICalls_V2(cust_param, zipCode, "4", "US");
 				
 			}
 
 		} else {
-			if (Ad instanceof AndroidDriver<?>) {
+			/*if (Ad instanceof AndroidDriver<?>) {
 				expected = get_param_value_from_APICalls(cust_param, zipCode);
 			} else {
 				expected = get_param_value_from_APICalls_V2(cust_param, zipCode, "4", "US");
-			}
+			}*/
+			expected = get_param_value_from_APICalls_V2(cust_param, zipCode, "4", "US");
 			
 		}
 
@@ -10986,6 +10988,7 @@ public class Utils extends Functions {
 			// adcardname = cardName;
 			cardName = cardName.replaceAll("-card", "");
 			System.out.println("Current Card Name is : " + cardName);
+			logStep("Current Card Name is : " + cardName);
 			if (cardName.contains("health-and-activities")) {
 				cardName = "lifestyle";
 			} else if (cardName.contains("air-quality")) {
@@ -11705,7 +11708,8 @@ public class Utils extends Functions {
 
 							if (flag) {
 								if (innernode.getNodeName().equals("response")) {
-									// System.out.println(innernode.getNodeName());
+									boolean responsebodyfound = false;
+									//System.out.println(innernode.getTextContent());
 									if (innernode.hasChildNodes()) {
 										NodeList n2 = innernode.getChildNodes();
 										for (int k = 0; k < n2.getLength(); k++) {
@@ -11714,6 +11718,7 @@ public class Utils extends Functions {
 												if (innernode2.getNodeType() == Node.ELEMENT_NODE) {
 													Element eElement = (Element) innernode2;
 													if (eElement.getNodeName().equals("body")) {
+														responsebodyfound = true;
 														String content = eElement.getTextContent();
 														istofResponseBodies.add(content);
 														// String tempBparam = get_b_value_inJsonResponseBody(content);
@@ -11729,6 +11734,16 @@ public class Utils extends Functions {
 												}
 											}
 										}
+									}
+									if (!responsebodyfound) {
+										/*
+										 * There are cases, criteo bidding is failed and response returns 204 :no content " 
+										 */
+										System.out.println("Response body not found, may be bidding failed");
+										logStep("Response body not found, may be bidding failed");
+										listOf_criteo_Params.add("-1");
+										System.out.println(cust_param + " Param Values from Criteo API Call is : (response body not found)" );
+										logStep(cust_param + " Param Values from Criteo API Call is : (response body not found)" );
 									}
 								}
 

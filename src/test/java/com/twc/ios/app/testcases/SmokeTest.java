@@ -2466,6 +2466,13 @@ public class SmokeTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		TestBase.waitForMilliSeconds(2000);---*/
 		
+		
+		hrTab.navigateToHourlyTabAndHandleInterstitialAd();
+		Functions.close_launchApp();
+		hmTab.clickonHomeTab();
+		hmTab.clickonHomeTab();
+		
+		
 		proxy.clearCharlesSession();
 		
 		addrScreen.enternewAddress(false, "30124", "Cave Spring, Georgia");
