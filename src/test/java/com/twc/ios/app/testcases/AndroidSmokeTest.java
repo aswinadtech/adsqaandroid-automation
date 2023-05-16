@@ -166,6 +166,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		aqCardScreen = new AndroidAirQualityCardScreen(Ad);
 		fOneCardScreen = new AndroidFeedOneCardScreen(Ad);
 		
+		Utils.get_v3_wx_forecast_daily_15day_data();
 		Utils.hlzip = Utils.get_custom_param_val_of_gampad("Smoke", "Marquee", "hlzip");
 		System.out.println("hlzip value is: "+Utils.hlzip);
 		logStep("hlzip value is: "+Utils.hlzip);
@@ -266,7 +267,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 			Functions.close_launchAppAndroid();
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
-			ParseForVideoOrderedList.getVideoCall_IU_Value_from_adZone();
+			//ParseForVideoOrderedList.getVideoCall_IU_Value_from_adZone();
 			Utils.get_v3_wx_forecast_daily_15day_data();
 			Utils.getPlaceIdFromAPICall("placeId");
 			//Utils.Verify_newfeedAdcalls("Smoke", "CleanLaunch");
