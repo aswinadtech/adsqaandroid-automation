@@ -543,6 +543,18 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 	 * Functions.verifyAAX_SlotId("Smoke", "News(details)");
 	 * Utils.verifyFeedAds_AAX_SlotIds("Smoke", "CleanLaunch"); }
 	 */
+	
+	/**
+	 * This method validates ppid parameter of Sticky ad Call
+	 */
+	@Test(priority = 90, enabled = true)
+	@Description("Validating 'ppid' parameter of Sticky ad Call")
+	public void validate_Sticky_Ad_Call_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of Sticky ad call");
+		logStep("Validating ppid parameter of Sticky ad call");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Pulltorefresh", "ppid", "NotNull");
+	}
 
 	@Test(priority = 101, enabled = true)
 	@Description("Verify preroll video iu")
@@ -578,6 +590,19 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 				properties.getProperty("IMASDKVersion"));
 
 	}
+	
+	/**
+	 * This method validates ppid parameter of Video Call
+	 */
+	@Test(priority = 103, enabled = true)
+	@Description("Validating 'ppid' parameter of Video Call")
+	public void Validate_PreRollVideo_Call_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of PreRollVideo call");
+		logStep("Validating ppid parameter of PreRollVideo call");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "PreRollVideo", "ppid", "NotNull");
+
+	}
 			
 	@Test(priority = 250,   enabled = true)
 	@Description("Segment Parameter Verificatiion when background launch the app from hourly tab")
@@ -606,7 +631,20 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 	
 	}
 	
-	@Test(priority = 251,   enabled = true)
+	/**
+	 * This method validates ppid parameter of Hourly details call
+	 */
+	@Test(priority = 251, enabled = true)
+	@Description("Validating 'ppid' parameter of Hourly details call ")
+	public void Validate_HourlyDetails_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of Hourly details call");
+		logStep("Validating ppid parameter of Hourly details call ");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Hourly", "ppid", "NotNull");
+
+	}
+	
+	@Test(priority = 252,   enabled = true)
 	@Description("Segment Parameter Verificatiion when background launch the app from daily tab")
 	public void seg_Parameter_Verification_When_Navigated_To_Daily_Tab() throws Exception {
 		System.out.println("==============================================");
@@ -623,7 +661,19 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 
 	}
 	
-	@Test(priority = 252,   enabled = true)
+	/**
+	 * This method validates ppid parameter of Daily Details ad Call
+	 */
+	@Test(priority = 253, enabled = true)
+	@Description("Validating 'ppid' parameter of Daily Details ad Call")
+	public void validate_Daily_Details_Ad_Call_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of Daily Details ad call");
+		logStep("Validating ppid parameter of Daily Details ad call");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Daily(10day)", "ppid", "NotNull");
+	}
+	
+	@Test(priority = 254,   enabled = true)
 	@Description("Segment Parameter Verificatiion when background launch the app from radar tab")
 	public void seg_Parameter_Verification_When_Navigated_To_Radar_Tab() throws Exception {
 		System.out.println("==============================================");
@@ -638,6 +688,18 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.verify_Lotame_Call_Segment_Parameter("Smoke", "Lotame", "seg=Radar");
 	
+	}
+	
+	/**
+	 * This method validates ppid parameter of Map Details ad Call
+	 */
+	@Test(priority = 255, enabled = true)
+	@Description("Validating 'ppid' parameter of Map Details ad Call")
+	public void validate_Map_Details_Ad_Call_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of Map Details ad call");
+		logStep("Validating ppid parameter of Map Details ad call");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Map", "ppid", "NotNull");
 	}
 	
 	@Test(priority = 253,   enabled = true)
