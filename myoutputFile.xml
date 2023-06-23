@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE charles-session SYSTEM "https://www.charlesproxy.com/dtd/charles-session-1_2.dtd">
+
+<charles-session>
+<transaction status="RECEIVING_RESPONSE_BODY" method="GET" protocolVersion="HTTP/1.1" protocol="http" host="control.charles" actualPort="80" path="/session/export-xml" remoteAddress="localhost/0:0:0:0:0:0:0:1" clientAddress="/127.0.0.1" clientPort="58976" startTime="2023-06-21T19:02:05.161+05:30" startTimeMillis="1687354325161" requestBeginTime="2023-06-21T19:02:05.168+05:30" requestBeginTimeMillis="1687354325168" requestTime="2023-06-21T19:02:05.168+05:30" requestTimeMillis="1687354325168" responseTime="2023-06-21T19:02:05.169+05:30" responseTimeMillis="1687354325169" duration="12" connectDuration="3" requestDuration="0" responseDuration="8" latency="1" overallSpeed="25250" requestSpeed="0" responseSpeed="16250" totalSize="303">
+<request headers="173" body="0">
+<headers>
+<first-line><![CDATA[GET /session/export-xml HTTP/1.1]]></first-line>
+<header>
+<name>User-Agent</name>
+<value>Java/1.8.0_311</value></header>
+<header>
+<name>Host</name>
+<value>control.charles</value></header>
+<header>
+<name>Accept</name>
+<value>text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2</value></header>
+<header>
+<name>Connection</name>
+<value>keep-alive</value></header></headers></request>
+<response status="200" headers="130" body="0" mime-type="text/xml">
+<headers>
+<first-line><![CDATA[HTTP/1.1 200 OK]]></first-line>
+<header>
+<name>Content-Type</name>
+<value>text/xml</value></header>
+<header>
+<name>Content-Disposition</name>
+<value>attachment; filename=charles202306211902.chlsx</value></header>
+<header>
+<name>Proxy-Connection</name>
+<value>close</value></header></headers>
+<body><![CDATA[]]></body></response></transaction></charles-session>
