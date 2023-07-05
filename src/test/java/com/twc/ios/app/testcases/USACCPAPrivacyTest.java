@@ -74,6 +74,8 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		if (this.configFile != null) {
 			this.configFile.delete();
 		}
+		stScreen.select_Privacy_Optin_From_Settings("Smoke", "Privacy");
+		stScreen.select_Privacy_Optin_From_Settings("Smoke", "Privacy");
 		Functions.archive_folder("Charles");
 		proxy.disableRewriting();
 		proxy.quitCharlesProxy();
@@ -471,10 +473,11 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 			Functions.checkForAppState();
 			Functions.put_Background_launch(15);
 			Functions.checkForAppState();
-			addrScreen.clearAddedAddresses();
-			TestBase.waitForMilliSeconds(5000);
-			addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
-			TestBase.waitForMilliSeconds(20000);
+			/*
+			 * addrScreen.clearAddedAddresses(); TestBase.waitForMilliSeconds(5000);
+			 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+			 * TestBase.waitForMilliSeconds(20000);
+			 */
 		}
 		
 	}

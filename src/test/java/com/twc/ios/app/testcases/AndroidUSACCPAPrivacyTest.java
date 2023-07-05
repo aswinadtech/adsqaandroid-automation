@@ -81,6 +81,8 @@ public class AndroidUSACCPAPrivacyTest extends TwcIosBaseTest {
 		if (this.configFile != null) {
 			this.configFile.delete();
 		}
+		stScreen.select_Privacy_Optin_From_Settings("Smoke", "Privacy");
+		stScreen.select_Privacy_Optin_From_Settings("Smoke", "Privacy");
 		Functions.archive_folder("Charles");
 		proxy.disableRewriting();
 		proxy.quitCharlesProxy();

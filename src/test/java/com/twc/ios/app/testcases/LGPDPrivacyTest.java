@@ -170,10 +170,13 @@ public class LGPDPrivacyTest extends TwcIosBaseTest {
 		pScreen = new PlanningCardScreen(Ad);
 		sScreen = new SeasonalHubCardScreen(Ad);
 		stScreen = new SettingsScreen(Ad);
-		addrScreen.clearAddedAddresses();
-		TestBase.waitForMilliSeconds(5000);
-		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
-		TestBase.waitForMilliSeconds(20000);
+		/*
+		 * addrScreen.clearAddedAddresses();
+		 * TestBase.waitForMilliSeconds(5000);
+		 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
+		 * TestBase.waitForMilliSeconds(20000);
+		 */
+		 
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 

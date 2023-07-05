@@ -836,6 +836,86 @@ public class TwcIosBaseTest extends CharlesProxy{
 		return configFile;
 	}
 	
+	
+	/**
+	 * Create a Charles configuration to rewrite privacy regime to the given regime (Colorado) values. 
+	 * @param fileName
+	 *            - Name of file (.config extension) to store configuration. Will be created in user.dir
+	 * @return Config Files (for deletion in After method)
+	 */
+	public File rewriteRuleToEnableCOLORADO(String fileName) {
+		final List<File> configFiles = new ArrayList<File>();
+		final File parentDir = new File(Constants.PATH_USER_HOME);
+		parentDir.mkdirs();
+		final File configFile = new File(parentDir, fileName);
+		configFile.setWritable(true);
+		// Create Charles config with header response rewrite for twc-privacy:exempt -> twc-privacy:gdpr
+		CharlesConfiguration config = new CharlesConfiguration();
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "usa-ccpa", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, "usa-co", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, "US", false, RewriteRuleReplaceType.ONLY_FIRST);
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region", false, "CA", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, "CO", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/*/privacy/en_US/*/*", "");
+		config.saveConfigurations(fileName);
+		return configFile;
+	}
+	
+	
+	
+	
+	/**
+	 * Create a Charles configuration to rewrite privacy regime to the given regime (Connecticut) values. 
+	 * @param fileName
+	 *            - Name of file (.config extension) to store configuration. Will be created in user.dir
+	 * @return Config Files (for deletion in After method)
+	 */
+	public File rewriteRuleToEnableCONNECTICUT(String fileName) {
+		final List<File> configFiles = new ArrayList<File>();
+		final File parentDir = new File(Constants.PATH_USER_HOME);
+		parentDir.mkdirs();
+		final File configFile = new File(parentDir, fileName);
+		configFile.setWritable(true);
+		// Create Charles config with header response rewrite for twc-privacy:exempt -> twc-privacy:gdpr
+		CharlesConfiguration config = new CharlesConfiguration();
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "usa-ccpa", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, "usa-ct", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, "US", false, RewriteRuleReplaceType.ONLY_FIRST);
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "GA", false, false, false, "twc-geoip-region", false, "CA", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-region", false, "CT", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/*/privacy/en_US/*/*", "");
+		config.saveConfigurations(fileName);
+		return configFile;
+	}
+	
+	/**
+	 * Create a Charles configuration to rewrite privacy regime to the given regime (KOREA) values. 
+	 * @param fileName
+	 *            - Name of file (.config extension) to store configuration. Will be created in user.dir
+	 * @return Config Files (for deletion in After method)
+	 */
+	public File rewriteRuleToEnableKOREA(String fileName) {
+		final List<File> configFiles = new ArrayList<File>();
+		final File parentDir = new File(Constants.PATH_USER_HOME);
+		parentDir.mkdirs();
+		final File configFile = new File(parentDir, fileName);
+		configFile.setWritable(true);
+
+		// Create Charles config with header response rewrite for twc-privacy:exempt -> twc-privacy:gdpr
+		CharlesConfiguration config = new CharlesConfiguration();
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "exempt", false, false, false, "twc-privacy", false, "lgpd", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-privacy", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-privacy", false, "kr", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-country", false, "[A-Za-z0-9\\.\\-]+", true, false, false, "twc-geoip-country", false, "KR", false, RewriteRuleReplaceType.ONLY_FIRST);
+		//config.addRule(RewriteRuleType.MODIFY_HEADER, false, true, "twc-geoip-region", false, "[A-Za-z0-9\\.\\-]+", false, false, false, "twc-geoip-region", false, "ON", false, RewriteRuleReplaceType.ONLY_FIRST);
+		config.addLocation(Protocol.HTTPS, "dsx.weather.com", "", "/cms/*/privacy/en_US/*/*", "");
+
+		config.saveConfigurations(fileName);
+
+
+		return configFile;
+	}
+	
+	
 	/**
 	 * Create a Charles configuration to rewrite vt1ContentMode mode to the given content mode. Rewrite to severe1 or severe2 to show Breaking
 	 * News/Trending module

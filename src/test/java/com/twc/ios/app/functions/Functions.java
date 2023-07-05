@@ -448,6 +448,7 @@ public class Functions extends Driver {
 	//	capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 	//	capabilities.setCapability("locale", "en_US");
 	//	capabilities.setCapability("language", "en");
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -493,6 +494,7 @@ public class Functions extends Driver {
 		//capabilities.setCapability("useNewWDA", true);
 		capabilities.setCapability("wdaLocalPort", "7403");
 		capabilities.setCapability("clearSystemFiles", true);
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -539,6 +541,7 @@ public class Functions extends Driver {
 		//capabilities.setCapability("useNewWDA", true);
 		capabilities.setCapability("wdaLocalPort", "7403");
 		capabilities.setCapability("clearSystemFiles", true);
+		
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -638,6 +641,7 @@ public class Functions extends Driver {
 		// capabilities.setCapability("locationServicesAuthorized", true);
 		// capabilities.setCapability("waitForAppScript","$.delay(5000); true");
 		capabilities.setCapability("clearSystemFiles", true);
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -698,6 +702,7 @@ public class Functions extends Driver {
 		// capabilities.setCapability("locationServicesAuthorized", true);
 		// capabilities.setCapability("waitForAppScript","$.delay(5000); true");
 		capabilities.setCapability("clearSystemFiles", true);
+		
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -789,7 +794,7 @@ public class Functions extends Driver {
 		if (includelanguage) {
 			capabilities.setCapability("language", language);
 		}
-
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -862,6 +867,7 @@ public class Functions extends Driver {
 		if (includelanguage) {
 			capabilities.setCapability("language", language);
 		}
+		
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -929,6 +935,7 @@ public class Functions extends Driver {
 		// capabilities.setCapability("wdaLocalPort", "8200");
 		// capabilities.setCapability("locationServicesAuthorized", true);
 		capabilities.setCapability("waitForAppScript", "$.delay(5000); true");
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		//TestBase.waitForMilliSeconds(80000);
@@ -1327,6 +1334,7 @@ public class Functions extends Driver {
 		// capabilities.setCapability("locationServicesAuthorized", true);
 		// capabilities.setCapability("waitForAppScript","$.delay(5000); true");
 		capabilities.setCapability("clearSystemFiles", true);
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -2795,6 +2803,7 @@ public class Functions extends Driver {
 		capabilities.setCapability("xcodeOrgId", "54VVTD24DT");
 		capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 		// capabilities.setCapability("safariInitialUrl", "https://myhcl.com/");
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -3068,6 +3077,7 @@ public class Functions extends Driver {
 		capabilities.setCapability("xcodeOrgId", "54VVTD24DT");
 		capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 		// capabilities.setCapability("safariInitialUrl", "https://myhcl.com/");
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -3439,6 +3449,7 @@ public class Functions extends Driver {
 		capabilities.setCapability("xcodeOrgId", "54VVTD24DT");
 		capabilities.setCapability("xcodeSigningId", "iPhone Developer");
 		// capabilities.setCapability("safariInitialUrl", "https://myhcl.com/");
+		capabilities.setCapability("showXcodeLog", false);
 		System.out.println("Reading capabilities done");
 		// Wait time for Execution of node.js
 		// TestBase.waitForMilliSeconds(10000);
@@ -3780,6 +3791,7 @@ public class Functions extends Driver {
 
 		capabilities.setCapability("app", "Settings");
 		capabilities.setCapability("connectHardwareKeyboard", true);
+		capabilities.setCapability("showXcodeLog", false);
 
 		System.out.println("Reading capabilities done");
 

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Properties;
@@ -488,6 +490,40 @@ public class TestBase extends Driver{
 	 */
 	public static void waitForMilliSeconds(long milliSeconds) throws Exception {
 		Thread.sleep(milliSeconds);
+	}
+	
+	
+	public ArrayList<String> getFifteenDaysDatesIncludingToday(String todayDate) {
+		ArrayList<String> fifteenDays = new ArrayList<String>();
+		LocalDate today = LocalDate.parse(todayDate);
+		System.out.println("Given Date is: " + todayDate );
+		Driver.logStep("Given Date is: " + todayDate );
+		String sDayNum = "";
+		for (int i = 0; i<=14; i++) {
+			
+			int dayNum = today.plusDays(i).getDayOfMonth();
+			if (dayNum < 10) {
+				sDayNum = "0"+String.valueOf(dayNum);
+			} else {
+				sDayNum = String.valueOf(dayNum);
+			}
+			fifteenDays.add(sDayNum);
+			//System.out.println(i+" th day after today will be " + sDayNum + "\n");
+			
+		}
+		System.out.println("Fifteen Days Array is: " + fifteenDays);
+		Driver.logStep("Fifteen Days Array is: " + fifteenDays);
+		return fifteenDays;
+	}
+	
+	public static long findElapsedTime(long startTime, long endTime) throws Exception {
+	
+		long timeElapsed = endTime - startTime;
+	
+		long convert = TimeUnit.SECONDS.convert(timeElapsed, TimeUnit.NANOSECONDS);
+		System.out.println("Elapsed time is: " + convert);
+		Driver.logStep("Elapsed time is: " + convert);
+		return convert;
 	}
 
 	

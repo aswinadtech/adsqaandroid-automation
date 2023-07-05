@@ -72,6 +72,10 @@ public class AddressScreen extends Utils {
 	By byClearAllLocationsCancel = MobileBy.xpath(clearAllLocationsCancel_Xpath);
 	
 	
+	By byReportLocationIssue = MobileBy.xpath("//XCUIElementTypeButton[@name='Report Location Issue']");
+	By byFavorites = MobileBy.xpath("//XCUIElementTypeOther[@name='FAVORITES']");
+	
+	
 	MobileElement searchForYourLocation = null;
 	MobileElement cancel = null;
 	MobileElement done = null;
@@ -98,6 +102,8 @@ public class AddressScreen extends Utils {
 	MobileElement clearAllYourRecentsAlert = null;
 	MobileElement clearAllLocationsOK = null;
 	MobileElement clearAllLocationsCancel = null;
+	
+	MobileElement reportLocationIssue = null;
 
 	public AddressScreen(AppiumDriver<MobileElement> Ad) {
 		this.Ad = Ad;
@@ -1018,7 +1024,11 @@ public class AddressScreen extends Utils {
 		System.out.println("Clicked on Present Address");
 		logStep("Clicked on Present Address");
 		TestBase.waitForMilliSeconds(5000);
-		genericScroll(byButtonLocationManagementClear, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		
+		if (TestBase.isElementExists(byFavorites)) {
+			genericScroll(byButtonLocationManagementClear, true, false, getOffsetYTop(), TOLERANCE_FROM_TOP);
+		}
+		
 		if (TestBase.isElementExists(byButtonLocationManagementClear)) {
 			try {
 				//MobileElement el1 = (MobileElement) Ad.findElementByAccessibilityId("button_locationManagementClear");

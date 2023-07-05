@@ -6,7 +6,9 @@
       <class name="com.twc.ios.app.testcases.GDPRPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.BURDAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.VIRGINIAPrivacyTest"/>
-       <class name="com.twc.ios.app.testcases.USACCPAPrivacyTest"/>
+      <class name="com.twc.ios.app.testcases.COLORADOPrivacyTest"/>
+      <class name="com.twc.ios.app.testcases.CONNECTICUTPrivacyTest"/>
+      <class name="com.twc.ios.app.testcases.USACCPAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.USAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.LGPDPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.SERBIAPrivacyTest"/>
@@ -14,6 +16,7 @@
       <class name="com.twc.ios.app.testcases.LATAMDOPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.LATAMCOPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.EXEMPTPrivacyTest"/>
+      <class name="com.twc.ios.app.testcases.KOREAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.TURKEYPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.CHINAPrivacyTest"/>
       <class name="com.twc.ios.app.testcases.BELARUSPrivacyTest"/>

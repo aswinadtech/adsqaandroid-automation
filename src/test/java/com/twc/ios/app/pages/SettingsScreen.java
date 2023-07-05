@@ -56,6 +56,7 @@ public class SettingsScreen extends Utils {
 	By byClearCache = MobileBy.name(clearCache_Name);
 	By byGeneral = MobileBy.name(general_Name);
 	
+	By byPrivacyPageHeading = MobileBy.xpath("//XCUIElementTypeOther[@name='The Weather Channel and Your Privacy']");
 	
 	MobileElement settingsButton = null;
 	MobileElement privacySettings = null;
@@ -69,6 +70,8 @@ public class SettingsScreen extends Utils {
 	MobileElement oK = null;
 	MobileElement clearCache = null;
 	MobileElement general = null;
+	
+	MobileElement privacyPageHeading = null;
 	
 
 	public SettingsScreen(AppiumDriver<MobileElement> Ad) {
@@ -177,7 +180,8 @@ public class SettingsScreen extends Utils {
 	public void select_Privacy_Optin_From_Settings(String Excelname, String sheetName) throws Exception {
 
 		navigateToPrivacyPage_From_Settings();
-		Thread.sleep(30000);
+		TestBase.waitForVisibilityOfElementLocated(Ad, 30, byPrivacyPageHeading);
+		//Thread.sleep(30000);
 		ReadExcelValues.excelValues(Excelname, sheetName);
 		String privacy_Optin_label = null;
 		String privacy_Optout_label = null;
@@ -290,7 +294,8 @@ public class SettingsScreen extends Utils {
 	public void select_Privacy_Optin_From_Settings_Virginia(String Excelname, String sheetName) throws Exception {
 
 		navigateToPrivacyPage_From_Settings();
-		Thread.sleep(30000);
+		TestBase.waitForVisibilityOfElementLocated(Ad, 30, byPrivacyPageHeading);
+		//Thread.sleep(30000);
 		ReadExcelValues.excelValues(Excelname, sheetName);
 		String privacy_Optin_label = null;
 		String privacy_Optout_label = null;
@@ -395,7 +400,8 @@ public class SettingsScreen extends Utils {
 	public void select_Privacy_Optout_From_Settings(String Excelname, String sheetName) throws Exception {
 
 		navigateToPrivacyPage_From_Settings();
-		Thread.sleep(30000);
+		TestBase.waitForVisibilityOfElementLocated(Ad, 30, byPrivacyPageHeading);
+		//Thread.sleep(30000);
 
 		ReadExcelValues.excelValues(Excelname, sheetName);
 		String privacy_Optin_label = null;
@@ -507,7 +513,8 @@ public class SettingsScreen extends Utils {
 	public void select_Privacy_Optout_From_Settings_Virginia(String Excelname, String sheetName) throws Exception {
 
 		navigateToPrivacyPage_From_Settings();
-		Thread.sleep(30000);
+		TestBase.waitForVisibilityOfElementLocated(Ad, 30, byPrivacyPageHeading);
+		//Thread.sleep(30000);
 
 		ReadExcelValues.excelValues(Excelname, sheetName);
 		String privacy_Optin_label = null;
@@ -610,7 +617,8 @@ public class SettingsScreen extends Utils {
 	@Step("Verify Privacy Card Options Navigating from Settings")
 	public void verify_PrivacyCard_Options_From_Settings(String Excelname, String sheetName) throws Exception {
 		navigateToPrivacyPage_From_Settings();
-		Thread.sleep(30000);
+		TestBase.waitForVisibilityOfElementLocated(Ad, 30, byPrivacyPageHeading);
+		//Thread.sleep(30000);
 
 		ReadExcelValues.excelValues(Excelname, sheetName);
 		String privacy_Optin_label = null;

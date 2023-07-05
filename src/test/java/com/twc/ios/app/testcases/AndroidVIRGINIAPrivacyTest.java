@@ -41,11 +41,7 @@ public class AndroidVIRGINIAPrivacyTest extends TwcIosBaseTest {
 	// private static final MobileAutomationLogger LOGGER = new
 	// MobileAutomationLogger(GDPRFunctionalEULaunchTests.class);
 	private static final String CONFIG_FILE_PATH = "enableVIRGINIA.config";
-	private static final String LGPD_CONFIG_FILE_PATH = "enableLGPD.config";
-	private static final String GDPR_CONFIG_FILE_PATH = "enableGDPR.config";
-	private static final String SERBIA_CONFIG_FILE_PATH = "enableSERBIA.config";
-	private static final String LATAMCO_CONFIG_FILE_PATH = "enableLATAMCO.config";
-	private static final String USA_CONFIG_FILE_PATH = "enableUSA.config";
+	
 	private File configFile;
 	AndroidHourlyNavTab hrTab;
 	AndroidDailyNavTab dTab;
@@ -81,6 +77,8 @@ public class AndroidVIRGINIAPrivacyTest extends TwcIosBaseTest {
 		if (this.configFile != null) {
 			this.configFile.delete();
 		}
+		stScreen.select_Privacy_Optin_From_Settings_Virginia("Smoke", "Privacy");
+		stScreen.select_Privacy_Optin_From_Settings_Virginia("Smoke", "Privacy"); 
 		Functions.archive_folder("Charles");
 		proxy.disableRewriting();
 		proxy.quitCharlesProxy();
@@ -657,14 +655,6 @@ public class AndroidVIRGINIAPrivacyTest extends TwcIosBaseTest {
 
 		Utils.validate_rdp_val_in_gampad_url("Smoke", "PrerollVideo", true);
 		
-		/*
-		 * Instead of Uninstall and install app for every regime, waiting for 5 mins to get dsx call is more time saviour
-		 * hence below hard wait steps are added and corresponding uninstall and install steps will be commented in next regimes.
-		 */
-		System.out.println("****** Waiting for five minutes to get dsx call to override privacy and geo ip country for next test");
-		logStep("****** Waiting for five minutes to get dsx call to override privacy and geo ip country for next test");
-		TestBase.waitForMilliSeconds(240000);
-
 	}
 
 	

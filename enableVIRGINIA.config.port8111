@@ -237,7 +237,7 @@
       <entry>
         <string>Rewrite</string>
         <rewrite>
-          <toolEnabled>true</toolEnabled>
+          <toolEnabled>false</toolEnabled>
           <debugging>false</debugging>
           <sets>
             <rewriteSet>
@@ -266,7 +266,7 @@
                   <matchRequest>false</matchRequest>
                   <matchResponse>true</matchResponse>
                   <newHeader>twc-privacy</newHeader>
-                  <newValue>usa-va</newValue>
+                  <newValue>usa-co</newValue>
                   <newHeaderRegex>false</newHeaderRegex>
                   <newValueRegex>false</newValueRegex>
                   <matchWholeValue>false</matchWholeValue>
@@ -300,7 +300,7 @@
                   <matchRequest>false</matchRequest>
                   <matchResponse>true</matchResponse>
                   <newHeader>twc-geoip-region</newHeader>
-                  <newValue>VA</newValue>
+                  <newValue>CO</newValue>
                   <newHeaderRegex>false</newHeaderRegex>
                   <newValueRegex>false</newValueRegex>
                   <matchWholeValue>false</matchWholeValue>
@@ -363,7 +363,7 @@
           <locations>
             <locationPatterns/>
           </locations>
-          <toolEnabled>true</toolEnabled>
+          <toolEnabled>false</toolEnabled>
           <useSelectedLocations>false</useSelectedLocations>
         </selectedHostsTool>
       </entry>
