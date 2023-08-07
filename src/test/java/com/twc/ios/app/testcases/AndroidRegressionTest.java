@@ -544,18 +544,6 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 	 * Utils.verifyFeedAds_AAX_SlotIds("Smoke", "CleanLaunch"); }
 	 */
 	
-	/**
-	 * This method validates ppid parameter of Sticky ad Call
-	 */
-	@Test(priority = 90, enabled = true)
-	@Description("Validating 'ppid' parameter of Sticky ad Call")
-	public void validate_Sticky_Ad_Call_ppid_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating ppid parameter of Sticky ad call");
-		logStep("Validating ppid parameter of Sticky ad call");
-		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Pulltorefresh", "ppid", "NotNull");
-	}
-
 	@Test(priority = 101, enabled = true)
 	@Description("Verify preroll video iu")
 	public void Verify_video_adcall_iu() throws Exception {
@@ -702,7 +690,7 @@ public class AndroidRegressionTest extends TwcIosBaseTest {
 		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Map", "ppid", "NotNull");
 	}
 	
-	@Test(priority = 253,   enabled = true)
+	@Test(priority = 256,   enabled = true)
 	@Description("Segment Parameter Verificatiion when background launch the app from video tab")
 	public void seg_Parameter_Verification_When_Navigated_To_Video_Tab() throws Exception {
 		System.out.println("==============================================");

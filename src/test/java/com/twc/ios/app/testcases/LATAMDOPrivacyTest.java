@@ -166,6 +166,7 @@ public class LATAMDOPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		hrTab = new HourlyNavTab(Ad);
 		dTab = new DailyNavTab(Ad);
 		hmTab = new HomeNavTab(Ad);

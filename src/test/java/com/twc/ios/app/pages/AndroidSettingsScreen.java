@@ -2113,15 +2113,14 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 				TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			}*/
 			boolean found = true;
-			while (found) {
-
-				if (TestBase.isElementExists(bySearchIcon, Ad)) {
-					found = true;
-					TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
-					Thread.sleep(10000);
-				} else {
-					found = false;
-				}
+			//while (found) {
+			while (TestBase.isElementExists(bySearchIcon, Ad)) {
+				/*
+				 * if (TestBase.isElementExists(bySearchIcon, Ad)) { found = true;
+				 * TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
+				 * Thread.sleep(10000); } else { found = false; }
+				 */
+				TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			}
 		} catch (Exception e) {
 			attachScreen();
@@ -2216,31 +2215,33 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 			logStep("Clicking on UPSX profile Icon");
 			Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
 			Thread.sleep(10000);
+			attachScreen();
 			boolean found = true;
-			while (found) {
+			//while (found) {
+			while (TestBase.isElementExists(bySearchIcon, Ad)) {
 
-				if (TestBase.isElementExists(bySearchIcon, Ad)) {
-					found = true;
-					Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
-					
-				} else {
-					found = false;
-				}
+				/*
+				 * if (TestBase.isElementExists(bySearchIcon, Ad)) { found = true;
+				 * Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
+				 * 
+				 * } else { found = false; }
+				 */
+				Ad.findElementById("com.weather.Weather:id/profile_avatar").click();
 			}
 		} catch (Exception e) {
 			settingsButton = Ad.findElement(bySettingsButton);
 			TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			Thread.sleep(10000);
 			boolean found = true;
-			while (found) {
-
-				if (TestBase.isElementExists(bySearchIcon, Ad)) {
-					found = true;
-					TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
-					
-				} else {
-					found = false;
-				}
+			//while (found) {
+			while (TestBase.isElementExists(bySearchIcon, Ad)) {
+				/*
+				 * if (TestBase.isElementExists(bySearchIcon, Ad)) { found = true;
+				 * TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
+				 * 
+				 * } else { found = false; }
+				 */
+				TestBase.clickOnElement(bySettingsButton, settingsButton, "Settings Button");
 			}
 		}
 
@@ -2320,15 +2321,15 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 		clickOnLogin();
 		attachScreen();
 		EmailUPSXLoginUserName(email);
+		EmailUPSXLoginPassword(password);
 		attachScreen();
-	   EmailUPSXLoginPassword(password);
-	   attachScreen();
-	   clickOnUPSXloginbutton();
-	  
+		clickOnUPSXloginbutton();
+		attachScreen();
 	   try {
 		   navigateBackToFeedCardAndroid(); 
 		   Functions.close_launchAppAndroid();
 	   }catch(Exception e){
+		   attachScreen();
 		   Functions.close_launchAppAndroid(); 
 	   }
 	   
@@ -2341,7 +2342,7 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 		attachScreen();
 		clickOnUPSXSignOut();
 		 attachScreen();
-		 clickOnUPSXSignOut();
+		 //clickOnUPSXSignOut();
 		 try {
 			   navigateBackToFeedCardAndroid(); 
 			   Functions.close_launchAppAndroid();
@@ -2352,7 +2353,8 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 	}
 	
 	public void clickOnUPSXSignOut() throws Exception {
-		// Functions.verifyElement(ByAccessibilityId("About this App"));
+		System.out.println("Clicking on UPSX Sign Out button");
+		logStep("Clicking on UPSX Sign Out button");
 		try {
 			List<MobileElement> all = Ad.findElementsById("android:id/title");
 			// Thread.sleep(15000);
@@ -2362,6 +2364,7 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 					//TestBase.waitForElementToBeClickable(Ad, 60, byAboutLabel);
 					signout.click();
 					Thread.sleep(15000);
+					 attachScreen();
 					break;
 				}
 			}
@@ -2374,6 +2377,7 @@ public  void select_Airlock_Branch(String branch) throws Exception{
 					//TestBase.waitForElementToBeClickable(Ad, 60, byAboutLabel);
 					signout.click();
 					Thread.sleep(15000);
+					 attachScreen();
 					break;
 		}
 	}

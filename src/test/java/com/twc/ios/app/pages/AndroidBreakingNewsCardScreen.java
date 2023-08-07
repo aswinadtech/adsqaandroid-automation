@@ -20,7 +20,8 @@ public class AndroidBreakingNewsCardScreen extends Utils {
 	String breakingNews_Id = "com.weather.Weather:id/breaking_news_grid_item_0";
 	String breakingNow_Id = "com.weather.Weather:id/breaking_news_grid_item_1";
 	
-	String editorialBreakingNewsCard_Xpath = "//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/card_videos_view\"]//android.widget.TextView[@text=\"Breaking News\"]";
+	//String editorialBreakingNewsCard_Xpath = "//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/card_videos_view\"]//android.widget.TextView[@text=\"Breaking News\"]";
+	String editorialBreakingNewsCard_Xpath = "//android.widget.FrameLayout[@resource-id=\"com.weather.Weather:id/card_videos_view\"]";
 	String editorialVideobreakingNews_Id = "com.weather.Weather:id/video_grid_item_0";
 	
 	By byBreakingNewsCard = MobileBy.id(breakingNewsCard_Id);

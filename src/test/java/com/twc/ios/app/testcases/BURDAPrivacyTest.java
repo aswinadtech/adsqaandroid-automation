@@ -142,6 +142,7 @@ public class BURDAPrivacyTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		hrTab = new HourlyNavTab(Ad);
@@ -181,11 +182,13 @@ public class BURDAPrivacyTest extends TwcIosBaseTest {
 		Functions.launchtheApp_forLocalization("true","de_DE",true,"de",true);
 		System.out.println("App launched ");
 		logStep("App launched ");
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Functions.archive_folder("Charles");
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		hrTab = new HourlyNavTab(Ad);

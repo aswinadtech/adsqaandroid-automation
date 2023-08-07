@@ -309,8 +309,20 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.verifyPubadCal("Smoke", "Pulltorefresh");
 	}
 	
-	
+	/**
+	 * This method validates ppid parameter of Sticky ad Call
+	 */
 	@Test(priority = 102, enabled = true)
+	@Description("Validating 'ppid' parameter of Sticky ad Call")
+	public void validate_Sticky_Ad_Call_ppid_parameter() throws Exception {
+		System.out.println("==============================================");
+		System.out.println("****** Validating ppid parameter of Sticky ad call");
+		logStep("Validating ppid parameter of Sticky ad call");
+		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Pulltorefresh", "ppid", "NotNull");
+	}
+	
+	
+	@Test(priority = 103, enabled = true)
 	@Description("Verify NextGen IM ad call iu")
 	public void Verify_NextGen_IM_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -321,7 +333,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.verifyPubadCal("Smoke", "Marquee");
 	}
 
-	@Test(priority = 103, enabled = true)
+	@Test(priority = 104, enabled = true)
 	@Description("Verify Hourly details page iu")
 	public void Verify_HourlyDetails_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -333,7 +345,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 
-	@Test(priority = 104, enabled = true)
+	@Test(priority = 105, enabled = true)
 	@Description("Verify Today's Detailed/Trending page iu")
 	public void Verify_TrendingPage_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -345,7 +357,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.verifyPubadCal("Smoke", "Today", false);
 	}
 
-	@Test(priority = 105, enabled = true)
+	@Test(priority = 110, enabled = true)
 	@Description("Verify Air Quality details page iu")
 	public void Verify_Air_Quality_Details_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -356,7 +368,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.verifyPubadCal("Smoke", "Air Quality(Content)");
 	}
 
-	@Test(priority = 106, enabled = true)
+	@Test(priority = 111, enabled = true)
 	@Description("Verify Maps detail page iu")
 	public void Verify_MapsDetails_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -368,7 +380,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 
-	@Test(priority = 107, enabled = true)
+	@Test(priority = 112, enabled = true)
 	@Description("Verify Health & Activities (Flu) Content page iu")
 	public void Verify_Health_Flu_ContentPage_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -381,7 +393,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 	
-	@Test(priority = 108, enabled = true)
+	@Test(priority = 113, enabled = true)
 	@Description("Verify Health & Activities (Allergy) Content page iu")
 	public void Verify_Health_Allergy_ContentPage_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -394,7 +406,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 
-	@Test(priority = 109, enabled = true)
+	@Test(priority = 114, enabled = true)
 	@Description("Verify Health & Activities (Running) Content iu")
 	public void Verify_Health_Running_ContentPage_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -407,7 +419,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 	
-	@Test(priority = 110, enabled = true)
+	@Test(priority = 115, enabled = true)
 	@Description("Verify Health & Activities (Boat & Beach) Content iu")
 	public void Verify_Health_BoatAndBeach_ContentPage_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -420,7 +432,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}
 
-	@Test(priority = 111, enabled = true)
+	@Test(priority = 120, enabled = true)
 	@Description("Verify Alert Center ad on My Alerts Page")
 	public void Verify_AlertCenterAd() throws Exception {
 		System.out.println("==============================================");
@@ -431,7 +443,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 		Utils.verifyPubadCal("Smoke", "MyAlerts");
 	}
 	
-	@Test(priority = 115, enabled = true)
+	@Test(priority = 121, enabled = true)
 	@Description("Verify Safety And Preparedness Card iu")
 	public void Verify_SafetyAndPreparednessCard_AdCall() throws Exception {
 		System.out.println("==============================================");
@@ -453,7 +465,7 @@ public class AndroidSmokeTest extends TwcIosBaseTest {
 
 	}*/
 	
-	@Test(priority = 117, enabled = true)
+	@Test(priority = 122, enabled = true)
 	@Description("Verify Seasonal Hub details page iu")
 	public void Verify_Seasonal_Hub_Details_AdCall() throws Exception {
 		System.out.println("==============================================");

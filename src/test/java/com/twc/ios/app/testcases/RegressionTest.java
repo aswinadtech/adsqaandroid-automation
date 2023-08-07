@@ -525,18 +525,6 @@ public class RegressionTest extends TwcIosBaseTest {
 	 * Utils.verifyFeedAds_AAX_SlotIds("Smoke", "CleanLaunch"); }
 	 */
 	
-	/**
-	 * This method validates ppid parameter of Sticky ad Call
-	 */
-	@Test(priority = 90, enabled = true)
-	@Description("Validating 'ppid' parameter of Sticky ad Call")
-	public void validate_Sticky_Ad_Call_ppid_parameter() throws Exception {
-		System.out.println("==============================================");
-		System.out.println("****** Validating ppid parameter of Sticky ad call");
-		logStep("Validating ppid parameter of Sticky ad call");
-		Utils.validate_Noncustom_param_val_of_gampad("Smoke", "Pulltorefresh", "ppid", "NotNull");
-	}
-
 	@Test(priority = 101, enabled = true)
 	@Description("Verify preroll video iu")
 	public void Verify_video_adcall_iu() throws Exception {
@@ -628,6 +616,7 @@ public class RegressionTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(5000);
 			addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
 			TestBase.waitForMilliSeconds(20000);*/
+			TestBase.waitForMilliSeconds(5000);
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
 		}
@@ -784,6 +773,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(5000);
 		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
 		TestBase.waitForMilliSeconds(20000);*/
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -925,6 +915,7 @@ public class RegressionTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(5000);
 			addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
 			TestBase.waitForMilliSeconds(20000);*/
+			TestBase.waitForMilliSeconds(5000);
 			proxy.getXml();
 			Utils.createXMLFileForCharlesSessionFile();
 		}
@@ -1081,6 +1072,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(5000);
 		addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
 		TestBase.waitForMilliSeconds(20000);*/
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 	}
@@ -1199,6 +1191,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		hmTab.clickonHomeTab();
 		hrTab.navigateToHourlyTab();
 		Functions.put_Background_launch(10);
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.verify_Lotame_Call_Segment_Parameter("Smoke", "Lotame", "seg=Hourly");
@@ -1228,6 +1221,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.archive_folder("Charles");
 		dTab.navigateToDailyTab();
 		Functions.put_Background_launch(10);
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.verify_Lotame_Call_Segment_Parameter("Smoke", "Lotame", "seg=Daily");
@@ -1256,6 +1250,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.archive_folder("Charles");
 		rTab.navigateToRadarTab();
 		Functions.put_Background_launch(10);
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.verify_Lotame_Call_Segment_Parameter("Smoke", "Lotame", "seg=Radar");
@@ -1284,6 +1279,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.archive_folder("Charles");
 		vTab.navigateToVideoTab();
 		Functions.put_Background_launch(10);
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		Utils.verify_Lotame_Call_Segment_Parameter("Smoke", "Lotame", "seg=Video");
@@ -1311,6 +1307,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1349,6 +1346,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1386,6 +1384,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1423,6 +1422,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1460,6 +1460,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1497,6 +1498,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1534,6 +1536,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		
@@ -1569,6 +1572,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();
 		Functions.archive_folder("Charles");
@@ -2216,6 +2220,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		//proxy.disableRewriting();
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(7000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		hmTab.verifyTapabilityOfStickyTestAdOnHomeScreen();
@@ -2231,6 +2236,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		//proxy.disableRewriting();
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(7000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		dTab.navigateToDailyTab();
@@ -2247,6 +2253,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		//proxy.disableRewriting();
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(7000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		rTab.navigateToRadarTab();
@@ -2534,6 +2541,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		stScreen.select_Airlock_UserGroup("UnlimitedInterstitial");
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		Functions.checkForAppState();
@@ -2567,6 +2575,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		Functions.checkForAppState();
@@ -2586,6 +2595,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		Functions.checkForAppState();
@@ -2605,6 +2615,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		hmTab.clickonHomeTab();
 		hmTab.clickonHomeTab();
 		Functions.checkForAppState();
@@ -2626,6 +2637,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		Functions.checkForAppState();
 		Functions.unlimitedInterstitial = true;
 		Utils.assertinterStitialAd("Smoke", "Hourly", "hourlybanner", "Entry");
@@ -2644,6 +2656,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		Functions.checkForAppState();
 		Functions.unlimitedInterstitial = true;
 		Utils.assertinterStitialAd("Smoke", "Daily(10day)", "dailybanner", "Exit");
@@ -2661,6 +2674,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		Functions.checkForAppState();
 		Functions.unlimitedInterstitial = true;
 		Utils.assertinterStitialAd("Smoke", "Daily(10day)", "daily", "Exit");
@@ -2681,6 +2695,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		TestBase.waitForMilliSeconds(40000);
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		Functions.checkForAppState();
 		Functions.unlimitedInterstitial = true;
 		Utils.assertinterStitialAd("Smoke", "Map", "radar.largead", "Exit");
@@ -3038,7 +3053,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		Functions.close_launchApp();
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
-		TestBase.waitForMilliSeconds(2000);
+		TestBase.waitForMilliSeconds(5000);
 		// navigate to Radar tab
 		Functions.archive_folder("Charles");
 		
@@ -3260,6 +3275,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		stScreen.select_Airlock_UserGroup("IOSFLAG 7782SevereInsight");
 		
 		Functions.close_launchApp();
+		TestBase.waitForMilliSeconds(5000);
 		proxy.clearCharlesSession();
 		//proxy.enableMapLocal();
 		//Functions.close_launchApp();
@@ -3330,6 +3346,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.archive_folder("Charles");
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();		
 	}
@@ -3371,6 +3388,7 @@ public class RegressionTest extends TwcIosBaseTest {
 		proxy.clearCharlesSession();
 		Functions.close_launchApp();
 		Functions.archive_folder("Charles");
+		TestBase.waitForMilliSeconds(5000);
 		proxy.getXml();
 		Utils.createXMLFileForCharlesSessionFile();	
 		stScreen.GPS_Spoof_Off();

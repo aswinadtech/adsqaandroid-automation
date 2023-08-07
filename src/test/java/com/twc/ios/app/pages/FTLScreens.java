@@ -562,6 +562,34 @@ public class FTLScreens extends Utils {
 						logStep("Change to Always Allow button not available on the screen");
 					}
 					
+					currentTime = System.nanoTime();
+					timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
+					if (timeElapsed>210) {
+						try {
+							Functions.checkForAppState();
+							TestBase.waitForVisibilityOfElementLocated(Ad, 5, bySettingsButton);
+							settingsButton = Ad.findElement(bySettingsButton);
+							System.out
+									.println("Settings Button found during handling all alerts");
+							logStep("Settings Button found during handling all alerts");
+							isSettingsButtonDisplayed = true;
+							break;
+							
+						}catch(Exception e6) {
+							currentTime = System.nanoTime();
+							timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
+							//startTime = System.nanoTime();
+							if (timeElapsed>210) {
+								System.out
+								.println("Settings Button not found after handling all alerts, hence kill and launching it again");
+								logStep("Settings Button not found after handling all alerts, hence kill and launching it again");
+								Functions.close_launchApp();
+								continue;
+							}					
+						}
+					}
+					
+													
 					try {
 						TestBase.waitForVisibilityOfElementLocated(Ad, 10, byCloseButton);
 						closeButton = Ad.findElement(byCloseButton);
@@ -586,6 +614,9 @@ public class FTLScreens extends Utils {
 						System.out.println("Let's Go/Next button not available on the screen");
 						logStep("Let's Go/Next button not available on the screen");
 						try {
+							currentTime = System.nanoTime();
+							timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
+							Functions.checkForAppState();
 							TestBase.waitForVisibilityOfElementLocated(Ad, 5, bySettingsButton);
 							settingsButton = Ad.findElement(bySettingsButton);
 							System.out
@@ -594,7 +625,7 @@ public class FTLScreens extends Utils {
 							isSettingsButtonDisplayed = true;
 							break;
 							
-						}catch(Exception e4) {
+						}catch(Exception e6) {
 							currentTime = System.nanoTime();
 							timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
 							//startTime = System.nanoTime();
@@ -645,7 +676,7 @@ public class FTLScreens extends Utils {
 			}
 		}
 		
-		
+		TestBase.waitForMilliSeconds(2000);
 		try {
 			attachScreen();
 		} catch (Exception e) {
@@ -764,6 +795,33 @@ public class FTLScreens extends Utils {
 						System.out.println("Change to Always Allow button not available on the screen");
 						logStep("Change to Always Allow button not available on the screen");
 					}
+					
+					currentTime = System.nanoTime();
+					timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
+					if (timeElapsed>210) {
+						try {
+							Functions.checkForAppState();
+							TestBase.waitForVisibilityOfElementLocated(Ad, 5, bySettingsButton);
+							settingsButton = Ad.findElement(bySettingsButton);
+							System.out
+									.println("Settings Button found during handling all alerts");
+							logStep("Settings Button found during handling all alerts");
+							isSettingsButtonDisplayed = true;
+							break;
+							
+						}catch(Exception e6) {
+							currentTime = System.nanoTime();
+							timeElapsed = TestBase.findElapsedTime(startTime, currentTime);
+							//startTime = System.nanoTime();
+							if (timeElapsed>210) {
+								System.out
+								.println("Settings Button not found after handling all alerts, hence kill and launching it again");
+								logStep("Settings Button not found after handling all alerts, hence kill and launching it again");
+								Functions.close_launchApp();
+								continue;
+							}					
+						}
+					}
 
 					try {
 						TestBase.waitForVisibilityOfElementLocated(Ad, 10, byCloseButton);
@@ -844,7 +902,7 @@ public class FTLScreens extends Utils {
 				}
 			}
 		}
-
+		TestBase.waitForMilliSeconds(2000);
 		try {
 			attachScreen(Ad);
 		} catch (Exception e) {

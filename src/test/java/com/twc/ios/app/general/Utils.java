@@ -128,6 +128,28 @@ public class Utils extends Functions {
 		video, today, news, aq, maps, daily
 	}
 	
+	public static void getIpaddress() {
+		Process p;
+		try {
+			File bashFile = new File(System.getProperty("user.dir") + "/getIpAddress.sh");
+			String[] cmd = { "/bin/sh", bashFile.getName() };
+
+			p = Runtime.getRuntime().exec(cmd);
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String s;
+			while ((s = reader.readLine()) != null) {
+				System.out.println("Current IP Address of the system is : " + s);
+				logStep("Current IP Address of the system is : " + s);
+				current_IPAddress = s;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("There is an exception while finding current MAC IP Address");
+			e.printStackTrace();
+		}
+
+	}
 	/**
 	 * Get Current Wifi Name and Write to properties file
 	 * This method works only if the device is connected to system
@@ -15334,7 +15356,11 @@ public class Utils extends Functions {
 		clickRequiredElementonSettingsapp("Wi-Fi || Internet || Wi‑Fi");
 		Thread.sleep(2000);
 		 attachScreen(Ad1);
-		Ad1.findElementByAccessibilityId("Settings").click();
+		 try {
+				Ad1.findElementByAccessibilityId("Settings").click();	
+			} catch (Exception e) {
+				Ad1.findElementByAccessibilityId("Settings Button").click();
+			}
 		Thread.sleep(2000);
 		 attachScreen(Ad1);
 		   try {
@@ -15408,31 +15434,6 @@ public class Utils extends Functions {
 		}
 		}
 	
-	
-	public static void getIpaddress() {
-		Process p;
-		try {
-			File bashFile = new File(System.getProperty("user.dir") + "/getIpAddress.sh");
-			String[] cmd = { "/bin/sh", bashFile.getName() };
-
-			p = Runtime.getRuntime().exec(cmd);
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			String s;
-			while ((s = reader.readLine()) != null) {
-				System.out.println("Current IP Address of the system is : " + s);
-				logStep("Current IP Address of the system is : " + s);
-				current_IPAddress = s;
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("There is an exception while finding current MAC IP Address");
-			e.printStackTrace();
-		}
-
-	}
-	
-	
  	public static void settingProxyEnable(String type,String current_IPAddress,String PortNumber) throws Exception{
  		clickRequiredElementonSettingsapp("Connections || Network & internet");
 		Thread.sleep(2000);
@@ -15440,7 +15441,12 @@ public class Utils extends Functions {
 		clickRequiredElementonSettingsapp("Wi-Fi || Internet || Wi‑Fi");
 		Thread.sleep(2000);
 		 attachScreen(Ad1);
-		Ad1.findElementByAccessibilityId("Settings").click();
+		
+		try {
+			Ad1.findElementByAccessibilityId("Settings").click();	
+		} catch (Exception e) {
+			Ad1.findElementByAccessibilityId("Settings Button").click();
+		}
 		Thread.sleep(2000);
 		 attachScreen(Ad1);
 		   try {

@@ -242,6 +242,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(2000);
 			
 			Functions.close_launchApp();
+			TestBase.waitForMilliSeconds(5000);
 			hmTab.clickonHomeTab();
 			hmTab.clickonHomeTab();
 			// navigate to Daily tab
@@ -462,6 +463,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 			Functions.checkForAppState();
 			Functions.put_Background_launch(15);
 			Functions.checkForAppState();
+			TestBase.waitForMilliSeconds(5000);
 			/*
 			 * addrScreen.clearAddedAddresses(); TestBase.waitForMilliSeconds(5000);
 			 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
@@ -488,6 +490,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(2000);
 
 			Functions.close_launchApp();
+			TestBase.waitForMilliSeconds(5000);
 			hmTab.clickonHomeTab();
 			hmTab.clickonHomeTab();
 			// navigate to Daily tab
@@ -709,6 +712,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 201, enabled = true)
@@ -948,6 +952,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 301, enabled = true)
@@ -1185,6 +1190,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 401, enabled = true)
@@ -1422,6 +1428,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 501, enabled = true)
@@ -1661,6 +1668,7 @@ public class USAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 801, enabled = true)

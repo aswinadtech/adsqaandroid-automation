@@ -3,7 +3,110 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.twc.ios.app.testcases.AndroidCOLORADOPrivacyTest"/>
+      <class name="com.twc.ios.app.testcases.AndroidCriteoAndAmazonBidTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.twc.ios.app.testcases.AndroidCriteoAndAmazonBidTest">
+        <methods>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Hourly3_Big_ad_gampad_call"/>
+          <include name="enable_PreConditions_to_Validate_amazon_bid_ids_Interstitial_Call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Hourly1_Big_ad_gampad_call"/>
+          <include name="Verify_Map_Details_ad_call_amazon_bid_id"/>
+          <include name="Verify_homescreen_adhesive_ad_call_amazon_bid_id"/>
+          <include name="Verify_Hourly3_Big_adcall_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Hourly2_Big_ad_gampad_call"/>
+          <include name="Verify_amazon_video_adcall_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_AlertCenter_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Interstitials_gampad_call"/>
+          <include name="Verify_amazon_aax_preload_feed4_adcall"/>
+          <include name="Verify_Health_Flu_Articles_ad_call_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_HealthallergyArticles_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_HealthcoldAndFluArticles_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_daily_details_gampad_call"/>
+          <include name="Verify_Feed1_ad_call_amazon_bid_id"/>
+          <include name="Verify_amazon_aax_preload_Intersitials_adcall"/>
+          <include name="Verify_amazon_aax_preload_map_details_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_HealthcoldAndFluArticles_gampad_call"/>
+          <include name="Verify_Interstitials_ad_call_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_daily_details_gampad_call"/>
+          <include name="Validate_IMA_SDK_version"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed2_gampad_call"/>
+          <include name="Verify_Health_Allergy_Articles_ad_call_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Hourly2_Big_ad_gampad_call"/>
+          <include name="Verify_Daily_Details_ad_call_amazon_bid_id"/>
+          <include name="Verify_amazon_aax_News_details_adcall"/>
+          <include name="Verify_amazon_aax_preload_Hourly3_bigad_adcall"/>
+          <include name="Verify_amazon_aax_preload_PreRollVideo_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_Feed1_gampad_call"/>
+          <include name="Verify_AlertCenter_ad_call_amazon_bid_id"/>
+          <include name="Validate_Criteo_SDK_config_app_Call_cpId_parameter"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed1_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_AlertCenter_gampad_call"/>
+          <include name="beforeClass"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Feed2_gampad_call"/>
+          <include name="kill_and_Launch_app_for_aax_calls"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Hourly1_Big_ad_gampad_call"/>
+          <include name="Verify_amazon_aax_feed5_adcall"/>
+          <include name="Verify_amazon_aax_preload_Hourly1_bigad_adcall"/>
+          <include name="Validate_Criteo_SDK_config_app_Call_bundleId_parameter"/>
+          <include name="Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_prefetchOnInitEnabled"/>
+          <include name="Verify_amazon_aax_Flu_Articles_adcall"/>
+          <include name="afterClass"/>
+          <include name="Verify_amazon_aax_Allergy_Articles_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Hourly3_Big_ad_gampad_call"/>
+          <include name="Verify_Feed2_ad_call_amazon_bid_id"/>
+          <include name="Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_remoteLogLevel"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Interstitials_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed1_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_homescreen_adhesive_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_HealthcoldAndFluArticles_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_HealthallergyArticles_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_homescreen_adhesive_gampad_call"/>
+          <include name="Verify_amazon_News_Details_adcall_bid_id"/>
+          <include name="Verify_amazon_aax_Hourly_Big_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_HealthallergyArticles_gampad_call"/>
+          <include name="Verify_Hourly1_Big_adcall_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Interstitials_gampad_call"/>
+          <include name="Verify_amazon_aax_preload_feed3_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Feed2_gampad_call"/>
+          <include name="Verify_amazon_aax_preload_feed1_adcall"/>
+          <include name="Validate_GMA_SDK_version"/>
+          <include name="Verify_amazon_aax_preload_homescreen_adhesive_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_homescreen_adhesive_gampad_call"/>
+          <include name="Verify_amazon_aax_preload_Daily_details_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_daily_details_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Hourly3_Big_ad_gampad_call"/>
+          <include name="Validate_Criteo_SDK_config_app_Call_sdkVersion_parameter"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_AlertCenter_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_Hourly1_Big_ad_gampad_call"/>
+          <include name="Verify_amazon_aax_AQ_details_adcall"/>
+          <include name="Validate_Criteo_SDK_Bidder_API_Call_Response_Code"/>
+          <include name="enable_PreConditions_to_Validate_Hourly_big_ad_Criteo_Parameters"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_map_details_gampad_call"/>
+          <include name="Verify_Criteo_SDK_config_app_Call"/>
+          <include name="Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_liveBiddingEnabled"/>
+          <include name="Verify_amazon_aax_preload_Hourly2_bigad_adcall"/>
+          <include name="Verify_amazon_aax_AlertCenter_adcall"/>
+          <include name="Validate_Criteo_SDK_Initialization_API_Call_Response_Code"/>
+          <include name="Verify_amazon_aax_SeasonalHub_details_adcall"/>
+          <include name="Validate_Amazon_SDK_adsdk_parameter"/>
+          <include name="enable_PreConditions_to_Validate_amazon_bid_ids_And_Criteo_Parameters"/>
+          <include name="Validate_Criteo_SDK_Initialization_API_Call_Response_Parameter_csmEnabled"/>
+          <include name="Verify_Hourly_Details_ad_call_amazon_bid_id"/>
+          <include name="Verify_amazon_aax_preload_feed2_adcall"/>
+          <include name="Verify_amazon_aax_Today_details_adcall"/>
+          <include name="Verify_AQ_Details_ad_call_amazon_bid_id"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_cpm_parameter_with_Hourly2_Big_ad_gampad_call"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_displayUrl_parameter_with_map_details_gampad_call"/>
+          <include name="beforeTest"/>
+          <include name="Verify_amazon_aax_preload_Hourly_details_adcall"/>
+          <include name="Verify_Criteo_SDK_inapp_v2_Call_size_parameter_with_map_details_gampad_call"/>
+          <include name="Verify_Hourly2_Big_adcall_amazon_bid_id"/>
+        </methods>
+      </class> <!-- com.twc.ios.app.testcases.AndroidCriteoAndAmazonBidTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

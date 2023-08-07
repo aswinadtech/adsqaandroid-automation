@@ -210,6 +210,7 @@ public class COLORADOPrivacyTest extends TwcIosBaseTest {
 			  Functions.checkForAppState();
 		   	  Functions.put_Background_launch(15);
 			  Functions.checkForAppState();
+			  TestBase.waitForMilliSeconds(5000);
 				/*
 				 * addrScreen.clearAddedAddresses(); TestBase.waitForMilliSeconds(5000);
 				 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");

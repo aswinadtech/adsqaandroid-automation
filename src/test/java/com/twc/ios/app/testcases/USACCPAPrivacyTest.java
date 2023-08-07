@@ -253,6 +253,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 			 hmTab.clickonHomeTab();*/
 			 
 			 Functions.close_launchApp();
+			 TestBase.waitForMilliSeconds(5000);
 			 hmTab.clickonHomeTab();
 			 hmTab.clickonHomeTab();
 			// navigate to Daily tab
@@ -473,6 +474,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 			Functions.checkForAppState();
 			Functions.put_Background_launch(15);
 			Functions.checkForAppState();
+			TestBase.waitForMilliSeconds(5000);
 			/*
 			 * addrScreen.clearAddedAddresses(); TestBase.waitForMilliSeconds(5000);
 			 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
@@ -499,6 +501,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(2000);
 
 			Functions.close_launchApp();
+			TestBase.waitForMilliSeconds(5000);
 			hmTab.clickonHomeTab();
 			hmTab.clickonHomeTab();
 			// navigate to Daily tab
@@ -712,6 +715,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		proxy.disableMapLocal();
 		Functions.close_launchApp();
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 		Functions.archive_folder("Charles");
 		//proxy.getXml();
 		proxy.clearCharlesSession();
@@ -719,6 +723,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 201, enabled = true)
@@ -956,6 +961,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 301, enabled = true)
@@ -1192,6 +1198,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 401, enabled = true)
@@ -1429,6 +1436,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 501, enabled = true)
@@ -1669,6 +1677,7 @@ public class USACCPAPrivacyTest extends TwcIosBaseTest {
 		Functions.checkForAppState();
 		Functions.put_Background_launch(15);
 		Functions.checkForAppState();
+		TestBase.waitForMilliSeconds(5000);
 	}
 
 	@Test(priority = 801, enabled = true)

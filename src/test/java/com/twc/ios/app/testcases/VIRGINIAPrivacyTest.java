@@ -209,6 +209,7 @@ public class VIRGINIAPrivacyTest extends TwcIosBaseTest {
 			  Functions.checkForAppState();
 		   	  Functions.put_Background_launch(15);
 			  Functions.checkForAppState();
+			  TestBase.waitForMilliSeconds(5000);
 				/*
 				 * addrScreen.clearAddedAddresses(); TestBase.waitForMilliSeconds(5000);
 				 * addrScreen.enternewAddress(false, "07095", "Woodbridge, New Jersey");
@@ -250,6 +251,7 @@ public class VIRGINIAPrivacyTest extends TwcIosBaseTest {
 			 hmTab.clickonHomeTab();*/
 			 
 			 Functions.close_launchApp();
+			 TestBase.waitForMilliSeconds(5000);
 			 hmTab.clickonHomeTab();
 			 hmTab.clickonHomeTab();
 			// navigate to Daily tab
@@ -495,6 +497,7 @@ public class VIRGINIAPrivacyTest extends TwcIosBaseTest {
 			TestBase.waitForMilliSeconds(2000);
 
 			Functions.close_launchApp();
+			TestBase.waitForMilliSeconds(5000);
 			hmTab.clickonHomeTab();
 			hmTab.clickonHomeTab();
 			// navigate to Daily tab
