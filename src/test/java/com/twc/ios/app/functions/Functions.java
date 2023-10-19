@@ -1925,6 +1925,7 @@ public class Functions extends Driver {
 //			TestBase.waitForMilliSeconds(5000);
 			ftlScreens = new AndroidFTLScreens(Ad);
 			ftlScreens.handle_Unwanted_Popups();
+			TestBase.waitForMilliSeconds(20000);
 			// attachScreen();
 		} catch (Exception e) {
 			try {
@@ -1941,7 +1942,7 @@ public class Functions extends Driver {
 				ftlScreens = new AndroidFTLScreens(Ad);
 				ftlScreens.handle_Unwanted_Popups();
 				// attachScreen();
-				TestBase.waitForMilliSeconds(6000);
+				TestBase.waitForMilliSeconds(20000);
 			} catch (Exception e1) {
 				System.out.println("App  close / Launch failed");
 				logStep("App  close / Launch failed");
